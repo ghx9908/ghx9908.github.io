@@ -105,3 +105,13 @@ deploy:
   type: git
   repo: git@github.com:Gao-Hongxiang/Gao-Hongxiang.github.io.git
   branch: master
+
+post:
+  comments:
+    enable: true
+    type: disqus
+disqus:
+  shortname: fluid
+dark_mode:
+  enable: true
+  default: auto
