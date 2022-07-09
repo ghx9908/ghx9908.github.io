@@ -1,10 +1,25 @@
 ---
-title: git reset使用
+title: git常见命令使用
 date: 2022-07-09 11:11:50
 tags: git
 ---
 
-# git reset
+# git 常见命令使用
+
+## git 仓库初始化
+
+```js
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:xxx.git
+git push -u origin main
+
+```
+
+## git reset
 
 `git reset`命令用于将当前分支指向另一个位置。
 
