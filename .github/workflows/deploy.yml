@@ -1,9 +1,9 @@
-name: Pages
+name: Pages  # Actions 显示的名字，随意设置
 
 on:
-  push:
+  push: # 监听到 push 事件后触发
     branches:
-      - master  # default branch
+      - master  # default branch  
 
 jobs:
   pages:
