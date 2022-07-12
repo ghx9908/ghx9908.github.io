@@ -105,4 +105,4 @@ language: zh-CN # 指定语言，会影响主题显示的语言，按需修改
 deploy:
   type: git
   repo: git@github.com:Gao-Hongxiang/Gao-Hongxiang.github.io.git
-  branch: master
+  branch: gh-pages
