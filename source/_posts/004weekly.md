@@ -1,0 +1,62 @@
+---
+title: weekly 004
+date: 2022-08-08 18:00:00
+categories: weekly
+tags: weekly
+---
+
+## 本期文章
+
+### [七夕到了，还不快给你女朋友做一个专属 chrome 插件](https://juejin.cn/post/7122332008252080142)
+
+七夕节马上就要到了，作为拥有对象（没有的话，可以选择 new 一个出来）的程序员来说，肯定是需要有一点表示才行的。用钱能买到的东西不一定能表达咱们的心意，但是用心去写的代码，还能让对象每天看到那才是最正确的选择。
+
+除了手机之外，在电脑上使用浏览器搜索想要的东西是最常用的功能了，所以就需要一个打开即用的搜索框，而且还能表达心意的 chrome 标签页来让 TA 随时可用。
+
+### [写给前端的跨平台方案、跨端引擎的本质](https://juejin.cn/post/6966626823912308772)
+
+近些年来，前端领域的跨端技术越来越多了：react native、weex、flutter、electron、kraken 等等。那么多跨端方案，他们有没有通用的思路？我们能不能从这么多方案中找出本质的原理？
+
+本文会尝试探究探究以下问题：
+什么是跨平台
+有哪些方案是跨平台的
+跨端和跨平台的区别是什么
+前端领域有哪些跨端方案
+跨平台、跨端的通用原理是什么
+
+本文主要讲述了跨平台的概念、方案、优缺点，以及前端跨端的常见方案和原理，通过这篇文章可以理解跨端和跨平台容器的思路
+
+### [lerna 中文教程](https://juejin.cn/post/6844903856153821198?share_token=52703fb9-a8a2-4301-956a-31bb3fb19b43)
+
+Lerna 是一个工具，它优化了使用 git 和 npm 管理多包存储库的工作流。本文讲解了工作的两种模式：Fixed/Locked mode (default)和 Independent mode；yarn 的 workspaces 模式；以及各种命令
+
+让我们简单了解一下如何使用 lerna 来管理一个多包，以及 lerna 的主要配置和命令。
+
+### [Git 基础教程(必学)](https://mp.weixin.qq.com/s/0mGBRiG-kOa9rNL3qn9vVQ)
+
+在工作中，发现不少同学对 Git 的掌握非常基础，同样作为版本控制系统，使用好 Git 比 SVN 要更有挑战，需要对 Git 有一定的了解，才能在工作中，驾驭好 Git。
+
+本文从最简单的基础入门，讲解工作中常用的 Git 基础，掌握这些是 Git 进阶的基础，足够日常工作场景。
+
+### [牛逼，一款 996 代码分析工具](https://mp.weixin.qq.com/s?__biz=MzA3MzE4ODY0Mg==&mid=2455993889&idx=1&sn=7233d57b655d882a3e73386abba5e8ac&chksm=88850a6cbff2837a0eee062726b62415836b92c0ee5527a6c8a72993f255fa6bc1095600a5dd#rd)
+
+一个代码分析工具 code996，它可以统计 Git 项目的 commit 时间分布，进而推导出这个项目的编码工作强度。这算是一种对项目更了解的方式，杜绝 996 从了解数据开始。
+
+code996 除了能够分析项目的实际工作强度，也能用来分析我们代码编写的情况，对自身了解自己代码编写效率的时段、最近的工作强度等都是非常好的一个输入
+
+### [如何优雅地在 React 中使用 TypeScript，看这一篇就够了！](https://juejin.cn/post/7021674818621669389)
+
+本文讲解了 ypeScript 与 React 一起使用时经常遇到的一些类型定义的问题。阅读本文前，希望你能有一定的 React 和 TypeScript 基础。
+
+你平时如何使用 ts, 鼠标点击事件对象类型是什么? 是不是用的最多的是 any 类型,最后 typescript 用成了 anyscript,typescript 也就失去了它存在的意义,本文将为你讲解如何在 react 中优雅的使用 typescript
+
+### [React State Hooks: useReducer, useState, useContext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/)
+
+作为 react 初学者，第一次弄懂了 useReducer, useState, useContext 的用法，在什么时候用，以及三者之间的区别。
+
+## 友情链接
+
+- [阿里云 TXD 前端周刊](https://github.com/aliyunfe/weekly)
+- [前端精度周刊](https://github.com/ascoders/weekly)
+- [o2team/tech-weekly]()
+- [tnfe/TNT-Weekly](https://github.com/tnfe/TNT-Weekly/)
