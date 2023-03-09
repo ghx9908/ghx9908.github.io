@@ -3,7 +3,7 @@ title: for...of循环和for...in循环区别
 date: 2022-07-09 14:30:00
 tags:
   - 面试
-  - es6
+  - ES6
 ---
 
 # for...of 循环和 for...in 循环区别
