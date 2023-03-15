@@ -4,21 +4,23 @@ menu:
   首页:
     url: /
     icon: fas fa-home
-  标签:
-    url: /tags
-    icon: fas fa-tags
-  分类:
-    url: /categories
-    icon: fas fa-bookmark
   归档:
     url: /archives
     icon: fas fa-archive
+  分类:
+    url: /categories
+    icon: fas fa-bookmark
+  标签:
+    url: /tags
+    icon: fas fa-tags
   关于:
     url: /about
     icon: fas fa-user-circle-o
-  # 友情链接:
-  #   url: /friends
-  #   icon: fas fa-address-book
+  友情链接:
+    icon: fas fa-address-book
+    children:
+      - name: My Site
+        url: https://ghx9908.github.io/
   # 二级菜单写法如下
   #Medias:
   #  icon: fas fa-list
