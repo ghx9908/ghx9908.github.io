@@ -1,6 +1,8 @@
 ---
 title: 标题
 layout: about
+type: "about"
+
 ---
 
 ### 让技术的沉淀，巩筑未来的美好。
