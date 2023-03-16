@@ -278,24 +278,23 @@ postCalendar: false
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
+  enable: false
+  owner: ghx9908
+  repo: blog
+  oauth:
+    clientId: 6778dabce113458b96bb
+    clientSecret: 5cb308d595b73955caa582982acd8961ae309dfd
+  admin: ghx9908
+
+# the Gitment config，default disabled
+# Gitment 评论模块的配置，默认为不激活
+gitment:
   enable: true
   owner: ghx9908
   repo: blog
   oauth:
     clientId: 6778dabce113458b96bb
     clientSecret: 5cb308d595b73955caa582982acd8961ae309dfd
-  admin:
-    - ghx9908
-
-# the Gitment config，default disabled
-# Gitment 评论模块的配置，默认为不激活
-gitment:
-  enable: false
-  owner:
-  repo:
-  oauth:
-    clientId:
-    clientSecret:
 
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
