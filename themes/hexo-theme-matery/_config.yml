@@ -280,7 +280,7 @@ postCalendar: false
 gitalk:
   enable: true
   owner: ghx9908
-  repo: ghx9908.github.io
+  repo: blog
   oauth:
     clientId: 6778dabce113458b96bb
     clientSecret: 5cb308d595b73955caa582982acd8961ae309dfd
