@@ -42,8 +42,8 @@ menu:
 # 站点运行开始时间.
 time:
   enable: true
-  year: 2020 # 年份
-  month: 09 # 月份
+  year: 2022 # 年份
+  month: 06 # 月份
   date: 20 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
@@ -504,7 +504,7 @@ featureImages:
 # noreprint（不允许转载 not allowed to reprint）
 # pay（付费转载 pay for reprinting）
 reprint:
-  enable: false # whether enable reprint section 是否启用“转载规则限定模块”
+  enable: true # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by
 
 # DaoVoice online contact

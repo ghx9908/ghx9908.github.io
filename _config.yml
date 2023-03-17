@@ -9,7 +9,7 @@ description: 从来没有真正的绝境，只有心灵的迷途
 keywords: 闪烁之狐 高红翔
 author: 高红翔
 language: zh-CN
-timezone: ''
+timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -38,7 +38,7 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -48,21 +48,21 @@ highlight:
   enable: false
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
   enable: true
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 12
   order_by: -date
 
@@ -82,7 +82,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: "mtime"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -105,7 +105,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:Gao-Hongxiang/Gao-Hongxiang.github.io.git
+  repo: git@github.com:ghx9908/blog.git
   branch: gh-pages
   # test
 search:
@@ -114,7 +114,7 @@ search:
 
 permalink_pinyin:
   enable: true
-  separator: '-' # default: '-'
+  separator: "-" # default: '-'
 
 feed:
   type: atom
@@ -123,5 +123,5 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+  content_limit_delim: " "
   order_by: -date
