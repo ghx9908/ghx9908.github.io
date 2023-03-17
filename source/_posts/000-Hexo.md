@@ -81,7 +81,7 @@ $ hexo publish [layout] <title>
 
 **tags:**
 
-- HTML | CSS | JavaScript | ES6 | git | npm | Node.js | Webpack | Vue.js | React.js | 算法 | 设计模式 | 面试 | 微前端 | 工具
+- HTML | CSS | javaScript | ES6 | git | npm | Node.js | webpack | Vue.js | React.js | 算法 | 设计模式 | 面试 | 微前端 | 工具
 
 **categories:**
 

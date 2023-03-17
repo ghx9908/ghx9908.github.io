@@ -3,7 +3,7 @@ title: hasOwnProperty
 author: 高红翔
 date: 2023-03-15 18:03:13
 categories: 前端基础
-tags: JavaScript
+tags: javaScript
 ---
 
 # Object.prototype.hasOwnProperty()
@@ -25,11 +25,8 @@ console.log(object1.hasOwnProperty('hasOwnProperty'));
 
 ```
 
-
-
 使用案例 | 二次封装
 
 ```js
 require.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
 ```
-

@@ -1,7 +1,7 @@
 ---
 title: Object.prototype.hasOwnProperty()和 Object.hasOwn()
 date: 2022-07-09 16:00:00
-tags: javascript
+tags: javaScript
 ---
 
 # Object.prototype.hasOwnProperty()和 Object.hasOwn()
