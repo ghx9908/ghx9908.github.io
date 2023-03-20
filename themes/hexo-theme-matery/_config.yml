@@ -20,7 +20,7 @@ menu:
     icon: fas fa-address-book
     children:
       - name: My Site
-        url: https://ghx9908.github.io/
+        url: https://ghx9908.github.io/website/
   # 二级菜单写法如下
   #Medias:
   #  icon: fas fa-list
@@ -289,7 +289,7 @@ gitalk:
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
-  enable: true
+  enable: false
   owner: ghx9908
   repo: blog
   oauth:
