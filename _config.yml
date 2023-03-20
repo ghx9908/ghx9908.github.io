@@ -105,7 +105,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:ghx9908/blog.git
+  repo: git@github.com:ghx9908/ghx9908.github.io.git
   branch: gh-pages
   # test
 search:
