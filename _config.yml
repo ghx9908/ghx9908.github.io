@@ -94,11 +94,12 @@ pagination_dir: page
 include:
 exclude:
 ignore:
-  # Extensions
-  ## Plugins: https://hexo.io/plugins/
-  ## Themes: https://hexo.io/themes/
-  theme: hexo-theme-matery
-  # theme: fluid
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: hexo-theme-matery
+# theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
