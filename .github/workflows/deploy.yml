@@ -1,9 +1,9 @@
-name: Pages  # Actions 显示的名字，随意设置
+name: Pages # Actions 显示的名字，随意设置
 
 on:
   push: # 监听到 push 事件后触发
     branches:
-      - master  # default branch  
+      - main # default branch
 
 jobs:
   pages:
@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Cache NPM dependencies
         uses: actions/cache@v2
         with:
