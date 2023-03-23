@@ -81,13 +81,15 @@ $ hexo publish [layout] <title>
 
 **tags:**
 
-- HTML | CSS | javaScript | ES6 | git | npm | Node.js | webpack | Vue.js | React.js | 算法 | 设计模式 | 面试 | 微前端 | 工具
+- HTML | CSS | javaScript | ES6 | git | npm | Node.js | webpack | Vue.js | React.js | 算法 | 设计模式 | 面试 | 微前端 | 工具 | 编程题
 
 **categories:**
 
 - 开发工具
 
 - 前端基础
+
+- 面试宝典
 
 - 前端框架
 
