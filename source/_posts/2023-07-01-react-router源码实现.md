@@ -1,12 +1,12 @@
 ---
-title: react-router源码实现
+title: react-router源码深度解析
 author: 高红翔
 date: 2023-07-01 19:04:19
 categories: 前端框架
 tags: React.js
 ---
 
-**代码地址：**
+代码地址：
 
 - https://create-react-app.dev/
 - https://reactrouter.com/
@@ -756,9 +756,10 @@ export function useNavigate() {
 }
 ```
 
-## 7. 嵌套路由
+## 7. 嵌套路由（核心）
 
 ```jsx
+
   <Route path="/user" element={<User />}>
     <Route path="add" element={<UserAdd />} />
     <Route path="list" element={<UserList />} />
@@ -778,4 +779,937 @@ export function useNavigate() {
     <Outlet />
   </div>
 
+```
+
+### 7.1 数据结构
+
+#### 7.1.1 routes
+
+```js
+const routes = [
+  { path: "/", element: <Home /> },
+  {
+    path: "user",
+    element: <User />,
+    children: [
+      { path: "add", element: <UserAdd /> },
+      { path: "list", element: <UserList /> },
+      { path: "detail/:id", element: <UserDetail /> },
+    ],
+  },
+  { path: "*", element: <NotFound /> },
+]
+```
+
+#### 7.1.1branches
+
+简介版
+
+```js
+const branches = [
+  { path: "/user/*/add", routesMeta: [user * Meta, addMeta] },
+  { path: "/user/*/list", routesMeta: [user * Meta, listMeta] },
+  { path: "/user/*/detail", routesMeta: [user * Meta, detailMeta] },
+  { path: "/user/*", routesMeta: [user * Meta] },
+]
+```
+
+复杂版
+
+```js
+const branches = [
+  {
+    path: "/user/detail/:id",
+    routesMeta: [
+      {
+        relativePath: "user",
+        childrenIndex: 1,
+        route: {
+          path: "user",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+          children: [
+            {
+              path: "add",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "list",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "detail/:id",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+          ],
+        },
+      },
+      {
+        relativePath: "detail/:id",
+        childrenIndex: 2,
+        route: {
+          path: "detail/:id",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+        },
+      },
+    ],
+    score: 28,
+  },
+  {
+    path: "/user/add",
+    routesMeta: [
+      {
+        relativePath: "user",
+        childrenIndex: 1,
+        route: {
+          path: "user",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+          children: [
+            {
+              path: "add",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "list",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "detail/:id",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+          ],
+        },
+      },
+      {
+        relativePath: "add",
+        childrenIndex: 0,
+        route: {
+          path: "add",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+        },
+      },
+    ],
+    score: 24,
+  },
+  {
+    path: "/user/list",
+    routesMeta: [
+      {
+        relativePath: "user",
+        childrenIndex: 1,
+        route: {
+          path: "user",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+          children: [
+            {
+              path: "add",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "list",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "detail/:id",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+          ],
+        },
+      },
+      {
+        relativePath: "list",
+        childrenIndex: 1,
+        route: {
+          path: "list",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+        },
+      },
+    ],
+    score: 24,
+  },
+  {
+    path: "/user",
+    routesMeta: [
+      {
+        relativePath: "user",
+        childrenIndex: 1,
+        route: {
+          path: "user",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+          children: [
+            {
+              path: "add",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "list",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+            {
+              path: "detail/:id",
+              element: {
+                $$typeof: Symbol(react.element),
+                type: Profile,
+                props: {},
+              },
+            },
+          ],
+        },
+      },
+    ],
+    score: 13,
+  },
+  {
+    path: "/",
+    routesMeta: [
+      {
+        relativePath: "/",
+        childrenIndex: 0,
+        route: {
+          path: "/",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+        },
+      },
+    ],
+    score: 4,
+  },
+  {
+    path: "/*",
+    routesMeta: [
+      {
+        relativePath: "*",
+        childrenIndex: 2,
+        route: {
+          path: "*",
+          element: {
+            $$typeof: Symbol(react.element),
+            type: Profile,
+            props: {},
+          },
+        },
+      },
+    ],
+    score: 1,
+  },
+]
+```
+
+#### 7.1.2 matches
+
+```js
+const matches = [
+  {
+    pathname: "/user",
+    route: {
+      element: {
+        type: User,
+      },
+      path: "/user",
+    },
+  },
+  {
+    pathname: "/user/list",
+    route: {
+      element: {
+        type: UserList,
+      },
+      path: "list",
+    },
+  },
+]
+```
+
+#### 7.1.3 renderMatches
+
+```js
+let element = {
+  $$typeof: Symbol(react.element),
+  type: {
+    $$typeof: Symbol(react.provider),
+  },
+  props: {
+    value: {
+      outlet: {
+        $$typeof: Symbol(react.element),
+        type: {
+          $$typeof: Symbol(react.provider),
+        },
+        props: {
+          value: {
+            outlet: null,
+            matches: [
+              {
+                params: {},
+                pathname: "/user",
+                route: {
+                  element: {
+                    $$typeof: Symbol(react.element),
+                    type: User,
+                    props: {},
+                  },
+                  path: "/user",
+                },
+              },
+              {
+                params: {},
+                pathname: "/user/list",
+                route: {
+                  element: {
+                    $$typeof: Symbol(react.element),
+                    type: User,
+                    props: {},
+                  },
+                  path: "list",
+                },
+              },
+            ],
+          },
+        },
+      },
+      matches: [
+        {
+          params: {},
+          pathname: "/user",
+          route: {
+            element: {
+              $$typeof: Symbol(react.element),
+              type: User,
+              props: {},
+            },
+            path: "/user",
+          },
+        },
+      ],
+    },
+  },
+}
+```
+
+### 7.2useRoutes（完整版）
+
+- 根据当前地址
+- 从路由表中匹配路径
+- 如果匹配成功则渲染匹配的路由
+
+```js
+export function useRoutes(routes) {
+  // 从 LocationContext 中读取地址
+  let location = useLocation()
+  // 获取路径
+  let pathname = location.pathname || "/"
+  // 调用matchRoutes匹配路径
+  let matches = matchRoutes(routes, { pathname })
+  // 如果匹配成功
+  if (matches)
+    // 渲染匹配结果
+    return renderMatches(matches)
+}
+```
+
+#### matchRoutes
+
+> 根据提供的 location 和 routes，将路由扁平化并分级为多个分支，遍历每个分支尝试匹配，返回第一个匹配成功的结果
+
+```jsx
+export function matchRoutes(routes, location) {
+  // 从地址中获取路径
+  let { pathname } = location
+  // 将嵌套路由扁平化为一个数组
+  let branches = flattenRoutes(routes)
+  // 给路由分级
+  rankRouteBranches(branches)
+  // 初始化matches为null
+  let matches = null
+  // 遍历扁平后的路由数组
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    // 尝试匹配当前分支
+    matches = matchRouteBranch(branches[i], pathname)
+  }
+  // 返回匹配结果
+  return matches
+}
+```
+
+### 7.3flattenRoutes
+
+- 将一个嵌套的路由数组:扁平化为一个单层的路由数组,同时记录每个路由的元数据(子路由索引、完整路径等)
+
+```jsx
+export const joinPaths = (paths) => paths.join("/").replace(/\/\/+/g, "/")
+
+// 定义一个函数，将嵌套的路由数组扁平化
+function flattenRoutes(
+  routes,
+  branches = [],
+  parentsMeta = [],
+  parentPath = ""
+) {
+  // 定义一个内部函数，处理单个路由对象
+  let flattenRoute = (route, index) => {
+    // 定义一个元数据对象，存储路由相关信息
+    let meta = {
+      relativePath: route.path,
+      childrenIndex: index,
+      route,
+    }
+    // 使用 joinPaths 函数将父路径与当前相对路径组合，生成完整路径
+    let path = joinPaths([parentPath, meta.relativePath])
+    // 将当前路由元数据添加到父级元数据数组中
+    let routesMeta = parentsMeta.concat(meta)
+    // 如果当前路由对象有子路由，则递归处理
+    if (route.children && route.children.length > 0) {
+      flattenRoutes(route.children, branches, routesMeta, path)
+    }
+    // 将路径和元数据对象添加到结果数组中
+    branches.push({ path, routesMeta, score: computeScore(path, route.index) })
+  }
+  // 遍历路由数组，调用内部函数处理每个路由对象
+  routes.forEach((route, index) => {
+    flattenRoute(route, index)
+  })
+  // 返回扁平化后的路由数组
+  return branches
+}
+```
+
+#### computeScore
+
+根据 path 计算一个分数主要根据路径中的静态片断、参数、通配符等根据这些特征来给予不同的"分数"分数较高的路径匹配程度较好
+
+```jsx
+// 如果路径中有通配符*就减少2分
+const splatPenalty = -2
+// 作为indexRoute增加2分
+const indexRouteValue = 2
+// 定义参数正则
+const paramRegexp = /^:\w+$/
+// 动态片断增加3分
+const dynamicSegmentValue = 3
+// 空片断增加1分
+const emptySegmentValue = 1
+// 静态片断增加10分
+const staticSegmentValue = 10
+// 判断是否有*
+const isSplat = (s) => s === "*"
+
+function computeScore(path, index) {
+  // 初始分数
+  let initialScore = segments.length
+  // 如果有*,减少2分
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty
+  }
+  // 如果是indexRoute,增加2分
+  if (typeof index !== "undefined") {
+    initialScore += indexRouteValue
+  }
+  // 返回每个片断计算后的分数
+  return segments.filter(isSplat).reduce((score, segment) => {
+    // 当前片断的分数
+    let currentScope = 0
+    // 如果是路径参数,增加3分
+    if (paramRegexp.test(segment)) {
+      currentScope += dynamicSegmentValue
+    }
+    // 如果是空片断,增加1分
+    // 如果是静态片断,增加10分
+    // ...
+    // 总分+当前片断的分数
+    score += currentScope
+    // 返回总分
+    return score
+  }, initialScore)
+}
+```
+
+#### rankRouteBranches
+
+将路由数组根据 score 进行排序，score 高的分支排在前面，如果 score 相同则根据子路由 index 排序
+
+```js
+function rankRouteBranches(branches) {
+  // 根据 score 排序 branches
+  branches.sort((a, b) => {
+    // 比较 score
+    if (a.score !== b.score) {
+      return b.score - a.score
+    }
+    // 如果 score 相同
+    else {
+      // 比较子路由的 index
+      return compareIndexes(
+        a.routesMeta.map((meta) => meta.childrenIndex),
+        b.routesMeta.map((meta) => meta.childrenIndex)
+      )
+    }
+  })
+}
+```
+
+### 7.4 matchRouteBranch
+
+> 根据提供的 branch 和 pathname，遍历 branch 中的路由元数据，尝试匹配每个路由路径，如果匹配成功则收集匹配信息，最终返回所有匹配成功的结果
+
+```jsx
+/**
+ * 定义matchRouteBranch函数，用于匹配路由分支和路径名
+ * @param {*} branch 分支
+ * @param {*} pathname 路径名
+ * @returns
+ */
+function matchRouteBranch(branch, pathname) {
+  // 从branch中解构routesMeta
+  let { routesMeta } = branch
+  // 初始化匹配参数、匹配路径名、匹配数组
+  let matchedParams = {}
+  let matchedPathname = "/"
+  let matches = []
+  // 遍历routesMeta
+  for (let i = 0; i < routesMeta.length; ++i) {
+    // 获取当前元素的meta
+    let meta = routesMeta[i]
+    // 判断是否为最后一个元素
+    let end = i === routesMeta.length - 1
+    // 获取剩余路径名
+    let remainingPathname =
+      matchedPathname === "/"
+        ? pathname
+        : pathname.slice(matchedPathname.length) || "/"
+    // 获取当前路径匹配结果
+    let match = matchPath({ path: meta.relativePath, end }, remainingPathname)
+    // 若没有匹配结果，返回null
+    if (!match) return null
+    // 将当前匹配参数合并到matchedParams
+    Object.assign(matchedParams, match.params)
+    // 获取当前路由
+    let route = meta.route
+    // 将匹配结果添加到matches数组
+    matches.push({
+      params: matchedParams,
+      pathname: joinPaths([matchedPathname, match.pathname]),
+      route,
+    })
+    // 更新匹配路径名
+    matchedPathname = joinPaths([matchedPathname, match.pathname])
+  }
+  // 返回匹配结果数组
+  return matches
+}
+
+export const joinPaths = (paths) => paths.join("/").replace(/\/\/+/g, "/")
+```
+
+#### matchPath
+
+##### matchPath 函数
+
+根据提供的路由模式和路径尝试匹配路径,如果匹配成功则返回:
+
+- 匹配路由的参数对象 params
+
+params 对象包含:
+
+- 路由路径中定义的参数的值
+
+所以,通过调用这个函数,我们可以获得:
+
+- 路径是否匹配
+- 匹配路由的参数
+
+从而可以提取匹配到的路由的参数,用于后续操作。
+
+##### compilePath 函数
+
+通过调用这个函数,我们可以获得: **[matcher, paramNames]**
+
+- matcher:匹配路径的正则表达式
+
+- paramNames:路径定义的参数名称列表
+
+从而我们可以根据 matcher 来匹配路径,根据 paramNames 来提取匹配到的参数。
+
+```js
+//根据提供的路由模式和路径尝试匹配路径,
+//如果匹配成功则返回:匹配路由的参数对象 params
+export function matchPath({ path, end }, pathname) {
+  // 调用compilePath解析路由
+  let [matcher, paramNames] = compilePath(path, end)
+  // 使用 matcher 尝试匹配路径
+  let match = pathname.match(matcher)
+  // 如果不匹配则返回null
+  if (!match) return null
+  // 获取已匹配的路径
+  let matchedPathname = match[0]
+  // 获取匹配组团
+  let captureGroups = match.slice(1)
+  // 创建params对象
+  let params = paramNames.reduce((memo, paramName, index) => {
+    memo[paramName] = captureGroups[index]
+    return memo
+  }, {})
+  // 返回匹配结果
+  return {
+    params,
+    pathname: matchedPathname,
+  }
+}
+
+function compilePath(path, end = true) {
+  // 保存路径参数名称
+  let paramNames = []
+  // 保存正则表达式源码
+  let regexpSource =
+    "^" +
+    path
+      // 去掉路径末尾的 *、**
+      .replace(/\/\?$/, "")
+      // 确保路径以/开始
+      .replace(/^\/*/, "/")
+      // 当匹配 :param 时,将其替换为捕获组
+      .replace(/\/:(\w+)/g, (_, paramName) => {
+        paramNames.push(paramName)
+        return "/([^\\/]+)"
+      })
+  // 如果路径为*时,将*加入名称列表,并使正则匹配任意内容
+  if (path === "*") {
+    paramNames.push("*")
+    regexpSource += "(.*)$"
+  }
+  // 如果需要完整匹配,添加$
+  if (end) {
+    regexpSource += "$"
+  }
+  // 编译正则表达式
+  let matcher = new RegExp(regexpSource)
+  // 返回匹配器和参数名称
+  return [matcher, paramNames]
+}
+```
+
+### 7.5renderMatches 函数的实现
+
+1. 创建了一个 RouteContext
+2. renderMatches 函数的作用是:
+
+将匹配结果数组从右向左渲染，为 每个 match 渲染对应路由时，通过 RouteContext.Provider 提供完整的 matches 及 outlet 给下级组件，通过这种方式，下一级组件就可以访问完整的 matches 数组和 outlet。
+
+```jsx
+// 创建RouteContext这个context
+export const RouteContext = React.createContext({
+  outlet: null,
+  matches: [],
+})
+// 定义渲染匹配结果的函数
+export function renderMatches(renderedMatches) {
+  // 使用 reduceRight 从右向左遍历数组
+  return renderedMatches.reduceRight((outlet, match, index) => {
+    // 获取当前元素匹配结果之前的数组
+    let matches = renderedMatches.slice(0, index + 1)
+    // 返回RouteContext.Provider组件
+    return (
+      <RouteContext.Provider value={{ outlet, matches }}>
+        // 渲染当前match对应的route
+        {match.route.element}
+      </RouteContext.Provider>
+    )
+  }, null)
+}
+```
+
+### 7.6 useOutlet 的实现
+
+```jsx
+export function useOutlet() {
+  let { outlet } = React.useContext(RouteContext)
+  return outlet
+}
+```
+
+### 7.7 useParams 的实现
+
+```jsx
+export function useParams() {
+  let { matches } = React.useContext(RouteContext)
+  let routeMatch = matches[matches.length - 1]
+  return routeMatch ? routeMatch.params : {}
+}
+```
+
+## 8. 实现 NavLink
+
+```js
+const activeStyle = { backgroundColor: 'green' };
+const activeClassName = 'active';
+const activeNavProps = {
+    style: ({ isActive }) => isActive ? activeStyle : {},
+    className: ({ isActive }) => isActive ? activeClassName : ''
+}
+<li><NavLink end={true} to="/" {...activeNavProps}>首页</NavLink></li>
+<li><NavLink to="/user/list" {...activeNavProps}>用户管理</NavLink></li>
+<li><NavLink to="/profile" {...activeNavProps}>个人中心</NavLink></li>
+```
+
+> 创建一个自动高亮的链接组件，当被点击且匹配路径时,会自动添加 active 类名
+
+```jsx
+export function NavLink({
+  // 样式名
+  className: classNameProp = "",
+  // 是否完整匹配
+  end = false,
+  // 样式对象
+  style: styleProp = {},
+  // 跳转路径
+  to,
+  // 子元素
+  children,
+  ...rest
+}) {
+  // 从context获取location
+  let location = useLocation()
+  // 需要跳转的路径
+  let path = { pathname: to }
+  // 当前的路径
+  let locationPathname = location.pathname
+  // 跳转的路径
+  let toPathname = path.pathname
+  // 判断是否高亮
+  let isActive =
+    locationPathname === toPathname ||
+    (!end &&
+      locationPathname.startsWith(toPathname) &&
+      locationPathname.charAt(toPathname.length) === "/")
+  // 根据样式名 参数获取最终的 className
+  let className
+  // 根据样式对象(函数|对象)获取最终的 style
+  let style
+  // 返回Link组件,绑定className和style
+  return (
+    <Link {...rest} to={to} className={className} style={style}>
+      {children}
+    </Link>
+  )
+}
+```
+
+## 9.实现 Navigate
+
+**实现路由跳转和重定向**
+
+```jsx
+<Route path="*" element={<Navigate to="/" />} />
+```
+
+### 实现
+
+```jsx
+export function Navigate({ to, state }) {
+  let navigate = useNavigate()
+  React.useEffect(() => {
+    navigate(to, state)
+  })
+  return null
+}
+```
+
+## 10. 受保护路由（权限）
+
+```jsx
+<Route path="/profile" element={<Protected component={Profile} path="/profile" />} />
+<Route path="/login" element={<Login />} />
+```
+
+Protected
+
+```jsx
+import React from "react"
+import { Navigate } from "../react-router-dom"
+function Protected(props) {
+  let { component: RouteComponent, path } = props
+  return localStorage.getItem("login") ? (
+    <RouteComponent />
+  ) : (
+    <Navigate to="/login" state={{ from: path }} />
+  )
+}
+export default Protected
+```
+
+## 13. 配置式路由和懒加载
+
+```jsx
+import React from "react"
+import ReactDOM from "react-dom/client"
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  NavLink,
+  Navigate,
+  useRoutes,
+} from "./react-router-dom"
+import routesConfig from "./routesConfig"
+const LazyPost = React.lazy(() => import("./components/Post"))
+function App() {
+  let [routes, setRoutes] = React.useState(routesConfig)
+  const addRoute = () => {
+    setRoutes([
+      ...routes,
+      {
+        path: "/post",
+        element: (
+          <React.Suspense fallback={<div>loading...</div>}>
+            <LazyPost />
+          </React.Suspense>
+        ),
+      },
+    ])
+  }
+  return (
+    <div>
+      {useRoutes(routes)}
+      <button onClick={addRoute}>addRoute</button>
+    </div>
+  )
+}
+const activeStyle = { backgroundColor: "green" }
+const activeClassName = "active"
+const activeNavProps = {
+  style: ({ isActive }) => (isActive ? activeStyle : {}),
+  className: ({ isActive }) => (isActive ? activeClassName : ""),
+}
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <ul>
+      <li>
+        <NavLink end={true} to="/" {...activeNavProps}>
+          首页
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/user/list" {...activeNavProps}>
+          用户管理
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/profile" {...activeNavProps}>
+          个人中心
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/post" {...activeNavProps}>
+          post
+        </NavLink>
+      </li>
+    </ul>
+    <App />
+  </BrowserRouter>
+)
+```
+
+src\routesConfig.js
+
+```jsx
+import React from "react"
+import Home from "./components/Home"
+import User from "./components/User"
+import Profile from "./components/Profile"
+import UserAdd from "./components/UserAdd"
+import UserDetail from "./components/UserDetail"
+import UserList from "./components/UserList"
+import NotFound from "./components/NotFound"
+import Login from "./components/Login"
+import Protected from "./components/Protected"
+const routes = [
+  { path: "/", element: <Home /> },
+  { path: "/profile", element: <Profile /> },
+  {
+    path: "user",
+    element: <User />,
+    children: [
+      { path: "add", element: <UserAdd /> },
+      { path: "list", element: <UserList /> },
+      { path: "detail/:id", element: <UserDetail /> },
+    ],
+  },
+  { path: "/profile", element: <Protected component={Profile} /> },
+  { path: "/login", element: <Login /> },
+  { path: "*", element: <NotFound /> },
+]
+export default routes
 ```
