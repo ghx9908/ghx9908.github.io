@@ -3,7 +3,7 @@ title: commitlint配置
 author: 高红翔
 date: 2023-07-05 21:25:08
 categories: 工程化
-tags: 工具
+tags: 基础
 ---
 
 # commitlint 配置
