@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>闪烁之狐</title>
+  
+  <subtitle>闪烁之狐</subtitle>
+  <link href="https://zn0624.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zn0624.github.io/"/>
+  <updated>2024-02-19T08:47:50.000Z</updated>
+  <id>https://zn0624.github.io/</id>
+  
+  <author>
+    <name>高红翔</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>echarts自适应问题高级解决方案</title>
+    <link href="https://zn0624.github.io/2024/01/26/echarts-zi-gua-ying-wen-ti-gao-ji-jie-jue-fang-an/"/>
+    <id>https://zn0624.github.io/2024/01/26/echarts-zi-gua-ying-wen-ti-gao-ji-jie-jue-fang-an/</id>
+    <published>2024-01-26T07:35:34.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-背景&quot;&gt;&lt;a href=&quot;#1-背景&quot; class=&quot;headerlink&quot; title=&quot;1. 背景&quot;&gt;&lt;/a&gt;1. 背景&lt;/h2&gt;&lt;p&gt;在移动端或者 PC 端当页面尺寸发生变化时，echarts 图表需要自适应，以适应页面尺寸的变化。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="解决方法" scheme="https://zn0624.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+    <category term="echarts" scheme="https://zn0624.github.io/tags/echarts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移动设备上的安全区域适配</title>
+    <link href="https://zn0624.github.io/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/"/>
+    <id>https://zn0624.github.io/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/</id>
+    <published>2024-01-26T03:26:18.000Z</published>
+    <updated>2024-02-19T08:47:50.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CSS-代码解析&quot;&gt;&lt;a href=&quot;#CSS-代码解析&quot; class=&quot;headerlink&quot; title=&quot;CSS 代码解析&quot;&gt;&lt;/a&gt;CSS 代码解析&lt;/h1&gt;&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="解决方法" scheme="https://zn0624.github.io/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    
+    
+    <category term="移动端" scheme="https://zn0624.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>v-code-diff使用</title>
+    <link href="https://zn0624.github.io/2023/08/29/v-code-diff-shi-yong/"/>
+    <id>https://zn0624.github.io/2023/08/29/v-code-diff-shi-yong/</id>
+    <published>2023-08-29T07:26:29.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考：&quot;&gt;&lt;a href=&quot;#参考：&quot; class=&quot;headerlink&quot; title=&quot;参考：&quot;&gt;&lt;/a&gt;参考：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://zn0624.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="npm" scheme="https://zn0624.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>导出execl文件</title>
+    <link href="https://zn0624.github.io/2023/08/28/dao-chu-execl-wen-jian/"/>
+    <id>https://zn0624.github.io/2023/08/28/dao-chu-execl-wen-jian/</id>
+    <published>2023-08-28T03:51:20.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/xlsx&quot;&gt;https://www.npmjs.com/package/xlsx&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://zn0624.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="工具" scheme="https://zn0624.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS-兼容性</title>
+    <link href="https://zn0624.github.io/2023/08/15/ts-jian-rong-xing/"/>
+    <id>https://zn0624.github.io/2023/08/15/ts-jian-rong-xing/</id>
+    <published>2023-08-15T08:11:46.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;TS 中的兼容性，主要看结构是否兼容。（核心是考虑安全性）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;一-基本数据类型的兼容性&quot;&gt;&lt;a href=&quot;#一-基本数据类型的兼容性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="TypeScript" scheme="https://zn0624.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS-类型推断</title>
+    <link href="https://zn0624.github.io/2023/08/14/ts-lei-xing-tui-duan/"/>
+    <id>https://zn0624.github.io/2023/08/14/ts-lei-xing-tui-duan/</id>
+    <published>2023-08-14T07:46:08.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一-赋值推断&quot;&gt;&lt;a href=&quot;#一-赋值推断&quot; class=&quot;headerlink&quot; title=&quot;一.赋值推断&quot;&gt;&lt;/a&gt;一.赋值推断&lt;/h2&gt;&lt;p&gt;赋值时推断，类型从右像左流动,会根据赋值推断出变量类型&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="TypeScript" scheme="https://zn0624.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS-类型保护</title>
+    <link href="https://zn0624.github.io/2023/08/14/ts-lei-xing-bao-hu/"/>
+    <id>https://zn0624.github.io/2023/08/14/ts-lei-xing-bao-hu/</id>
+    <published>2023-08-14T06:34:04.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ts 默认在使用的时候 都是联合类型，</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="TypeScript" scheme="https://zn0624.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS-基础类型</title>
+    <link href="https://zn0624.github.io/2023/08/09/ts-ji-chu-lei-xing/"/>
+    <id>https://zn0624.github.io/2023/08/09/ts-ji-chu-lei-xing/</id>
+    <published>2023-08-09T11:01:02.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;TS 中冒号后面的都为类型标识&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;一-布尔、数字、字符串类型&quot;&gt;&lt;a href=&quot;#一-布尔、数字、字符串类型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="TypeScript" scheme="https://zn0624.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS——环境配置和搭建</title>
+    <link href="https://zn0624.github.io/2023/08/08/ts-huan-jing-pei-zhi-he-da-jian/"/>
+    <id>https://zn0624.github.io/2023/08/08/ts-huan-jing-pei-zhi-he-da-jian/</id>
+    <published>2023-08-08T07:48:49.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一-Typescript-的价值是什么&quot;&gt;&lt;a href=&quot;#一-Typescript-的价值是什么&quot; class=&quot;headerlink&quot; title=&quot;一.Typescript 的价值是什么&quot;&gt;&lt;/a&gt;一.Typescript</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="TypeScript" scheme="https://zn0624.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法</title>
+    <link href="https://zn0624.github.io/2023/08/02/tan-xin-suan-fa/"/>
+    <id>https://zn0624.github.io/2023/08/02/tan-xin-suan-fa/</id>
+    <published>2023-08-02T08:53:42.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;455-分发饼干&quot;&gt;&lt;a href=&quot;#455-分发饼干&quot; class=&quot;headerlink&quot; title=&quot;455. 分发饼干&quot;&gt;&lt;/a&gt;455. 分发饼干&lt;/h2&gt;&lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://zn0624.github.io/categories/LeetCode/"/>
+    
+    
+    <category term="贪心算法" scheme="https://zn0624.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS输出</title>
+    <link href="https://zn0624.github.io/2023/08/02/js-shu-chu/"/>
+    <id>https://zn0624.github.io/2023/08/02/js-shu-chu/</id>
+    <published>2023-08-02T02:47:01.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;考察函数和作用域的 PRIORITY,以及 new 在执行时的一些机制。需要结合执行上下文来分析函数和变量声明的顺序与优先级。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://zn0624.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="面试" scheme="https://zn0624.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="javaScript" scheme="https://zn0624.github.io/tags/javaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单React-Hooks实现</title>
+    <link href="https://zn0624.github.io/2023/07/31/react-hooks/"/>
+    <id>https://zn0624.github.io/2023/07/31/react-hooks/</id>
+    <published>2023-07-31T07:41:37.000Z</published>
+    <updated>2024-02-19T08:47:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-React-Hooks&quot;&gt;&lt;a href=&quot;#1-React-Hooks&quot; class=&quot;headerlink&quot; title=&quot;1. React Hooks&quot;&gt;&lt;/a&gt;1. React Hooks&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Hook 可以让你在不编写</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="React.js" scheme="https://zn0624.github.io/tags/React-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3-ace-editor的使用</title>
+    <link href="https://zn0624.github.io/2023/07/19/vue3-ace-editor-de-shi-yong/"/>
+    <id>https://zn0624.github.io/2023/07/19/vue3-ace-editor-de-shi-yong/</id>
+    <published>2023-07-19T06:12:25.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;参考文档&quot;&gt;&lt;a href=&quot;#参考文档&quot; class=&quot;headerlink&quot; title=&quot;参考文档&quot;&gt;&lt;/a&gt;参考文档&lt;/h2&gt;&lt;p&gt;npm 地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://zn0624.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="npm" scheme="https://zn0624.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git删除本地无用分支</title>
+    <link href="https://zn0624.github.io/2023/07/12/git-shan-chu-ben-di-wu-yong-fen-zhi/"/>
+    <id>https://zn0624.github.io/2023/07/12/git-shan-chu-ben-di-wu-yong-fen-zhi/</id>
+    <published>2023-07-12T03:04:42.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;单个删除&quot;&gt;&lt;a href=&quot;#单个删除&quot; class=&quot;headerlink&quot; title=&quot;单个删除&quot;&gt;&lt;/a&gt;单个删除&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;首先查看所有本地分支的信息:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://zn0624.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://zn0624.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pinia源码实现</title>
+    <link href="https://zn0624.github.io/2023/07/11/pinia-yuan-ma-shi-xian/"/>
+    <id>https://zn0624.github.io/2023/07/11/pinia-yuan-ma-shi-xian/</id>
+    <published>2023-07-11T15:07:00.000Z</published>
+    <updated>2024-02-19T08:48:48.854Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;代码地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/zn0624/pinia&quot;&gt;https://github.com/zn0624/pinia&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="Vue.js" scheme="https://zn0624.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm常见包</title>
+    <link href="https://zn0624.github.io/2023/07/07/npm-chang-jian-bao/"/>
+    <id>https://zn0624.github.io/2023/07/07/npm-chang-jian-bao/</id>
+    <published>2023-07-07T07:36:19.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;vue 的拖拽包&lt;/strong&gt;: &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://zn0624.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="npm" scheme="https://zn0624.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码风格配置</title>
+    <link href="https://zn0624.github.io/2023/07/06/dai-ma-feng-ge-pei-zhi/"/>
+    <id>https://zn0624.github.io/2023/07/06/dai-ma-feng-ge-pei-zhi/</id>
+    <published>2023-07-06T07:41:50.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ESLint&quot;&gt;&lt;a href=&quot;#ESLint&quot; class=&quot;headerlink&quot; title=&quot;ESLint&quot;&gt;&lt;/a&gt;ESLint&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="工程化" scheme="https://zn0624.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+    <category term="基础" scheme="https://zn0624.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>commitlint配置</title>
+    <link href="https://zn0624.github.io/2023/07/05/commitlint-pei-zhi/"/>
+    <id>https://zn0624.github.io/2023/07/05/commitlint-pei-zhi/</id>
+    <published>2023-07-05T13:25:08.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;commitlint-配置&quot;&gt;&lt;a href=&quot;#commitlint-配置&quot; class=&quot;headerlink&quot; title=&quot;commitlint 配置&quot;&gt;&lt;/a&gt;commitlint 配置&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="工程化" scheme="https://zn0624.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+    <category term="基础" scheme="https://zn0624.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-router源码深度解刨</title>
+    <link href="https://zn0624.github.io/2023/07/01/react-router-yuan-ma-shi-xian/"/>
+    <id>https://zn0624.github.io/2023/07/01/react-router-yuan-ma-shi-xian/</id>
+    <published>2023-07-01T11:04:19.000Z</published>
+    <updated>2024-02-19T08:48:48.858Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;代码地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zn0624/react-router&quot;&gt;https://github.com/zn0624/react-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://zn0624.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="React.js" scheme="https://zn0624.github.io/tags/React-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重新安排行程-332</title>
+    <link href="https://zn0624.github.io/2023/06/19/chong-xin-an-pai-xing-cheng-332/"/>
+    <id>https://zn0624.github.io/2023/06/19/chong-xin-an-pai-xing-cheng-332/</id>
+    <published>2023-06-19T13:30:26.000Z</published>
+    <updated>2024-02-19T08:47:49.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;力扣（LeetCode） 链接：&lt;a href=&quot;https://leetcode.cn/problems/combination-sum/&quot;&gt;https://leetcode.cn/problems/combination-sum/&lt;/a&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://zn0624.github.io/categories/LeetCode/"/>
+    
+    
+    <category term="回溯" scheme="https://zn0624.github.io/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
+  </entry>
+  
+</feed>
