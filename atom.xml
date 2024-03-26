@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2024-03-19T09:12:52.859Z</updated>
+  <updated>2024-03-26T11:02:31.012Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,462 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>v-once的使用场景有哪些</title>
+    <link href="https://ghx9908.github.io/2024/03/25/v-once-de-shi-yong-chang-jing-you-na-xie/"/>
+    <id>https://ghx9908.github.io/2024/03/25/v-once-de-shi-yong-chang-jing-you-na-xie/</id>
+    <published>2024-03-25T17:05:57.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;v-once 是 Vue 中内置指令，只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。&lt;br&gt;&lt;strong&gt;核心实现原理是利用缓存&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>v-if和v-for哪个优先级更高</title>
+    <link href="https://ghx9908.github.io/2024/03/25/v-if-he-v-for-na-ge-you-xian-ji-geng-gao/"/>
+    <id>https://ghx9908.github.io/2024/03/25/v-if-he-v-for-na-ge-you-xian-ji-geng-gao/</id>
+    <published>2024-03-25T16:49:00.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;同时使用 v-if 和 v-for 是不推荐的，因为这样二者的优先级不明显。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 Vue3 中 v-if 的优先级高于 v-for，这意味着 v-if 的条件将无法访问到 v-for</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中的v-show和v-if怎么理解</title>
+    <link href="https://ghx9908.github.io/2024/03/25/vue-zhong-de-v-show-he-v-if-zen-me-li-jie/"/>
+    <id>https://ghx9908.github.io/2024/03/25/vue-zhong-de-v-show-he-v-if-zen-me-li-jie/</id>
+    <published>2024-03-25T16:45:54.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;v-if 是“真实的”按条件渲染，因为它确保了在切换时，条件区块内的事件监听器和子组件都会被销毁与重建。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;v-if 也是惰性的：(可以阻断内部代码是否执行),如果在初次渲染时条件值为</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何看待CompositionAPI和OptionsAPI</title>
+    <link href="https://ghx9908.github.io/2024/03/25/ru-he-kan-dai-compositionapi-he-optionsapi/"/>
+    <id>https://ghx9908.github.io/2024/03/25/ru-he-kan-dai-compositionapi-he-optionsapi/</id>
+    <published>2024-03-25T16:39:06.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;在 Vue2 中采用的是 OptionsAPI, 用户提供的 data,props,methods,computed,watch 等属性 (用户编写复杂业务逻辑会出现反复横跳问题)&lt;/li&gt;
+&lt;li&gt;Vue2</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3对⽐Vue2的变化</title>
+    <link href="https://ghx9908.github.io/2024/03/25/vue3-dui-vue2-de-bian-hua/"/>
+    <id>https://ghx9908.github.io/2024/03/25/vue3-dui-vue2-de-bian-hua/</id>
+    <published>2024-03-25T16:24:01.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;性能优化（更快）：&lt;ul&gt;
+&lt;li&gt;使用了&lt;strong&gt;Proxy&lt;/strong&gt;替代 Object.defineProperty 实现响应式。（为什么？defineProperty</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你知道哪些Vue3新特性</title>
+    <link href="https://ghx9908.github.io/2024/03/25/ni-zhi-dao-na-xie-vue3-xin-te-xing/"/>
+    <id>https://ghx9908.github.io/2024/03/25/ni-zhi-dao-na-xie-vue3-xin-te-xing/</id>
+    <published>2024-03-25T15:19:24.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Composition API&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用函数的方式编写 vue 组件。&lt;/li&gt;
+&lt;li&gt;组合式 API (响应式 API</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈Vue3中模板编译做了哪些优化</title>
+    <link href="https://ghx9908.github.io/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/"/>
+    <id>https://ghx9908.github.io/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/</id>
+    <published>2024-03-25T14:51:50.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-PatchFlags-优化&quot;&gt;&lt;a href=&quot;#1-1-PatchFlags-优化&quot; class=&quot;headerlink&quot; title=&quot;1.1 PatchFlags 优化&quot;&gt;&lt;/a&gt;1.1 PatchFlags 优化&lt;/h2&gt;&lt;p&gt;Diff</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>key的作用和原理</title>
+    <link href="https://ghx9908.github.io/2024/03/22/key-de-zuo-yong-he-yuan-li/"/>
+    <id>https://ghx9908.github.io/2024/03/22/key-de-zuo-yong-he-yuan-li/</id>
+    <published>2024-03-22T15:56:02.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-key-的概念&quot;&gt;&lt;a href=&quot;#1-1-key-的概念&quot; class=&quot;headerlink&quot; title=&quot;1.1 key 的概念&quot;&gt;&lt;/a&gt;1.1 key 的概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;key 的特殊 attribute 主要用在</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中的diff算法</title>
+    <link href="https://ghx9908.github.io/2024/03/22/vue-zhong-de-diff-suan-fa/"/>
+    <id>https://ghx9908.github.io/2024/03/22/vue-zhong-de-diff-suan-fa/</id>
+    <published>2024-03-22T14:47:57.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-Diff-概念&quot;&gt;&lt;a href=&quot;#1-1-Diff-概念&quot; class=&quot;headerlink&quot; title=&quot;1.1 Diff 概念&quot;&gt;&lt;/a&gt;1.1 Diff 概念&lt;/h2&gt;&lt;p&gt;vue 基于虚拟 DOM 做更新 。diff</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 中如何检测数组变化?</title>
+    <link href="https://ghx9908.github.io/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/"/>
+    <id>https://ghx9908.github.io/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/</id>
+    <published>2024-03-22T11:43:17.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-Vue2-中采用重写数组方法的方式&quot;&gt;&lt;a href=&quot;#1-1-Vue2-中采用重写数组方法的方式&quot; class=&quot;headerlink&quot; title=&quot;1.1 Vue2 中采用重写数组方法的方式&quot;&gt;&lt;/a&gt;1.1 Vue2</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 中如何进行依赖收集</title>
+    <link href="https://ghx9908.github.io/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/"/>
+    <id>https://ghx9908.github.io/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/</id>
+    <published>2024-03-22T11:43:17.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-依赖收集的流程&quot;&gt;&lt;a href=&quot;#1-1-依赖收集的流程&quot; class=&quot;headerlink&quot; title=&quot;1.1 依赖收集的流程&quot;&gt;&lt;/a&gt;1.1</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何将template转换成render函数</title>
+    <link href="https://ghx9908.github.io/2024/03/22/ru-he-jiang-template-zhuan-huan-cheng-render-han-shu/"/>
+    <id>https://ghx9908.github.io/2024/03/22/ru-he-jiang-template-zhuan-huan-cheng-render-han-shu/</id>
+    <published>2024-03-22T11:38:37.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Vue 中含有模版编译的功能，它的主要作用是将用户编写的 template 编译为 js 中可执行的 render 函数。&lt;/p&gt;
+&lt;h2 id=&quot;Vue-中的模版转化流程&quot;&gt;&lt;a href=&quot;#Vue-中的模版转化流程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>请说一下你对响应式数据的理解？</title>
+    <link href="https://ghx9908.github.io/2024/03/22/qing-shuo-yi-xia-ni-dui-xiang-ying-shi-shu-ju-de-li-jie/"/>
+    <id>https://ghx9908.github.io/2024/03/22/qing-shuo-yi-xia-ni-dui-xiang-ying-shi-shu-ju-de-li-jie/</id>
+    <published>2024-03-22T10:50:47.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-如何实现响应式数据&quot;&gt;&lt;a href=&quot;#1-1-如何实现响应式数据&quot; class=&quot;headerlink&quot; title=&quot;1.1 如何实现响应式数据&quot;&gt;&lt;/a&gt;1.1</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>既然 Vue 通过数据劫持可以精准探测数据变化,为什么还需要虚拟 DOM 进行 diff 检测差异？</title>
+    <link href="https://ghx9908.github.io/2024/03/22/wei-shi-me-yao-you-diff-suan-fa/"/>
+    <id>https://ghx9908.github.io/2024/03/22/wei-shi-me-yao-you-diff-suan-fa/</id>
+    <published>2024-03-22T10:43:17.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Vue 的数据劫持是通过 Object.defineProperty 或 Proxy 来实现的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;虚拟 DOM 是用于比较两次渲染之间的虚拟树，找出差异并仅更新必要的部分。从而提高性能，减少直接操作实际 DOM</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈vue组件化的理解</title>
+    <link href="https://ghx9908.github.io/2024/03/22/tan-tan-vue-zu-jian-hua-de-li-jie/"/>
+    <id>https://ghx9908.github.io/2024/03/22/tan-tan-vue-zu-jian-hua-de-li-jie/</id>
+    <published>2024-03-22T10:34:17.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;WebComponent&lt;/code&gt; 组件化的核心组成：模板、属性、事件、插槽、生命周期。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;组件化好处:</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue为什么需要虚拟DOM</title>
+    <link href="https://ghx9908.github.io/2024/03/21/vue-wei-shi-me-xu-yao-xu-ni-dom/"/>
+    <id>https://ghx9908.github.io/2024/03/21/vue-wei-shi-me-xu-yao-xu-ni-dom/</id>
+    <published>2024-03-21T16:57:10.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-1-基本概念&quot;&gt;&lt;a href=&quot;#1-1-基本概念&quot; class=&quot;headerlink&quot; title=&quot;1.1 基本概念&quot;&gt;&lt;/a&gt;1.1 基本概念&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;基本上所有框架都引入了虚拟 DOM 来对真实 DOM</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈你对vue的理解</title>
+    <link href="https://ghx9908.github.io/2024/03/21/tan-tan-ni-dui-vue-de-li-jie/"/>
+    <id>https://ghx9908.github.io/2024/03/21/tan-tan-ni-dui-vue-de-li-jie/</id>
+    <published>2024-03-21T16:18:14.000Z</published>
+    <updated>2024-03-26T11:02:31.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-谈谈你对-vue-的理解-？&quot;&gt;&lt;a href=&quot;#1-谈谈你对-vue-的理解-？&quot; class=&quot;headerlink&quot; title=&quot;1.谈谈你对 vue 的理解 ？&quot;&gt;&lt;/a&gt;1.谈谈你对 vue 的理解 ？&lt;/h1&gt;&lt;p&gt;官方：</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>echarts自适应问题高级解决方案</title>
     <link href="https://ghx9908.github.io/2024/01/26/echarts-zi-gua-ying-wen-ti-gao-ji-jie-jue-fang-an/"/>
     <id>https://ghx9908.github.io/2024/01/26/echarts-zi-gua-ying-wen-ti-gao-ji-jie-jue-fang-an/</id>
     <published>2024-01-26T15:35:34.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
+    <updated>2024-03-26T11:02:31.012Z</updated>
     
     
       
@@ -47,7 +498,7 @@
     <link href="https://ghx9908.github.io/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/"/>
     <id>https://ghx9908.github.io/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/</id>
     <published>2024-01-26T11:26:18.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
+    <updated>2024-03-26T11:02:31.012Z</updated>
     
     
       
@@ -72,7 +523,7 @@
     <link href="https://ghx9908.github.io/2023/08/29/v-code-diff-shi-yong/"/>
     <id>https://ghx9908.github.io/2023/08/29/v-code-diff-shi-yong/</id>
     <published>2023-08-29T15:26:29.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
+    <updated>2024-03-26T11:02:31.012Z</updated>
     
     
       
@@ -90,462 +541,6 @@
     
     
     <category term="npm" scheme="https://ghx9908.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>导出execl文件</title>
-    <link href="https://ghx9908.github.io/2023/08/28/dao-chu-execl-wen-jian/"/>
-    <id>https://ghx9908.github.io/2023/08/28/dao-chu-execl-wen-jian/</id>
-    <published>2023-08-28T11:51:20.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/xlsx&quot;&gt;https://www.npmjs.com/package/xlsx&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="工具" scheme="https://ghx9908.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS-兼容性</title>
-    <link href="https://ghx9908.github.io/2023/08/15/ts-jian-rong-xing/"/>
-    <id>https://ghx9908.github.io/2023/08/15/ts-jian-rong-xing/</id>
-    <published>2023-08-15T16:11:46.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;TS 中的兼容性，主要看结构是否兼容。（核心是考虑安全性）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;一-基本数据类型的兼容性&quot;&gt;&lt;a href=&quot;#一-基本数据类型的兼容性&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="TypeScript" scheme="https://ghx9908.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS-类型推断</title>
-    <link href="https://ghx9908.github.io/2023/08/14/ts-lei-xing-tui-duan/"/>
-    <id>https://ghx9908.github.io/2023/08/14/ts-lei-xing-tui-duan/</id>
-    <published>2023-08-14T15:46:08.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一-赋值推断&quot;&gt;&lt;a href=&quot;#一-赋值推断&quot; class=&quot;headerlink&quot; title=&quot;一.赋值推断&quot;&gt;&lt;/a&gt;一.赋值推断&lt;/h2&gt;&lt;p&gt;赋值时推断，类型从右像左流动,会根据赋值推断出变量类型&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="TypeScript" scheme="https://ghx9908.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS-类型保护</title>
-    <link href="https://ghx9908.github.io/2023/08/14/ts-lei-xing-bao-hu/"/>
-    <id>https://ghx9908.github.io/2023/08/14/ts-lei-xing-bao-hu/</id>
-    <published>2023-08-14T14:34:04.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ts 默认在使用的时候 都是联合类型，</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="TypeScript" scheme="https://ghx9908.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS-基础类型</title>
-    <link href="https://ghx9908.github.io/2023/08/09/ts-ji-chu-lei-xing/"/>
-    <id>https://ghx9908.github.io/2023/08/09/ts-ji-chu-lei-xing/</id>
-    <published>2023-08-09T19:01:02.000Z</published>
-    <updated>2024-03-19T09:12:52.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;TS 中冒号后面的都为类型标识&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;一-布尔、数字、字符串类型&quot;&gt;&lt;a href=&quot;#一-布尔、数字、字符串类型&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="TypeScript" scheme="https://ghx9908.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS——环境配置和搭建</title>
-    <link href="https://ghx9908.github.io/2023/08/08/ts-huan-jing-pei-zhi-he-da-jian/"/>
-    <id>https://ghx9908.github.io/2023/08/08/ts-huan-jing-pei-zhi-he-da-jian/</id>
-    <published>2023-08-08T15:48:49.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一-Typescript-的价值是什么&quot;&gt;&lt;a href=&quot;#一-Typescript-的价值是什么&quot; class=&quot;headerlink&quot; title=&quot;一.Typescript 的价值是什么&quot;&gt;&lt;/a&gt;一.Typescript</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="TypeScript" scheme="https://ghx9908.github.io/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>贪心算法</title>
-    <link href="https://ghx9908.github.io/2023/08/02/tan-xin-suan-fa/"/>
-    <id>https://ghx9908.github.io/2023/08/02/tan-xin-suan-fa/</id>
-    <published>2023-08-02T16:53:42.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;455-分发饼干&quot;&gt;&lt;a href=&quot;#455-分发饼干&quot; class=&quot;headerlink&quot; title=&quot;455. 分发饼干&quot;&gt;&lt;/a&gt;455. 分发饼干&lt;/h2&gt;&lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://ghx9908.github.io/categories/LeetCode/"/>
-    
-    
-    <category term="贪心算法" scheme="https://ghx9908.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS输出</title>
-    <link href="https://ghx9908.github.io/2023/08/02/js-shu-chu/"/>
-    <id>https://ghx9908.github.io/2023/08/02/js-shu-chu/</id>
-    <published>2023-08-02T10:47:01.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;考察函数和作用域的 PRIORITY,以及 new 在执行时的一些机制。需要结合执行上下文来分析函数和变量声明的顺序与优先级。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="面试" scheme="https://ghx9908.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="javaScript" scheme="https://ghx9908.github.io/tags/javaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单React-Hooks实现</title>
-    <link href="https://ghx9908.github.io/2023/07/31/react-hooks/"/>
-    <id>https://ghx9908.github.io/2023/07/31/react-hooks/</id>
-    <published>2023-07-31T15:41:37.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-React-Hooks&quot;&gt;&lt;a href=&quot;#1-React-Hooks&quot; class=&quot;headerlink&quot; title=&quot;1. React Hooks&quot;&gt;&lt;/a&gt;1. React Hooks&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Hook 可以让你在不编写</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="React.js" scheme="https://ghx9908.github.io/tags/React-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3-ace-editor的使用</title>
-    <link href="https://ghx9908.github.io/2023/07/19/vue3-ace-editor-de-shi-yong/"/>
-    <id>https://ghx9908.github.io/2023/07/19/vue3-ace-editor-de-shi-yong/</id>
-    <published>2023-07-19T14:12:25.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;参考文档&quot;&gt;&lt;a href=&quot;#参考文档&quot; class=&quot;headerlink&quot; title=&quot;参考文档&quot;&gt;&lt;/a&gt;参考文档&lt;/h2&gt;&lt;p&gt;npm 地址：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="npm" scheme="https://ghx9908.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git删除本地无用分支</title>
-    <link href="https://ghx9908.github.io/2023/07/12/git-shan-chu-ben-di-wu-yong-fen-zhi/"/>
-    <id>https://ghx9908.github.io/2023/07/12/git-shan-chu-ben-di-wu-yong-fen-zhi/</id>
-    <published>2023-07-12T11:04:42.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;单个删除&quot;&gt;&lt;a href=&quot;#单个删除&quot; class=&quot;headerlink&quot; title=&quot;单个删除&quot;&gt;&lt;/a&gt;单个删除&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;首先查看所有本地分支的信息:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="git" scheme="https://ghx9908.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pinia源码实现</title>
-    <link href="https://ghx9908.github.io/2023/07/11/pinia-yuan-ma-shi-xian/"/>
-    <id>https://ghx9908.github.io/2023/07/11/pinia-yuan-ma-shi-xian/</id>
-    <published>2023-07-11T23:07:00.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;代码地址：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/ghx9908/pinia&quot;&gt;https://github.com/ghx9908/pinia&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm常见包</title>
-    <link href="https://ghx9908.github.io/2023/07/07/npm-chang-jian-bao/"/>
-    <id>https://ghx9908.github.io/2023/07/07/npm-chang-jian-bao/</id>
-    <published>2023-07-07T15:36:19.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;vue 的拖拽包&lt;/strong&gt;: &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="npm" scheme="https://ghx9908.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码风格配置</title>
-    <link href="https://ghx9908.github.io/2023/07/06/dai-ma-feng-ge-pei-zhi/"/>
-    <id>https://ghx9908.github.io/2023/07/06/dai-ma-feng-ge-pei-zhi/</id>
-    <published>2023-07-06T15:41:50.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;ESLint&quot;&gt;&lt;a href=&quot;#ESLint&quot; class=&quot;headerlink&quot; title=&quot;ESLint&quot;&gt;&lt;/a&gt;ESLint&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="工程化" scheme="https://ghx9908.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
-    
-    
-    <category term="基础" scheme="https://ghx9908.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>commitlint配置</title>
-    <link href="https://ghx9908.github.io/2023/07/05/commitlint-pei-zhi/"/>
-    <id>https://ghx9908.github.io/2023/07/05/commitlint-pei-zhi/</id>
-    <published>2023-07-05T21:25:08.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;commitlint-配置&quot;&gt;&lt;a href=&quot;#commitlint-配置&quot; class=&quot;headerlink&quot; title=&quot;commitlint 配置&quot;&gt;&lt;/a&gt;commitlint 配置&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="工程化" scheme="https://ghx9908.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
-    
-    
-    <category term="基础" scheme="https://ghx9908.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-router源码深度解刨</title>
-    <link href="https://ghx9908.github.io/2023/07/01/react-router-yuan-ma-shi-xian/"/>
-    <id>https://ghx9908.github.io/2023/07/01/react-router-yuan-ma-shi-xian/</id>
-    <published>2023-07-01T19:04:19.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;代码地址：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ghx9908/react-router&quot;&gt;https://github.com/ghx9908/react-router&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="React.js" scheme="https://ghx9908.github.io/tags/React-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重新安排行程-332</title>
-    <link href="https://ghx9908.github.io/2023/06/19/chong-xin-an-pai-xing-cheng-332/"/>
-    <id>https://ghx9908.github.io/2023/06/19/chong-xin-an-pai-xing-cheng-332/</id>
-    <published>2023-06-19T21:30:26.000Z</published>
-    <updated>2024-03-19T09:12:52.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;力扣（LeetCode） 链接：&lt;a href=&quot;https://leetcode.cn/problems/combination-sum/&quot;&gt;https://leetcode.cn/problems/combination-sum/&lt;/a&gt;&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://ghx9908.github.io/categories/LeetCode/"/>
-    
-    
-    <category term="回溯" scheme="https://ghx9908.github.io/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
