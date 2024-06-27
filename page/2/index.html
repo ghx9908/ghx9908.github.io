@@ -375,20 +375,374 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/22/qing-shuo-yi-xia-ni-dui-xiang-ying-shi-shu-ju-de-li-jie/">
+                    <a href="/2024/03/25/v-once-de-shi-yong-chang-jing-you-na-xie/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="请说一下你对响应式数据的理解？">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="v-once的使用场景有哪些">
                             
-                            <span class="card-title">请说一下你对响应式数据的理解？</span>
+                            <span class="card-title">v-once的使用场景有哪些</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.1 如何实现响应式数据数组和对象类型当值变化时如何劫持到。对象内部通过defineReactive方法，使用Object.defineProperty将属性进行劫持（只会劫持已经存在的属性），数组则是通过重写数组方法来实现。 多层对象是
+                                
+v-once 是 Vue 中内置指令，只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。核心实现原理是利用缓存
+
+&lt;!-- 单个元素 --&gt;
+&lt;span v-
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/v-if-he-v-for-na-ge-you-xian-ji-geng-gao/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="v-if和v-for哪个优先级更高">
+                            
+                            <span class="card-title">v-if和v-for哪个优先级更高</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+同时使用 v-if 和 v-for 是不推荐的，因为这样二者的优先级不明显。
+
+在 Vue3 中 v-if 的优先级高于 v-for，这意味着 v-if 的条件将无法访问到 v-for 作用域内定义的变量别名：
+
+
+&lt;!--
+ 这会
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/vue-zhong-de-v-show-he-v-if-zen-me-li-jie/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Vue中的v-show和v-if怎么理解">
+                            
+                            <span class="card-title">Vue中的v-show和v-if怎么理解</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+v-if 是“真实的”按条件渲染，因为它确保了在切换时，条件区块内的事件监听器和子组件都会被销毁与重建。
+
+v-if 也是惰性的：(可以阻断内部代码是否执行),如果在初次渲染时条件值为 false，则不会做任何事。条件区块只有当条件首次变
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/ru-he-kan-dai-compositionapi-he-optionsapi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="如何看待CompositionAPI和OptionsAPI">
+                            
+                            <span class="card-title">如何看待CompositionAPI和OptionsAPI</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+在 Vue2 中采用的是 OptionsAPI, 用户提供的 data,props,methods,computed,watch 等属性 (用户编写复杂业务逻辑会出现反复横跳问题)
+Vue2 中所有的属性都是通过this访问，this存在
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/vue3-dui-vue2-de-bian-hua/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue3对⽐Vue2的变化">
+                            
+                            <span class="card-title">Vue3对⽐Vue2的变化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+性能优化（更快）：
+使用了Proxy替代 Object.defineProperty 实现响应式。（为什么？defineProperty 需要对属性进行递归重写添加getter及setter 性能差，同时新增属性和删除属性时无法监控变化，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/ni-zhi-dao-na-xie-vue3-xin-te-xing/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="你知道哪些Vue3新特性">
+                            
+                            <span class="card-title">你知道哪些Vue3新特性</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+Composition API
+
+使用函数的方式编写 vue 组件。
+组合式 API (响应式 API ref()、reactive()，生命周期钩子onMounted()、onUnmounted()，依赖注入inject()、provi
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="谈谈Vue3中模板编译做了哪些优化">
+                            
+                            <span class="card-title">谈谈Vue3中模板编译做了哪些优化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1.1 PatchFlags 优化Diff 算法无法避免新旧虚拟 DOM 中无用的比较操作，通过 patchFlags 来标记动态内容，可以实现快速 diff 算法
+&lt;div&gt;
+  &lt;h1 a&#x3D;&#39;a&#3
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/22/key-de-zuo-yong-he-yuan-li/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="key的作用和原理">
+                            
+                            <span class="card-title">key的作用和原理</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1.1 key 的概念
+key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes。如果不使用 key，Vue 会使用一种最大限度减少动态元素并且尽可能的尝试就地修改/复用相同类
                             
                         </div>
                         <div class="publish-info">
@@ -422,23 +776,21 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/22/wei-shi-me-yao-you-diff-suan-fa/">
+                    <a href="/2024/03/22/vue-zhong-de-diff-suan-fa/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="既然 Vue 通过数据劫持可以精准探测数据变化,为什么还需要虚拟 DOM 进行 diff 检测差异？">
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue中的diff算法">
                             
-                            <span class="card-title">既然 Vue 通过数据劫持可以精准探测数据变化,为什么还需要虚拟 DOM 进行 diff 检测差异？</span>
+                            <span class="card-title">Vue中的diff算法</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-Vue 的数据劫持是通过 Object.defineProperty 或 Proxy 来实现的。
-
-虚拟 DOM 是用于比较两次渲染之间的虚拟树，找出差异并仅更新必要的部分。从而提高性能，减少直接操作实际 DOM 的次数。（直接操作真实 
+                                1.1 Diff 概念vue 基于虚拟 DOM 做更新 。diff 的核心就是比较两个虚拟节点的差异 。Vue 的 diff 算法是平级比较，不考虑跨级比较的情况。内部采用深度递归的方式 + 双指针的方式进行比较。
+1.2 Vue2 Dif
                             
                         </div>
                         <div class="publish-info">
@@ -472,29 +824,21 @@ Vue 的数据劫持是通过 Object.defineProperty 或 Proxy 来实现的。
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/22/tan-tan-vue-zu-jian-hua-de-li-jie/">
+                    <a href="/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="谈谈vue组件化的理解">
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 中如何检测数组变化?">
                             
-                            <span class="card-title">谈谈vue组件化的理解</span>
+                            <span class="card-title">Vue 中如何检测数组变化?</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-WebComponent 组件化的核心组成：模板、属性、事件、插槽、生命周期。
-
-组件化好处: 高内聚、可重用、可组合
-
-组件化开发能大幅提高应用开发效率、测试性、复用性等;
-降低更新范围，只重新渲染变化的组件；
-
-补充：
-Vue 中的每
+                                1.1 Vue2 中采用重写数组方法的方式
+数组考虑性能原因没有用defineProperty对数组的每一项进行拦截，而是选择重写数组（push,shift,pop,splice,unshift,sort,reverse）方法。数组中如果是
                             
                         </div>
                         <div class="publish-info">
@@ -528,29 +872,28 @@ Vue 中的每
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/21/vue-wei-shi-me-xu-yao-xu-ni-dom/">
+                    <a href="/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue为什么需要虚拟DOM">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 中如何进行依赖收集">
                             
-                            <span class="card-title">Vue为什么需要虚拟DOM</span>
+                            <span class="card-title">Vue 中如何进行依赖收集</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.1 基本概念
-基本上所有框架都引入了虚拟 DOM 来对真实 DOM 进行抽象，也就是现在大家所熟知的 VNode 和 VDOM
-
-
-Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象，由于直接操作 D
+                                1.1 依赖收集的流程
+每个属性都拥有自己的dep属性，存放他所依赖的 watcher，当属性变化后会通知自己对应的 watcher 去更新
+默认在初始化时会调用 render 函数，此时会触发属性依赖收集 dep.depend
+当属性发生
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-22
                             </span>
                             <span class="publish-author">
                                 
@@ -579,27 +922,27 @@ Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/21/tan-tan-ni-dui-vue-de-li-jie/">
+                    <a href="/2024/03/22/ru-he-jiang-template-zhuan-huan-cheng-render-han-shu/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="谈谈你对vue的理解">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="如何将template转换成render函数">
                             
-                            <span class="card-title">谈谈你对vue的理解</span>
+                            <span class="card-title">如何将template转换成render函数</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.谈谈你对 vue 的理解 ？官方： Vue是一套用于构建用户界面的渐进式框架，Vue 的核心库只关注视图层
-
-声明式渲染（data，mathod），功能不够，大型项目需要拆分，提供了组件化功能，有提供了客户端路由的模式，需要通信，提供了
+                                Vue 中含有模版编译的功能，它的主要作用是将用户编写的 template 编译为 js 中可执行的 render 函数。
+Vue 中的模版转化流程
+将 template 模板转换成 ast 语法树 - parserHTML (ast 描述
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-22
                             </span>
                             <span class="publish-author">
                                 
@@ -619,374 +962,6 @@ Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象�
                         
                         <a href="/tags/Vue-js/">
                             <span class="chip bg-color">Vue.js</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/01/26/echarts-zi-gua-ying-wen-ti-gao-ji-jie-jue-fang-an/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="echarts自适应问题高级解决方案">
-                            
-                            <span class="card-title">echarts自适应问题高级解决方案</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1. 背景在移动端或者 PC 端当页面尺寸发生变化时，echarts 图表需要自适应，以适应页面尺寸的变化。
-2. 解决方案增加图表 resizewindow.addEventListener("resize", function () &
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-category">
-                                    解决方法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/echarts/">
-                            <span class="chip bg-color">echarts</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="移动设备上的安全区域适配">
-                            
-                            <span class="card-title">移动设备上的安全区域适配</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                CSS 代码解析问题描述当我们写个功能，容器的高度需要设置为 100vh，发现在 ios(safari)浏览器显示的时候，浏览器的底部工具栏总是会挡住底下的一部分，只有工具栏隐藏或者向上滚动的时候才能看到。
-问题原因没找到相关官方的问题，从
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-category">
-                                    解决方法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                            <span class="chip bg-color">移动端</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/08/29/v-code-diff-shi-yong/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="v-code-diff使用">
-                            
-                            <span class="card-title">v-code-diff使用</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                参考：
-https://github.com/Shimada666/v-code-diff/blob/master/README-zh.md
-https://www.npmjs.com/package/v-code-diff
-https:/
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/npm/">
-                            <span class="chip bg-color">npm</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/08/28/dao-chu-execl-wen-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="导出execl文件">
-                            
-                            <span class="card-title">导出execl文件</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                参考：
-
-https://www.npmjs.com/package/xlsx
-
-https://juejin.cn/post/7018094518931030053
-
-
-
-安装 xlsx 库
-
-npm install xlsx --sav
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                            <span class="chip bg-color">工具</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/08/15/ts-jian-rong-xing/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="TS-兼容性">
-                            
-                            <span class="card-title">TS-兼容性</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-TS 中的兼容性，主要看结构是否兼容。（核心是考虑安全性）
-
-一.基本数据类型的兼容性let temp: string | number
-let num!: number
-temp = num
-
-
-你要的我有就可以
-
-let num: &
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    前端框架
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/08/14/ts-lei-xing-tui-duan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="TS-类型推断">
-                            
-                            <span class="card-title">TS-类型推断</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一.赋值推断赋值时推断，类型从右像左流动,会根据赋值推断出变量类型
-let str = "zhangsan"
-let age = 11
-let boolean = true
-
-二.返回值推断自动推断函数返回值类型
-function sum(
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    前端框架
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/08/14/ts-lei-xing-bao-hu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="TS-类型保护">
-                            
-                            <span class="card-title">TS-类型保护</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-
-ts 默认在使用的时候 都是联合类型， 不能直接使用联合类型。
-
-识别类型，通过判断识别所执行的代码块，自动识别变量属性和方法，对不同的类型进行范围缩小
-
-
-
-一.typeof类型保护function getTypeof(val: nu
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    前端框架
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/">
-                            <span class="chip bg-color">TypeScript</span>
                         </a>
                         
                     </div>
@@ -1011,7 +986,7 @@ ts 默认在使用的时候 都是联合类型， 不能直接使用联合类型
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 9</div>
+            <div class="center-align b-text-gray">2 / 10</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1043,7 +1018,7 @@ ts 默认在使用的时候 都是联合类型， 不能直接使用联合类型
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">89.4k</span>&nbsp;字
+                class="white-color">93.3k</span>&nbsp;字
             
             
             
