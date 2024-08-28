@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2024-06-27T07:34:27.804Z</updated>
+  <updated>2024-08-28T02:39:09.869Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue 中的diff算法？</title>
+    <link href="https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/"/>
+    <id>https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/</id>
+    <published>2024-07-15T17:26:30.000Z</published>
+    <updated>2024-08-28T02:39:09.869Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前后元素不一致&quot;&gt;&lt;a href=&quot;#前后元素不一致&quot; class=&quot;headerlink&quot; title=&quot;前后元素不一致&quot;&gt;&lt;/a&gt;前后元素不一致&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;两个不同虚拟节点不需要进行比较，直接移除老节点，将新的虚拟节点渲染成真实</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="Vue" scheme="https://ghx9908.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>V8内存管理</title>
     <link href="https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/"/>
     <id>https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/</id>
     <published>2024-06-27T15:33:25.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -41,41 +67,11 @@
   </entry>
   
   <entry>
-    <title>Vue 项目中有封装过 axios 吗？主要是封装哪方面的？</title>
-    <link href="https://ghx9908.github.io/2024/05/11/vue-zhong-dui-axios-feng-zhuang-guo-na-fang-mian-de/"/>
-    <id>https://ghx9908.github.io/2024/05/11/vue-zhong-dui-axios-feng-zhuang-guo-na-fang-mian-de/</id>
-    <published>2024-05-11T17:51:14.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;设置请求超时时间。&lt;/li&gt;
-&lt;li&gt;根据项目环境设置请求路径。&lt;/li&gt;
-&lt;li&gt;设置请求拦截，自动添加 Token。&lt;/li&gt;
-&lt;li&gt;设置响应拦截，对响应的状态码或者数据进行格式化。&lt;/li&gt;
-&lt;li&gt;增添请求队列，实现 loading</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
     <title>单页应用首屏加载速度慢的怎么解决？</title>
     <link href="https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/"/>
     <id>https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -100,11 +96,37 @@
   </entry>
   
   <entry>
+    <title>React中的diff算法？</title>
+    <link href="https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/"/>
+    <id>https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/</id>
+    <published>2024-05-11T17:26:30.000Z</published>
+    <updated>2024-08-28T02:39:09.869Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;React 的 diff 算法是 React 在更新 DOM 时使用的算法。它的目的是最小化页面的重新渲染，以便提高性能。&lt;/p&gt;
+&lt;p&gt;当 React 渲染组件时，它会在内存中生成虚拟 DOM 树。然后，它会对比新的虚拟 DOM</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="React" scheme="https://ghx9908.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue中的性能优化有哪些</title>
     <link href="https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/"/>
     <id>https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/</id>
     <published>2024-05-11T16:51:14.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -132,7 +154,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/"/>
     <id>https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/</id>
     <published>2024-05-11T16:43:46.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -154,39 +176,11 @@
   </entry>
   
   <entry>
-    <title>Vue常用的修饰符有哪些有什么应用场景</title>
-    <link href="https://ghx9908.github.io/2024/05/11/vue-chang-yong-de-xiu-shi-fu-you-na-xie-you-shi-me-ying-yong-chang-jing/"/>
-    <id>https://ghx9908.github.io/2024/05/11/vue-chang-yong-de-xiu-shi-fu-you-na-xie-you-shi-me-ying-yong-chang-jing/</id>
-    <published>2024-05-11T16:27:43.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;表单修饰符 lazy、trim、number&lt;/li&gt;
-&lt;li&gt;事件修饰符 stop、prevent、self、once、capture、passive、.native&lt;/li&gt;
-&lt;li&gt;鼠标按键修饰符</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Vue.set方法是如何实现的</title>
     <link href="https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/</id>
     <published>2024-03-28T17:32:45.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -212,7 +206,7 @@
     <link href="https://ghx9908.github.io/2024/03/28/vue-zu-jian-zhong-de-data-wei-shi-me-bi-xu-shi-han-shu/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-zu-jian-zhong-de-data-wei-shi-me-bi-xu-shi-han-shu/</id>
     <published>2024-03-28T17:28:46.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -239,7 +233,7 @@
     <link href="https://ghx9908.github.io/2024/03/28/vue-extend-fang-fa-de-zuo-yong/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-extend-fang-fa-de-zuo-yong/</id>
     <published>2024-03-28T17:20:09.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -264,7 +258,7 @@
     <link href="https://ghx9908.github.io/2024/03/27/shuo-shuo-ni-dui-shuang-xiang-bang-ding-de-li-jie-yi-ji-ta-de-shi-xian-yuan-li-ma/"/>
     <id>https://ghx9908.github.io/2024/03/27/shuo-shuo-ni-dui-shuang-xiang-bang-ding-de-li-jie-yi-ji-ta-de-shi-xian-yuan-li-ma/</id>
     <published>2024-03-27T17:40:53.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -289,7 +283,7 @@
     <link href="https://ghx9908.github.io/2024/03/27/vue-use-shi-gan-shi-me-de/"/>
     <id>https://ghx9908.github.io/2024/03/27/vue-use-shi-gan-shi-me-de/</id>
     <published>2024-03-27T17:28:27.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -314,7 +308,7 @@
     <link href="https://ghx9908.github.io/2024/03/27/vue-mixin-de-shi-yong-chang-jing-he-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/03/27/vue-mixin-de-shi-yong-chang-jing-he-yuan-li/</id>
     <published>2024-03-27T17:17:14.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -339,7 +333,7 @@
     <link href="https://ghx9908.github.io/2024/03/26/shuo-shi-vue-de-sheng-ming-zhou-qi/"/>
     <id>https://ghx9908.github.io/2024/03/26/shuo-shi-vue-de-sheng-ming-zhou-qi/</id>
     <published>2024-03-26T16:05:00.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -364,7 +358,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/v-once-de-shi-yong-chang-jing-you-na-xie/"/>
     <id>https://ghx9908.github.io/2024/03/25/v-once-de-shi-yong-chang-jing-you-na-xie/</id>
     <published>2024-03-25T17:05:57.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -392,7 +386,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/v-if-he-v-for-na-ge-you-xian-ji-geng-gao/"/>
     <id>https://ghx9908.github.io/2024/03/25/v-if-he-v-for-na-ge-you-xian-ji-geng-gao/</id>
     <published>2024-03-25T16:49:00.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -420,7 +414,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/vue-zhong-de-v-show-he-v-if-zen-me-li-jie/"/>
     <id>https://ghx9908.github.io/2024/03/25/vue-zhong-de-v-show-he-v-if-zen-me-li-jie/</id>
     <published>2024-03-25T16:45:54.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -448,7 +442,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/ru-he-kan-dai-compositionapi-he-optionsapi/"/>
     <id>https://ghx9908.github.io/2024/03/25/ru-he-kan-dai-compositionapi-he-optionsapi/</id>
     <published>2024-03-25T16:39:06.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -475,7 +469,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/vue3-dui-vue2-de-bian-hua/"/>
     <id>https://ghx9908.github.io/2024/03/25/vue3-dui-vue2-de-bian-hua/</id>
     <published>2024-03-25T16:24:01.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -502,7 +496,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/ni-zhi-dao-na-xie-vue3-xin-te-xing/"/>
     <id>https://ghx9908.github.io/2024/03/25/ni-zhi-dao-na-xie-vue3-xin-te-xing/</id>
     <published>2024-03-25T15:19:24.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       
@@ -531,7 +525,7 @@
     <link href="https://ghx9908.github.io/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/"/>
     <id>https://ghx9908.github.io/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/</id>
     <published>2024-03-25T14:51:50.000Z</published>
-    <updated>2024-06-27T07:34:27.804Z</updated>
+    <updated>2024-08-28T02:39:09.869Z</updated>
     
     
       

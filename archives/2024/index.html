@@ -383,6 +383,74 @@
             
             
             <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                <a href="/archives/2024/07">07</a>
+            </div>
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>15</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2024/07/15/vue-zhong-de-diff-suan-fa/">
+                            <div class="card-image">
+                                
+                                
+                                <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Vue 中的diff算法？">
+                                
+                                <span class="card-title">Vue 中的diff算法？</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    前后元素不一致
+两个不同虚拟节点不需要进行比较，直接移除老节点，将新的虚拟节点渲染成真实 DOM 进行挂载即可
+
+export const isSameVNodeType = (n1, n2) => &#123;
+  return n1.t
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2024-07-15
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    前端框架
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Vue/"><span class="chip bg-color">Vue</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+            
+            <div class="cd-timeline-img month" data-aos="zoom-in-up">
                 <a href="/archives/2024/06">06</a>
             </div>
             
@@ -455,25 +523,23 @@ V8 也会申请内存，申请的内存又会分为堆内存和栈内存
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/05/11/vue-zhong-dui-axios-feng-zhuang-guo-na-fang-mian-de/">
+                        <a href="/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Vue 项目中有封装过 axios 吗？主要是封装哪方面的？">
+                                <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="单页应用首屏加载速度慢的怎么解决？">
                                 
-                                <span class="card-title">Vue 项目中有封装过 axios 吗？主要是封装哪方面的？</span>
+                                <span class="card-title">单页应用首屏加载速度慢的怎么解决？</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
                                     
-设置请求超时时间。
-根据项目环境设置请求路径。
-设置请求拦截，自动添加 Token。
-设置响应拦截，对响应的状态码或者数据进行格式化。
-增添请求队列，实现 loading 效果。
-维护取消请求 token，在页面切换时通过导航守卫可以取消
+使用路由懒加载、异步组件，实现组件拆分，减少入口文件体积大小,优化体验骨架屏
+抽离公共代码，采用 splitChunks 进行代码分割。
+组件加载采用按需加载的方式。
+静态资源缓存，采用 HTTP 缓存 （强制缓存、对比缓存）、使用 lo
                                 
                             </div>
                             <div class="publish-info">
@@ -520,23 +586,20 @@ V8 也会申请内存，申请的内存又会分为堆内存和栈内存
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/">
+                        <a href="/2024/05/11/react-zhong-de-diff-suan-fa/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="单页应用首屏加载速度慢的怎么解决？">
+                                <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="React中的diff算法？">
                                 
-                                <span class="card-title">单页应用首屏加载速度慢的怎么解决？</span>
+                                <span class="card-title">React中的diff算法？</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    
-使用路由懒加载、异步组件，实现组件拆分，减少入口文件体积大小,优化体验骨架屏
-抽离公共代码，采用 splitChunks 进行代码分割。
-组件加载采用按需加载的方式。
-静态资源缓存，采用 HTTP 缓存 （强制缓存、对比缓存）、使用 lo
+                                    React 的 diff 算法是 React 在更新 DOM 时使用的算法。它的目的是最小化页面的重新渲染，以便提高性能。
+当 React 渲染组件时，它会在内存中生成虚拟 DOM 树。然后，它会对比新的虚拟 DOM 树和之前的树的差异，找
                                 
                             </div>
                             <div class="publish-info">
@@ -547,8 +610,8 @@ V8 也会申请内存，申请的内存又会分为堆内存和栈内存
                                     
                                     <i class="fas fa-bookmark fa-fw icon-category"></i>
                                     
-                                    <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
-                                    面试宝典
+                                    <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    前端框架
                                     </a>
                                     
                                     
@@ -559,7 +622,7 @@ V8 也会申请内存，申请的内存又会分为堆内存和栈内存
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/Vue-js/"><span class="chip bg-color">Vue.js</span></a>
+                            <a href="/tags/React/"><span class="chip bg-color">React</span></a>
                             
                         </div>
                         
@@ -661,69 +724,6 @@ Vue2 中采用函数式组件 -&gt; 函数式组件开销
 函数式组件是一种定义自身没有任何状态的组件的方式。它们很像纯函数：接收 props，返回 vnodes。函数式组件在渲染过程中不会创建组件实例 (也就是说，没有 this)，也不会触发常规的组件生命周期钩子。
 
 在 Vue2 正常组件是通
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2024-05-11
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
-                                    面试宝典
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Vue-js/"><span class="chip bg-color">Vue.js</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>11</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2024/05/11/vue-chang-yong-de-xiu-shi-fu-you-na-xie-you-shi-me-ying-yong-chang-jing/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Vue常用的修饰符有哪些有什么应用场景">
-                                
-                                <span class="card-title">Vue常用的修饰符有哪些有什么应用场景</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    
-表单修饰符 lazy、trim、number
-事件修饰符 stop、prevent、self、once、capture、passive、.native
-鼠标按键修饰符 left、right、middle
-键值修饰符 对 keyCode 处
                                 
                             </div>
                             <div class="publish-info">
@@ -1172,7 +1172,7 @@ mixin 中有
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">95.1k</span>&nbsp;字
+                class="white-color">99.5k</span>&nbsp;字
             
             
             
