@@ -3,7 +3,7 @@ title: react-router源码深度解刨
 author: 高红翔
 date: 2023-07-01 19:04:19
 categories: 前端框架
-tags: React.js
+tags: React
 ---
 
 代码地址：

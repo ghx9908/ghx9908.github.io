@@ -3,7 +3,7 @@ title: 简单React-Hooks实现
 author: 高红翔
 date: 2023-07-31 15:41:37
 categories: 前端框架
-tags: React.js
+tags: React
 ---
 
 ## 1. React Hooks
