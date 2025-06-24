@@ -203,20 +203,12 @@ function commitDeletionEffects(root, returnFiber, deletedFiber) {
  * @param {*} nearestMountedAncestor 最近的父fiber
  * @param {*} deletedFiber 要删除的fiber
  */
-function commitDeletionEffectsOnFiber(
-  finishedRoot,
-  nearestMountedAncestor,
-  deletedFiber
-) {
+function commitDeletionEffectsOnFiber(finishedRoot, nearestMountedAncestor, deletedFiber) {
   switch (deletedFiber.tag) {
     case HostComponent:
     case HostText: {
       //当要删除一个节点的时候，要先删除它的子节点
-      recursivelyTraverseDeletionEffects(
-        finishedRoot,
-        nearestMountedAncestor,
-        deletedFiber
-      )
+      recursivelyTraverseDeletionEffects(finishedRoot, nearestMountedAncestor, deletedFiber)
       //再把自己删除
       if (hostParent !== null) {
         removeChild(hostParent, deletedFiber.stateNode)
@@ -228,11 +220,7 @@ function commitDeletionEffectsOnFiber(
   }
 }
 //递归遍历
-function recursivelyTraverseDeletionEffects(
-  finishedRoot,
-  nearestMountedAncestor,
-  parent
-) {
+function recursivelyTraverseDeletionEffects(finishedRoot, nearestMountedAncestor, parent) {
   let child = parent.child
   while (child !== null) {
     commitDeletionEffectsOnFiber(finishedRoot, nearestMountedAncestor, child)
