@@ -690,20 +690,12 @@
  * @param &#123;*&#125; nearestMountedAncestor 最近的父fiber
  * @param &#123;*&#125; deletedFiber 要删除的fiber
  */</span>
-<span class="token keyword">function</span> <span class="token function">commitDeletionEffectsOnFiber</span><span class="token punctuation">(</span>
-  <span class="token parameter">finishedRoot<span class="token punctuation">,</span>
-  nearestMountedAncestor<span class="token punctuation">,</span>
-  deletedFiber</span>
-<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">function</span> <span class="token function">commitDeletionEffectsOnFiber</span><span class="token punctuation">(</span><span class="token parameter">finishedRoot<span class="token punctuation">,</span> nearestMountedAncestor<span class="token punctuation">,</span> deletedFiber</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">switch</span> <span class="token punctuation">(</span>deletedFiber<span class="token punctuation">.</span>tag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">case</span> <span class="token literal-property property">HostComponent</span><span class="token operator">:</span>
     <span class="token keyword">case</span> <span class="token literal-property property">HostText</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
       <span class="token comment">//当要删除一个节点的时候，要先删除它的子节点</span>
-      <span class="token function">recursivelyTraverseDeletionEffects</span><span class="token punctuation">(</span>
-        finishedRoot<span class="token punctuation">,</span>
-        nearestMountedAncestor<span class="token punctuation">,</span>
-        deletedFiber
-      <span class="token punctuation">)</span>
+      <span class="token function">recursivelyTraverseDeletionEffects</span><span class="token punctuation">(</span>finishedRoot<span class="token punctuation">,</span> nearestMountedAncestor<span class="token punctuation">,</span> deletedFiber<span class="token punctuation">)</span>
       <span class="token comment">//再把自己删除</span>
       <span class="token keyword">if</span> <span class="token punctuation">(</span>hostParent <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token function">removeChild</span><span class="token punctuation">(</span>hostParent<span class="token punctuation">,</span> deletedFiber<span class="token punctuation">.</span>stateNode<span class="token punctuation">)</span>
@@ -715,17 +707,13 @@
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token comment">//递归遍历</span>
-<span class="token keyword">function</span> <span class="token function">recursivelyTraverseDeletionEffects</span><span class="token punctuation">(</span>
-  <span class="token parameter">finishedRoot<span class="token punctuation">,</span>
-  nearestMountedAncestor<span class="token punctuation">,</span>
-  parent</span>
-<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">function</span> <span class="token function">recursivelyTraverseDeletionEffects</span><span class="token punctuation">(</span><span class="token parameter">finishedRoot<span class="token punctuation">,</span> nearestMountedAncestor<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> child <span class="token operator">=</span> parent<span class="token punctuation">.</span>child
   <span class="token keyword">while</span> <span class="token punctuation">(</span>child <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token function">commitDeletionEffectsOnFiber</span><span class="token punctuation">(</span>finishedRoot<span class="token punctuation">,</span> nearestMountedAncestor<span class="token punctuation">,</span> child<span class="token punctuation">)</span>
     child <span class="token operator">=</span> child<span class="token punctuation">.</span>sibling
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>src\react-dom-bindings\src\client\ReactDOMHostConfig.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">removeChild</span><span class="token punctuation">(</span><span class="token parameter">parentInstance<span class="token punctuation">,</span> child</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1461,7 +1449,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2024</span>
+                <span id="year">2022-2025</span>
             
             <span id="year">2022</span>
             <a href="/about" target="_blank">高红翔</a>
@@ -1470,7 +1458,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">99.5k</span>&nbsp;字
+                class="white-color">116.7k</span>&nbsp;字
             
             
             

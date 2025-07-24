@@ -560,6 +560,9 @@
 </tr>
 </tbody></table>
 <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p><strong>.eslintrc.js</strong></p>
+<ol>
+<li>案例 1</li>
+</ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"eslint-define-config"</span><span class="token punctuation">)</span>
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
   <span class="token literal-property property">root</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -568,11 +571,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token literal-property property">node</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token literal-property property">es2021</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"eslint:recommended"</span><span class="token punctuation">,</span>
-    <span class="token string">"plugin:@typescript-eslint/recommended"</span><span class="token punctuation">,</span>
-    <span class="token string">"plugin:vue/vue3-essential"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"eslint:recommended"</span><span class="token punctuation">,</span> <span class="token string">"plugin:@typescript-eslint/recommended"</span><span class="token punctuation">,</span> <span class="token string">"plugin:vue/vue3-essential"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token literal-property property">parser</span><span class="token operator">:</span> <span class="token string">"vue-eslint-parser"</span><span class="token punctuation">,</span>
   <span class="token literal-property property">parserOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     <span class="token literal-property property">parser</span><span class="token operator">:</span> <span class="token string">"@typescript-eslint/parser"</span><span class="token punctuation">,</span>
@@ -628,7 +627,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>.eslintignore</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">*</span><span class="token punctuation">.</span>sh
@@ -1081,42 +1080,19 @@ npx husky <span class="token function">install</span>
     <span class="token string-property property">"type-enum"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token string">"always"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">[</span>
-        <span class="token string">"build"</span><span class="token punctuation">,</span>
-        <span class="token string">"chore"</span><span class="token punctuation">,</span>
-        <span class="token string">"ci"</span><span class="token punctuation">,</span>
-        <span class="token string">"docs"</span><span class="token punctuation">,</span>
-        <span class="token string">"feature"</span><span class="token punctuation">,</span>
-        <span class="token string">"fix"</span><span class="token punctuation">,</span>
-        <span class="token string">"perf"</span><span class="token punctuation">,</span>
-        <span class="token string">"refactor"</span><span class="token punctuation">,</span>
-        <span class="token string">"revert"</span><span class="token punctuation">,</span>
-        <span class="token string">"style"</span><span class="token punctuation">,</span>
-        <span class="token string">"test"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">"build"</span><span class="token punctuation">,</span> <span class="token string">"chore"</span><span class="token punctuation">,</span> <span class="token string">"ci"</span><span class="token punctuation">,</span> <span class="token string">"docs"</span><span class="token punctuation">,</span> <span class="token string">"feature"</span><span class="token punctuation">,</span> <span class="token string">"fix"</span><span class="token punctuation">,</span> <span class="token string">"perf"</span><span class="token punctuation">,</span> <span class="token string">"refactor"</span><span class="token punctuation">,</span> <span class="token string">"revert"</span><span class="token punctuation">,</span> <span class="token string">"style"</span><span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="4-详细案例"><a href="#4-详细案例" class="headerlink" title="4. 详细案例"></a>4. 详细案例</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">ignores</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token parameter">commit</span><span class="token punctuation">)</span> <span class="token operator">=></span> commit<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"init"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@commitlint/config-conventional"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token literal-property property">parserPreset</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     <span class="token literal-property property">parserOpts</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      <span class="token literal-property property">headerPattern</span><span class="token operator">:</span>
-        <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(\w*|[\u4e00-\u9fa5]*)(?:[\(\（](.*)[\)\）])?[\:\：] (.*)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+      <span class="token literal-property property">headerPattern</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(\w*|[\u4e00-\u9fa5]*)(?:[\(\（](.*)[\)\）])?[\:\：] (.*)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
       <span class="token literal-property property">headerCorrespondence</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"type"</span><span class="token punctuation">,</span> <span class="token string">"scope"</span><span class="token punctuation">,</span> <span class="token string">"subject"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">referenceActions</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token string">"close"</span><span class="token punctuation">,</span>
-        <span class="token string">"closes"</span><span class="token punctuation">,</span>
-        <span class="token string">"closed"</span><span class="token punctuation">,</span>
-        <span class="token string">"fix"</span><span class="token punctuation">,</span>
-        <span class="token string">"fixes"</span><span class="token punctuation">,</span>
-        <span class="token string">"fixed"</span><span class="token punctuation">,</span>
-        <span class="token string">"resolve"</span><span class="token punctuation">,</span>
-        <span class="token string">"resolves"</span><span class="token punctuation">,</span>
-        <span class="token string">"resolved"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">referenceActions</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"close"</span><span class="token punctuation">,</span> <span class="token string">"closes"</span><span class="token punctuation">,</span> <span class="token string">"closed"</span><span class="token punctuation">,</span> <span class="token string">"fix"</span><span class="token punctuation">,</span> <span class="token string">"fixes"</span><span class="token punctuation">,</span> <span class="token string">"fixed"</span><span class="token punctuation">,</span> <span class="token string">"resolve"</span><span class="token punctuation">,</span> <span class="token string">"resolves"</span><span class="token punctuation">,</span> <span class="token string">"resolved"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token literal-property property">issuePrefixes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"#"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token literal-property property">noteKeywords</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"BREAKING CHANGE"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token literal-property property">fieldPattern</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^-(.*?)-$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
@@ -1156,7 +1132,7 @@ npx husky <span class="token function">install</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="5-常见问题"><a href="#5-常见问题" class="headerlink" title="5. 常见问题"></a>5. 常见问题</h3><p><strong>问题 1</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">hint</span><span class="token operator">:</span> The <span class="token string">'.husky/pre-commit'</span> hook was ignored because it's not <span class="token keyword">set</span> <span class="token keyword">as</span> executable<span class="token punctuation">.</span>
@@ -1638,7 +1614,7 @@ npx husky <span class="token function">install</span>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2024</span>
+                <span id="year">2022-2025</span>
             
             <span id="year">2022</span>
             <a href="/about" target="_blank">高红翔</a>
@@ -1647,7 +1623,7 @@ npx husky <span class="token function">install</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">99.5k</span>&nbsp;字
+                class="white-color">116.7k</span>&nbsp;字
             
             
             
