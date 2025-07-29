@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2025-07-24T11:51:05.818Z</updated>
+  <updated>2025-07-29T02:25:41.447Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git配置个人信息</title>
+    <link href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/"/>
+    <id>https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</id>
+    <published>2025-07-25T10:58:17.000Z</published>
+    <updated>2025-07-29T02:25:41.447Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;🌟-配置全局用户名和邮箱（适用于所有仓库）&quot;&gt;&lt;a href=&quot;#🌟-配置全局用户名和邮箱（适用于所有仓库）&quot; class=&quot;headerlink&quot; title=&quot;🌟 配置全局用户名和邮箱（适用于所有仓库）&quot;&gt;&lt;/a&gt;🌟</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://ghx9908.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mac配置</title>
     <link href="https://ghx9908.github.io/2025/07/23/mac-pei-zhi/"/>
     <id>https://ghx9908.github.io/2025/07/23/mac-pei-zhi/</id>
     <published>2025-07-23T13:53:06.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -34,6 +59,10 @@
     
     
     
+    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="工具" scheme="https://ghx9908.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -42,7 +71,7 @@
     <link href="https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/"/>
     <id>https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/</id>
     <published>2025-06-24T12:29:19.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -67,7 +96,7 @@
     <link href="https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/"/>
     <id>https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/</id>
     <published>2024-10-18T15:57:22.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -92,7 +121,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/"/>
     <id>https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/</id>
     <published>2024-10-17T17:51:54.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -117,7 +146,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/posscss/"/>
     <id>https://ghx9908.github.io/2024/10/17/posscss/</id>
     <published>2024-10-17T17:30:11.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -142,7 +171,7 @@
     <link href="https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/"/>
     <id>https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/</id>
     <published>2024-10-09T16:14:56.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -165,7 +194,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/express/"/>
     <id>https://ghx9908.github.io/2024/10/08/express/</id>
     <published>2024-10-08T14:48:34.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -188,7 +217,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/jwt/"/>
     <id>https://ghx9908.github.io/2024/10/08/jwt/</id>
     <published>2024-10-08T11:27:55.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -212,7 +241,7 @@
     <link href="https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/</id>
     <published>2024-09-27T18:28:27.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -235,7 +264,7 @@
     <link href="https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/"/>
     <id>https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/</id>
     <published>2024-09-26T15:25:43.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.447Z</updated>
     
     
       
@@ -259,7 +288,7 @@
     <link href="https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/"/>
     <id>https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/</id>
     <published>2024-07-15T17:26:30.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -285,7 +314,7 @@
     <link href="https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/"/>
     <id>https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/</id>
     <published>2024-06-27T15:33:25.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -311,7 +340,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/"/>
     <id>https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -340,7 +369,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/"/>
     <id>https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-07-24T11:51:05.818Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -366,7 +395,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/"/>
     <id>https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/</id>
     <published>2024-05-11T16:51:14.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -394,7 +423,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/"/>
     <id>https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/</id>
     <published>2024-05-11T16:43:46.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -420,7 +449,7 @@
     <link href="https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/</id>
     <published>2024-03-28T17:32:45.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -446,7 +475,7 @@
     <link href="https://ghx9908.github.io/2024/03/28/vue-zu-jian-zhong-de-data-wei-shi-me-bi-xu-shi-han-shu/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-zu-jian-zhong-de-data-wei-shi-me-bi-xu-shi-han-shu/</id>
     <published>2024-03-28T17:28:46.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -473,7 +502,7 @@
     <link href="https://ghx9908.github.io/2024/03/28/vue-extend-fang-fa-de-zuo-yong/"/>
     <id>https://ghx9908.github.io/2024/03/28/vue-extend-fang-fa-de-zuo-yong/</id>
     <published>2024-03-28T17:20:09.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
+    <updated>2025-07-29T02:25:41.446Z</updated>
     
     
       
@@ -481,31 +510,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;1-1-Vue-extend-概念&quot;&gt;&lt;a href=&quot;#1-1-Vue-extend-概念&quot; class=&quot;headerlink&quot; title=&quot;1.1 Vue.extend 概念&quot;&gt;&lt;/a&gt;1.1 Vue.extend 概念&lt;/h2&gt;&lt;p&gt;使用基础 Vue</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>说说你对双向绑定的理解,以及它的实现原理吗</title>
-    <link href="https://ghx9908.github.io/2024/03/27/shuo-shuo-ni-dui-shuang-xiang-bang-ding-de-li-jie-yi-ji-ta-de-shi-xian-yuan-li-ma/"/>
-    <id>https://ghx9908.github.io/2024/03/27/shuo-shuo-ni-dui-shuang-xiang-bang-ding-de-li-jie-yi-ji-ta-de-shi-xian-yuan-li-ma/</id>
-    <published>2024-03-27T17:40:53.000Z</published>
-    <updated>2025-07-24T11:51:05.817Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-1-双向绑定的概念&quot;&gt;&lt;a href=&quot;#1-1-双向绑定的概念&quot; class=&quot;headerlink&quot; title=&quot;1.1 双向绑定的概念&quot;&gt;&lt;/a&gt;1.1 双向绑定的概念&lt;/h2&gt;&lt;p&gt;vue 中双向绑定靠的是指令</summary>
         
       
     

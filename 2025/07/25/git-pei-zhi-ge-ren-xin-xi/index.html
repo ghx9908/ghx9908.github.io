@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="移动零, 闪烁之狐 高红翔">
+    <meta name="keywords" content="git配置个人信息, 闪烁之狐 高红翔">
     <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>移动零 | 闪烁之狐</title>
+    <title>git配置个人信息 | 闪烁之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -341,7 +341,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">移动零</h1>
+                    <h1 class="description center-align post-title">git配置个人信息</h1>
                 </div>
             </div>
         </div>
@@ -457,12 +457,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                                <span class="chip bg-color">双指针</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">数组</span>
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
                             </a>
                         
                     </div>
@@ -473,8 +469,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category">
-                                LeetCode
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                开发工具
                             </a>
                         
                     </div>
@@ -486,7 +482,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-24
+                    2025-07-25
                 </div>
                 
 
@@ -495,7 +491,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    53
+                    342
                 </div>
                 
 
@@ -522,21 +518,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>力扣（LeetCode） 链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/move-zeroes/">https://leetcode.cn/problems/move-zeroes/</a></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">moveZeroes</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> slow <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token keyword">let</span> fast <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>fast <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>fast<span class="token punctuation">]</span> <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      nums<span class="token punctuation">[</span>slow<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>fast<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span>
-    fast<span class="token operator">++</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>slow <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    nums<span class="token punctuation">[</span>slow<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> nums
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="🌟-配置全局用户名和邮箱（适用于所有仓库）"><a href="#🌟-配置全局用户名和邮箱（适用于所有仓库）" class="headerlink" title="🌟 配置全局用户名和邮箱（适用于所有仓库）"></a>🌟 配置全局用户名和邮箱（适用于所有仓库）</h2><h3 id="步骤-1：配置用户名"><a href="#步骤-1：配置用户名" class="headerlink" title="步骤 1：配置用户名"></a>步骤 1：配置用户名</h3><p>打开终端并运行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="步骤-2：配置邮箱"><a href="#步骤-2：配置邮箱" class="headerlink" title="步骤 2：配置邮箱"></a>步骤 2：配置邮箱</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"your-email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>🔍 <strong>注意</strong>：<code>--global</code> 表示此配置对所有仓库有效。如果你希望为某个特定仓库设置不同的用户名和邮箱，可以跳过 <code>--global</code>。</p>
+</blockquote>
+<hr>
+<h2 id="🔧-配置局部用户名和邮箱（只针对当前仓库）"><a href="#🔧-配置局部用户名和邮箱（只针对当前仓库）" class="headerlink" title="🔧 配置局部用户名和邮箱（只针对当前仓库）"></a>🔧 配置局部用户名和邮箱（只针对当前仓库）</h2><p>如果你需要为某个特定仓库设置不同的用户名或邮箱：</p>
+<ol>
+<li>进入该仓库目录：</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /path/to/your/repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li>设置仓库的用户名和邮箱：</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.name <span class="token string">"Your Name"</span>
+<span class="token function">git</span> config user.email <span class="token string">"your-email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="✅-验证配置"><a href="#✅-验证配置" class="headerlink" title="✅ 验证配置"></a>✅ 验证配置</h2><p>你可以使用以下命令检查当前的用户名和邮箱配置：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如果想查看当前仓库的配置信息（局部配置），可以执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.name
+<span class="token function">git</span> config user.email<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="🧩-其他配置"><a href="#🧩-其他配置" class="headerlink" title="🧩 其他配置"></a>🧩 其他配置</h2><p>如果需要查看所有 Git 配置（包括全局和局部配置）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--list</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这将显示所有配置项（包括用户名、邮箱等信息）。</p>
+<hr>
+<p>通过这些配置，你可以确保在提交代码时，Git 会使用正确的身份信息。如果需要更改邮箱或者用户名，只需要执行相应的 <code>git config</code> 命令即可。</p>
 
                 
             </div>
@@ -563,7 +581,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghx9908.github.io/2023/05/24/yi-dong-ling/">https://ghx9908.github.io/2023/05/24/yi-dong-ling/</a>
+                    <a href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/">https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,12 +619,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                                    <span class="chip bg-color">双指针</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">数组</span>
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
                                 </a>
                             
                         </div>
@@ -776,17 +790,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/24/shan-chu-shu-zu-zhong-de-chong-fu-xiang/">
+                <a href="/2025/07/25/git-pei-zhi-ge-ren-xin-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="删除数组中的重复项-26">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="git配置个人信息">
                         
-                        <span class="card-title">删除数组中的重复项-26</span>
+                        <span class="card-title">git配置个人信息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -796,30 +811,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E7%BB%84/">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -833,13 +845,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/24/yi-dong-yuan-su/">
+                <a href="/2025/07/23/mac-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="移动元素-283">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="mac配置">
                         
-                        <span class="card-title">移动元素-283</span>
+                        <span class="card-title">mac配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,14 +862,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
                                 </a>
                             
                             
@@ -867,12 +879,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E7%BB%84/">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
