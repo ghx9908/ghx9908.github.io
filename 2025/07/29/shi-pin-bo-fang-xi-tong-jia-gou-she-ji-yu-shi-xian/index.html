@@ -1,0 +1,2000 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="视频播放系统架构设计与实现, 闪烁之狐 高红翔">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>视频播放系统架构设计与实现 | 闪烁之狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="闪烁之狐" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">闪烁之狐</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="https://ghx9908.github.io/website/">
+          
+          <span>My Site</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">闪烁之狐</div>
+        <div class="logo-desc">
+            
+            从来没有真正的绝境，只有心灵的迷途
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="https://ghx9908.github.io/website/ " style="margin-left:75px">
+				  
+		          <span>My Site</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ghx9908/ghx9908.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ghx9908/ghx9908.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">视频播放系统架构设计与实现</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
+                                架构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-07-29
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        <!-- 代码块折行 -->
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>本文介绍了一个基于 Vue 3 + TypeScript 的视频播放系统，该系统采用了代理模式、事件驱动架构和状态管理，实现了跨平台的视频播放控制。系统主要应用于写作教学场景，支持教师讲解视频的播放、进度同步、时间轴事件触发等功能。</p>
+</blockquote>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><h3 id="1-整体架构图"><a href="#1-整体架构图" class="headerlink" title="1. 整体架构图"></a>1. 整体架构图</h3><pre class="line-numbers language-none"><code class="language-none">┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   TeacherWindow │    │   VideoPlayer   │    │   VideoProxy    │
+│   (UI 组件)     │◄──►│   (播放器组件)   │◄──►│   (代理层)      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │                       │
+                                ▼                       ▼
+                       ┌─────────────────┐    ┌─────────────────┐
+                       │   write.ts      │    │ TimelineEmitter │
+                       │   (状态管理)     │    │   (时间轴管理)   │
+                       └─────────────────┘    └─────────────────┘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-核心组件关系"><a href="#2-核心组件关系" class="headerlink" title="2. 核心组件关系"></a>2. 核心组件关系</h3><ul>
+<li><strong>TeacherWindow.vue</strong>: UI 展示层，包含视频播放器组件</li>
+<li><strong>VideoPlayer.vue</strong>: 跨平台视频播放器，支持 App 和 Web 环境</li>
+<li><strong>VideoProxy.ts</strong>: 视频代理层，统一管理播放状态和事件</li>
+<li><strong>write.ts</strong>: 业务逻辑层，处理视频播放的业务逻辑</li>
+</ul>
+<h2 id="VideoProxy-ts"><a href="#VideoProxy-ts" class="headerlink" title="VideoProxy.ts"></a><code>VideoProxy.ts</code></h2><blockquote>
+<p>这是一个视频代理类，采用了代理模式设计，用于统一管理视频播放器的状态和行为，提供事件驱动的视频控制接口。</p>
+</blockquote>
+<h3 id="1-导入和类型定义"><a href="#1-导入和类型定义" class="headerlink" title="1. 导入和类型定义"></a>1. 导入和类型定义</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EventEmitter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"eventemitter3"</span>
+<span class="token keyword">import</span> WriteUtilsVideoPlayer <span class="token keyword">from</span> <span class="token string">"@/components/write/Utils/VideoPlayer.vue"</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> $pick <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"@/utils/global-properties"</span>
+
+<span class="token comment">// 定义视频代理支持的事件类型</span>
+<span class="token keyword">type</span> <span class="token class-name">VideoProxyEvents</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">ready</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token comment">// 视频准备就绪事件</span>
+  <span class="token function-variable function">end</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token comment">// 视频播放结束事件</span>
+  <span class="token function-variable function">error</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token comment">// 视频播放错误事件</span>
+  <span class="token function-variable function">meta</span><span class="token operator">:</span> <span class="token punctuation">(</span>duration<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token comment">// 视频元数据事件（获取时长）</span>
+  <span class="token function-variable function">tick</span><span class="token operator">:</span> <span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> duration<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token comment">// 视频播放进度事件</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-VideoProxy-类结构"><a href="#2-VideoProxy-类结构" class="headerlink" title="2. VideoProxy 类结构"></a>2. VideoProxy 类结构</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">VideoProxy</span> <span class="token keyword">extends</span> <span class="token class-name">EventEmitter<span class="token operator">&lt;</span>VideoProxyEvents<span class="token operator">></span></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">private</span> videoRef<span class="token operator">:</span> InstanceType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> WriteUtilsVideoPlayer<span class="token operator">></span> <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>  <span class="token comment">// 视频组件引用</span>
+	<span class="token keyword">private</span> isActive<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>    <span class="token comment">// 是否激活状态</span>
+	<span class="token keyword">private</span> isReady<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>     <span class="token comment">// 是否准备就绪</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3. 构造函数"></a>3. 构造函数</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'ready'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>isReady <span class="token operator">=</span> <span class="token boolean">true</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 准备就绪后自动播放</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-核心方法解析"><a href="#4-核心方法解析" class="headerlink" title="4. 核心方法解析"></a>4. 核心方法解析</h3><h4 id="takeOver-接管视频组件"><a href="#takeOver-接管视频组件" class="headerlink" title="takeOver() - 接管视频组件"></a><strong>takeOver() - 接管视频组件</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token function">takeOver</span><span class="token punctuation">(</span>videoRef<span class="token operator">:</span> InstanceType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> WriteUtilsVideoPlayer<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef <span class="token operator">=</span> videoRef
+	<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">setBus</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token comment">// 设置事件总线</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>作用</strong>:</p>
+<ul>
+<li>接收一个视频组件实例</li>
+<li>建立代理与视频组件的连接</li>
+<li>设置事件通信机制</li>
+</ul>
+<h4 id="active-属性设置器"><a href="#active-属性设置器" class="headerlink" title="active 属性设置器"></a><strong>active 属性设置器</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">set</span> <span class="token function">active</span><span class="token punctuation">(</span>isActive<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isActive<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">)</span>    <span class="token comment">// 取消激活时移除事件监听</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">'tick'</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>isActive <span class="token operator">=</span> isActive
+		<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">setActive</span><span class="token punctuation">(</span>isActive<span class="token punctuation">)</span>  <span class="token comment">// 通知视频组件激活状态</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 激活时自动播放</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>作用</strong>:</p>
+<ul>
+<li>控制代理的激活状态</li>
+<li>状态变化时自动管理事件监听</li>
+<li>激活时自动开始播放</li>
+</ul>
+<h4 id="播放控制方法"><a href="#播放控制方法" class="headerlink" title="播放控制方法"></a><strong>播放控制方法</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 播放视频</span>
+<span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isActive <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isReady<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 只有在激活且准备就绪时才播放</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 暂停播放</span>
+<span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 恢复播放</span>
+<span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 跳转到指定时间</span>
+<span class="token function">seek</span><span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">seek</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-设计模式分析"><a href="#5-设计模式分析" class="headerlink" title="5. 设计模式分析"></a>5. 设计模式分析</h3><h4 id="代理模式-Proxy-Pattern"><a href="#代理模式-Proxy-Pattern" class="headerlink" title="代理模式 (Proxy Pattern)"></a><strong>代理模式 (Proxy Pattern)</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// VideoProxy 作为视频组件的代理</span>
+<span class="token comment">// 封装了视频播放的复杂逻辑</span>
+<span class="token comment">// 提供了统一的接口来控制视频播放</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代理模式的优势</strong>:</p>
+<ul>
+<li>✅ 封装了视频播放的复杂逻辑</li>
+<li>✅ 提供了统一的控制接口</li>
+<li>✅ 可以添加额外的控制逻辑（如状态检查）</li>
+<li>✅ 实现了组件间的解耦</li>
+</ul>
+<h4 id="事件驱动架构"><a href="#事件驱动架构" class="headerlink" title="事件驱动架构"></a><strong>事件驱动架构</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 继承自 EventEmitter，支持事件机制</span>
+<span class="token comment">// 通过事件与视频组件通信</span>
+<span class="token comment">// 支持多种事件类型</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>事件类型说明</strong>:</p>
+<ul>
+<li><code>ready</code>: 视频准备就绪</li>
+<li><code>end</code>: 视频播放结束</li>
+<li><code>error</code>: 视频播放错误</li>
+<li><code>meta</code>: 获取视频元数据</li>
+<li><code>tick</code>: 播放进度更新</li>
+</ul>
+<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a><strong>状态管理</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">private</span> isActive<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>    <span class="token comment">// 控制代理是否激活</span>
+<span class="token keyword">private</span> isReady<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>     <span class="token comment">// 控制视频是否准备就绪</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>状态逻辑</strong>:</p>
+<ul>
+<li>只有同时满足 <code>isActive</code> 和 <code>isReady</code> 时才能播放</li>
+<li>状态变化时自动触发相应行为</li>
+</ul>
+<h3 id="6-使用流程"><a href="#6-使用流程" class="headerlink" title="6. 使用流程"></a>6. 使用流程</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 1. 创建代理实例</span>
+<span class="token keyword">const</span> videoProxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VideoProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 2. 接管视频组件</span>
+videoProxy<span class="token punctuation">.</span><span class="token function">takeOver</span><span class="token punctuation">(</span>videoComponent<span class="token punctuation">)</span>
+
+<span class="token comment">// 3. 激活代理</span>
+videoProxy<span class="token punctuation">.</span>active <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment">// 4. 监听事件</span>
+videoProxy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"播放进度:"</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 5. 控制播放</span>
+videoProxy<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+videoProxy<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+videoProxy<span class="token punctuation">.</span><span class="token function">seek</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7-在-write-ts-中的使用"><a href="#7-在-write-ts-中的使用" class="headerlink" title="7. 在 write.ts 中的使用"></a>7. 在 write.ts 中的使用</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 创建视频代理实例</span>
+<span class="token keyword">const</span> videoTeacherProxy<span class="token operator">:</span> VideoProxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VideoProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> videoSceneFrameProxy<span class="token operator">:</span> VideoProxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VideoProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 监听播放进度事件</span>
+videoTeacherProxy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">__updateTimelineEmitters</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token comment">// 更新时间轴发射器</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 监听播放结束事件</span>
+videoTeacherProxy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">__handleCleanForVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 清理视频相关状态</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-优点总结"><a href="#8-优点总结" class="headerlink" title="8. 优点总结"></a>8. 优点总结</h3><ul>
+<li>✅ <strong>封装性</strong>: 封装了视频播放的复杂逻辑</li>
+<li>✅ <strong>统一接口</strong>: 提供了统一的播放控制接口</li>
+<li>✅ <strong>事件驱动</strong>: 支持事件机制，易于扩展</li>
+<li>✅ <strong>状态管理</strong>: 清晰的状态管理逻辑</li>
+<li>✅ <strong>解耦设计</strong>: 实现了组件间的解耦</li>
+<li>✅ <strong>类型安全</strong>: 使用 TypeScript 提供类型安全</li>
+</ul>
+<h3 id="9-应用场景"><a href="#9-应用场景" class="headerlink" title="9. 应用场景"></a>9. 应用场景</h3><p>这个代理类主要用于：</p>
+<ol>
+<li><strong>写作模块的视频播放控制</strong></li>
+<li><strong>统一管理多个视频组件</strong></li>
+<li><strong>提供事件驱动的视频控制接口</strong></li>
+<li><strong>确保视频播放的状态一致性</strong></li>
+</ol>
+<p>这是一个设计良好的视频代理类，很好地体现了代理模式和事件驱动的设计思想，为视频播放提供了统一、可靠的接口。</p>
+<h3 id="源码："><a href="#源码：" class="headerlink" title="源码："></a>源码：</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> EventEmitter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"eventemitter3"</span>
+<span class="token keyword">import</span> WriteUtilsVideoPlayer <span class="token keyword">from</span> <span class="token string">"@/components/write/Utils/VideoPlayer.vue"</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> $pick <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"@/utils/global-properties"</span>
+
+<span class="token keyword">type</span> <span class="token class-name">VideoProxyEvents</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">ready</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+  <span class="token function-variable function">end</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+  <span class="token function-variable function">error</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+  <span class="token function-variable function">meta</span><span class="token operator">:</span> <span class="token punctuation">(</span>duration<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+  <span class="token function-variable function">tick</span><span class="token operator">:</span> <span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> duration<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">VideoProxy</span> <span class="token keyword">extends</span> <span class="token class-name">EventEmitter<span class="token operator">&lt;</span>VideoProxyEvents<span class="token operator">></span></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">private</span> videoRef<span class="token operator">:</span> InstanceType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> WriteUtilsVideoPlayer<span class="token operator">></span> <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">private</span> isActive<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">private</span> isReady<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"ready"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>isReady <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token function">takeOver</span><span class="token punctuation">(</span>videoRef<span class="token operator">:</span> InstanceType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> WriteUtilsVideoPlayer<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef <span class="token operator">=</span> videoRef
+    <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">setBus</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">set</span> <span class="token function">active</span><span class="token punctuation">(</span>isActive<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isActive<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>isActive <span class="token operator">=</span> isActive
+      <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">setActive</span><span class="token punctuation">(</span>isActive<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isActive <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>isReady<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">seek</span><span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>videoRef<span class="token punctuation">.</span><span class="token function">seek</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="VideoPlayer-vue"><a href="#VideoPlayer-vue" class="headerlink" title="VideoPlayer.vue"></a><code>VideoPlayer.vue</code></h2><blockquote>
+<p>这是一个跨平台的视频播放器组件，支持 App 原生播放和 Web 浏览器播放两种模式。</p>
+</blockquote>
+<h3 id="1-模板结构"><a href="#1-模板结构" class="headerlink" title="1. 模板结构"></a>1. 模板结构</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;!-- Web 环境：使用 HTML5 video 元素 --&gt;
+  &lt;video
+    v-if&#x3D;&quot;!isApp &amp;&amp; active&quot;
+    preload&#x3D;&quot;auto&quot;
+    webkit-playsinline
+    ref&#x3D;&quot;videoRef&quot;
+    :src&#x3D;&quot;src&quot;
+    playbackRate&#x3D;&quot;1&quot;
+    @canplay&#x3D;&quot;handleCanPlay&quot;
+    :autoplay&#x3D;&quot;autoplay&quot;
+    :muted&#x3D;&quot;muted&quot;
+    @ended&#x3D;&quot;handleVideoEnd&quot;
+    @error&#x3D;&quot;handleError&quot;
+    @timeupdate&#x3D;&quot;handleTimeUpdate&quot;
+    @loadedmetadata&#x3D;&quot;handleLoadedMetadata&quot;
+    :style&#x3D;&quot;&#123;...&#125;&quot;
+    class&#x3D;&quot;video-player&quot;
+  &gt;&lt;&#x2F;video&gt;
+
+  &lt;!-- App 环境：使用原生容器 --&gt;
+  &lt;div v-else-if&#x3D;&quot;active&quot; class&#x3D;&quot;video-player&quot; ref&#x3D;&quot;videoRef&quot;&gt;&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-核心状态管理"><a href="#2-核心状态管理" class="headerlink" title="2. 核心状态管理"></a>2. 核心状态管理</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> isApp <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token function">browserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isApp<span class="token punctuation">)</span> <span class="token comment">// 判断是否为 App 环境</span>
+<span class="token keyword">const</span> videoRef <span class="token operator">=</span> <span class="token generic-function"><span class="token function">ref</span><span class="token generic class-name"><span class="token operator">&lt;</span>HTMLVideoElement <span class="token operator">|</span> <span class="token keyword">null</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment">// 视频元素引用</span>
+<span class="token keyword">const</span> bus <span class="token operator">=</span> <span class="token generic-function"><span class="token function">ref</span><span class="token generic class-name"><span class="token operator">&lt;</span>VideoProxy<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 事件总线（VideoProxy 实例）</span>
+<span class="token keyword">const</span> active <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token comment">// 是否激活状态</span>
+<span class="token keyword">const</span> playerId <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span> <span class="token comment">// 播放器唯一标识</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-Props-配置"><a href="#3-Props-配置" class="headerlink" title="3. Props 配置"></a>3. Props 配置</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> props <span class="token operator">=</span> <span class="token function">defineProps</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  src<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">""</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 视频源地址</span>
+  duration<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 视频时长</span>
+  autoplay<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> Boolean<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 是否自动播放</span>
+  muted<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> Boolean<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 是否静音</span>
+  fitMode<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">"W"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 适配模式：H-高宽比，W-宽度</span>
+  scale<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 缩放比例</span>
+  zIndex<span class="token operator">:</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 层级</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-核心方法解析-1"><a href="#4-核心方法解析-1" class="headerlink" title="4. 核心方法解析"></a>4. 核心方法解析</h3><h4 id="App-环境相关方法"><a href="#App-环境相关方法" class="headerlink" title="App 环境相关方法"></a><strong>App 环境相关方法</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 显示原生视频视图</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">showNativeVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> rect <span class="token operator">=</span> videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rect<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token keyword">let</span> <span class="token punctuation">&#123;</span> left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> top<span class="token punctuation">,</span> bottom<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height <span class="token punctuation">&#125;</span> <span class="token operator">=</span> rect
+  <span class="token keyword">await</span> $bridge<span class="token punctuation">.</span><span class="token function">showLiveVideoView</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    centerX<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>right <span class="token operator">+</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">/</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    centerY<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>bottom <span class="token operator">+</span> top<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">/</span> window<span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token punctuation">(</span>width <span class="token operator">/</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token punctuation">(</span>height <span class="token operator">/</span> window<span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    cornerRadius<span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span>
+    zIndex<span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+    playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+    renderMode<span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 移除原生视频视图</span>
+<span class="token keyword">function</span> <span class="token function">removeNativeVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  $bridge<span class="token punctuation">.</span><span class="token function">removeVideoPlayerView</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="状态控制方法"><a href="#状态控制方法" class="headerlink" title="状态控制方法"></a><strong>状态控制方法</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 设置激活状态</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setActive</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>val<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  active<span class="token punctuation">.</span>value <span class="token operator">=</span> val
+  <span class="token keyword">await</span> <span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isApp<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">removeNativeVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 取消激活时移除原生视图</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">showNativeVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 激活时显示原生视图</span>
+      bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"ready"</span><span class="token punctuation">)</span> <span class="token comment">// 发送准备就绪事件</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 设置事件总线</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setBus</span> <span class="token operator">=</span> <span class="token punctuation">(</span>_bus<span class="token operator">:</span> VideoProxy<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  bus<span class="token punctuation">.</span>value <span class="token operator">=</span> _bus
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="播放控制方法-1"><a href="#播放控制方法-1" class="headerlink" title="播放控制方法"></a><strong>播放控制方法</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 播放视频</span>
+<span class="token keyword">const</span> <span class="token function-variable function">play</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isApp<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// App 环境：调用原生播放接口</span>
+    $bridge<span class="token punctuation">.</span><span class="token function">playLiveVideo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      playUrl<span class="token operator">:</span> props<span class="token punctuation">.</span>src<span class="token punctuation">,</span>
+      <span class="token function-variable function">onTick</span><span class="token operator">:</span> <span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        isTeacherSpeaking<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">true</span>
+        bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">,</span> time <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">51</span><span class="token punctuation">)</span> <span class="token comment">// 发送播放进度事件</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">onStatus</span><span class="token operator">:</span> <span class="token punctuation">(</span>status<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> <span class="token string">"4"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          isTeacherSpeaking<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">false</span>
+          bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">)</span> <span class="token comment">// 发送播放结束事件</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// Web 环境：调用 HTML5 video 播放</span>
+    videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 暂停播放</span>
+<span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isApp<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    $bridge<span class="token punctuation">.</span><span class="token function">pauseLiveVideo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 恢复播放</span>
+<span class="token keyword">const</span> <span class="token function-variable function">resume</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isApp<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    $bridge<span class="token punctuation">.</span><span class="token function">resumeLiveVideo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 跳转到指定时间</span>
+<span class="token keyword">const</span> <span class="token function-variable function">seek</span> <span class="token operator">=</span> <span class="token punctuation">(</span>time<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isApp<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    $bridge<span class="token punctuation">.</span><span class="token function">seekLiveVideoTo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      playerId<span class="token operator">:</span> playerId<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      seekTime<span class="token operator">:</span> time<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>videoRef<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      videoRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>currentTime <span class="token operator">=</span> time
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="事件处理方法"><a href="#事件处理方法" class="headerlink" title="事件处理方法"></a><strong>事件处理方法</strong></h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 视频可以播放时</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleCanPlay</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"ready"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 视频播放结束时</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleVideoEnd</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  isTeacherSpeaking<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">false</span>
+  bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 视频播放错误时</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleError</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 视频播放进度更新时（Web 环境）</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleTimeUpdate</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  isTeacherSpeaking<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">true</span>
+  bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span>
+    <span class="token string">"tick"</span><span class="token punctuation">,</span>
+    videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span>currentTime <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span>duration
+  <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 视频元数据加载完成时</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleLoadedMetadata</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  bus<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"meta"</span><span class="token punctuation">,</span> videoRef<span class="token punctuation">.</span>value<span class="token operator">?.</span>duration <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-设计模式分析-1"><a href="#5-设计模式分析-1" class="headerlink" title="5. 设计模式分析"></a>5. 设计模式分析</h3><h4 id="适配器模式-Adapter-Pattern"><a href="#适配器模式-Adapter-Pattern" class="headerlink" title="适配器模式 (Adapter Pattern)"></a><strong>适配器模式 (Adapter Pattern)</strong></h4><ul>
+<li>统一了 App 原生播放和 Web HTML5 播放的接口</li>
+<li>通过 <code>isApp</code> 判断使用不同的播放实现</li>
+<li>对外提供统一的播放控制方法</li>
+</ul>
+<h4 id="事件驱动架构-1"><a href="#事件驱动架构-1" class="headerlink" title="事件驱动架构"></a><strong>事件驱动架构</strong></h4><ul>
+<li>通过 <code>bus</code> (VideoProxy) 发送事件</li>
+<li>支持 <code>ready</code>、<code>end</code>、<code>error</code>、<code>tick</code>、<code>meta</code> 等事件</li>
+<li>实现了组件间的解耦</li>
+</ul>
+<h4 id="状态管理-1"><a href="#状态管理-1" class="headerlink" title="状态管理"></a><strong>状态管理</strong></h4><ul>
+<li><code>active</code>: 控制组件是否激活</li>
+<li><code>isTeacherSpeaking</code>: 管理教师说话状态</li>
+<li>状态变化时自动触发相应行为</li>
+</ul>
+<h3 id="6-使用场景"><a href="#6-使用场景" class="headerlink" title="6. 使用场景"></a>6. 使用场景</h3><p>这个组件主要用于：</p>
+<ol>
+<li><strong>写作模块的视频播放</strong></li>
+<li><strong>教师讲解视频的播放控制</strong></li>
+<li><strong>场景视频的播放管理</strong></li>
+<li><strong>跨平台视频播放的统一接口</strong></li>
+</ol>
+<h3 id="7-优点"><a href="#7-优点" class="headerlink" title="7. 优点"></a>7. 优点</h3><ul>
+<li>✅ 跨平台兼容性好</li>
+<li>✅ 事件驱动，易于扩展</li>
+<li>✅ 状态管理清晰</li>
+<li>✅ 接口统一，使用简单</li>
+<li>✅ 支持多种播放控制功能</li>
+</ul>
+<p>这是一个设计良好的视频播放器组件，很好地处理了跨平台播放的复杂性，并提供了统一的事件接口。</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;video
+    v-if&#x3D;&quot;!isApp &amp;&amp; active&quot;
+    preload&#x3D;&quot;auto&quot;
+    webkit-playsinline
+    ref&#x3D;&quot;videoRef&quot;
+    :src&#x3D;&quot;src&quot;
+    playbackRate&#x3D;&quot;1&quot;
+    @canplay&#x3D;&quot;handleCanPlay&quot;
+    :autoplay&#x3D;&quot;autoplay&quot;
+    :muted&#x3D;&quot;muted&quot;
+    @ended&#x3D;&quot;handleVideoEnd&quot;
+    @error&#x3D;&quot;handleError&quot;
+    @timeupdate&#x3D;&quot;handleTimeUpdate&quot;
+    @loadedmetadata&#x3D;&quot;handleLoadedMetadata&quot;
+    :style&#x3D;&quot;&#123;
+      width: fitMode &#x3D;&#x3D;&#x3D; &#39;W&#39; ? &#96;calc(100% * $&#123;scale&#125;)&#96; : &#39;auto&#39;,
+      height: fitMode &#x3D;&#x3D;&#x3D; &#39;H&#39; ? &#96;calc(100% * $&#123;scale&#125;)&#96; : &#39;auto&#39;,
+      zIndex: zIndex,
+    &#125;&quot;
+    class&#x3D;&quot;video-player&quot;
+  &gt;&lt;&#x2F;video&gt;
+  &lt;div v-else-if&#x3D;&quot;active&quot; class&#x3D;&quot;video-player&quot; ref&#x3D;&quot;videoRef&quot;&gt;&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import &#123; v4 as uuidv4 &#125; from &quot;uuid&quot;
+import &#123; nextTick, onBeforeMount, onMounted, ref, watch &#125; from &quot;vue&quot;
+import &#123; $bridge, $pick &#125; from &quot;@&#x2F;utils&#x2F;global-properties&quot;
+import &#123; VideoProxy &#125; from &quot;@&#x2F;store&#x2F;modules&#x2F;write&#x2F;VideoProxy&quot;
+import &#123; browserInfo &#125; from &quot;@&#x2F;utils&#x2F;tool&quot;
+const isApp &#x3D; ref(browserInfo().isApp)
+const videoRef &#x3D; ref&lt;HTMLVideoElement | null&gt;(null)
+const bus &#x3D; ref&lt;VideoProxy&gt;()
+
+import &#123; storeToRefs &#125; from &quot;pinia&quot;
+import &#123; useWriteStore &#125; from &quot;@&#x2F;store&quot;
+const writeStore &#x3D; useWriteStore()
+const &#123; isTeacherSpeaking &#125; &#x3D; storeToRefs(writeStore)
+
+const props &#x3D; defineProps(&#123;
+  src: &#123;
+    type: String,
+    default: &quot;&quot;,
+  &#125;,
+  duration: &#123;
+    type: Number,
+    default: 0,
+  &#125;,
+  autoplay: &#123;
+    type: Boolean,
+    default: false,
+  &#125;,
+  muted: &#123;
+    type: Boolean,
+    default: false,
+  &#125;,
+  fitMode: &#123;
+    type: String,
+    default: &quot;W&quot;, &#x2F;&#x2F;H:高宽比适配，W:宽度适配
+  &#125;,
+  scale: &#123;
+    type: Number,
+    default: 1,
+  &#125;,
+  zIndex: &#123;
+    type: Number,
+    default: 0,
+  &#125;,
+&#125;)
+const active &#x3D; ref(false)
+const playerId &#x3D; ref(&quot;&quot;)
+onBeforeMount(() &#x3D;&gt; &#123;
+  playerId.value &#x3D; uuidv4()
+&#125;)
+
+async function showNativeVideo() &#123;
+  const rect &#x3D; videoRef.value?.getBoundingClientRect()
+  if (!rect) return
+  let &#123; left, right, top, bottom, width, height &#125; &#x3D; rect
+  await $bridge.showLiveVideoView(&#123;
+    centerX: ((right + left) &#x2F; 2 &#x2F; window.innerWidth).toString(),
+    centerY: ((bottom + top) &#x2F; 2 &#x2F; window.innerHeight).toString(),
+    width: (width &#x2F; window.innerWidth).toString(),
+    height: (height &#x2F; window.innerHeight).toString(),
+    cornerRadius: &quot;12&quot;,
+    zIndex: &quot;1&quot;,
+    playerId: playerId.value,
+    renderMode: &quot;0&quot;,
+  &#125;)
+&#125;
+
+function removeNativeVideo() &#123;
+  $bridge.removeVideoPlayerView(&#123;
+    playerId: playerId.value,
+  &#125;)
+&#125;
+
+const setActive &#x3D; async (val: boolean) &#x3D;&gt; &#123;
+  active.value &#x3D; val
+  await nextTick()
+  console.log(&quot;🚀 ~ setActive ~ val:&quot;, val, props.src)
+  if (isApp.value) &#123;
+    if (!val) &#123;
+      removeNativeVideo()
+    &#125; else &#123;
+      showNativeVideo()
+      bus.value?.emit(&quot;ready&quot;)
+    &#125;
+  &#125;
+&#125;
+const setBus &#x3D; (_bus: VideoProxy) &#x3D;&gt; &#123;
+  bus.value &#x3D; _bus
+&#125;
+
+const play &#x3D; () &#x3D;&gt; &#123;
+  console.log(&quot;DEBUG_LOG:play call &quot;, props.src)
+  if (isApp.value) &#123;
+    $bridge.playLiveVideo(&#123;
+      playUrl: props.src,
+      onTick: (time: number) &#x3D;&gt; &#123;
+        isTeacherSpeaking.value &#x3D; true
+        bus.value?.emit(&quot;tick&quot;, time &#x2F; 1000, 51)
+      &#125;,
+      onStatus: (status: string) &#x3D;&gt; &#123;
+        if (status &#x3D;&#x3D; &quot;4&quot;) &#123;
+          isTeacherSpeaking.value &#x3D; false
+          bus.value?.emit(&quot;end&quot;)
+        &#125;
+      &#125;,
+      playerId: playerId.value,
+    &#125;)
+  &#125; else &#123;
+    videoRef.value?.play()
+  &#125;
+&#125;
+const pause &#x3D; () &#x3D;&gt; &#123;
+  if (isApp.value) &#123;
+    $bridge.pauseLiveVideo(&#123;
+      playerId: playerId.value,
+    &#125;)
+  &#125; else &#123;
+    videoRef.value?.pause()
+  &#125;
+&#125;
+const resume &#x3D; () &#x3D;&gt; &#123;
+  if (isApp.value) &#123;
+    $bridge.resumeLiveVideo(&#123;
+      playerId: playerId.value,
+    &#125;)
+  &#125; else &#123;
+    videoRef.value?.play()
+  &#125;
+&#125;
+const seek &#x3D; (time: number) &#x3D;&gt; &#123;
+  if (isApp.value) &#123;
+    $bridge.seekLiveVideoTo(&#123;
+      playerId: playerId.value,
+      seekTime: time.toString(),
+    &#125;)
+  &#125; else &#123;
+    if (videoRef.value) &#123;
+      videoRef.value.currentTime &#x3D; time
+    &#125;
+  &#125;
+&#125;
+const handleCanPlay &#x3D; () &#x3D;&gt; &#123;
+  console.log(&quot;DEBUG_LOG:call can play &quot;, props.src)
+  bus.value?.emit(&quot;ready&quot;)
+&#125;
+const handleVideoEnd &#x3D; () &#x3D;&gt; &#123;
+  isTeacherSpeaking.value &#x3D; false
+  bus.value?.emit(&quot;end&quot;)
+&#125;
+const handleError &#x3D; () &#x3D;&gt; &#123;
+  bus.value?.emit(&quot;error&quot;)
+&#125;
+const handleTimeUpdate &#x3D; () &#x3D;&gt; &#123;
+  isTeacherSpeaking.value &#x3D; true
+  bus.value?.emit(
+    &quot;tick&quot;,
+    videoRef.value?.currentTime || 0,
+    videoRef.value?.duration
+  )
+&#125;
+const handleLoadedMetadata &#x3D; () &#x3D;&gt; &#123;
+  bus.value?.emit(&quot;meta&quot;, videoRef.value?.duration || 0)
+&#125;
+
+watch(
+  () &#x3D;&gt; props.src,
+  (val) &#x3D;&gt; &#123;
+    console.log(&quot;DEBUG_LOG:call video src change&quot;, val)
+  &#125;
+)
+
+defineExpose(&#123;
+  play,
+  pause,
+  resume,
+  seek,
+  setActive,
+  setBus,
+&#125;)
+&lt;&#x2F;script&gt;
+
+&lt;style scoped lang&#x3D;&quot;scss&quot;&gt;
+.video-player &#123;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="在TeacherWindow-vue组件中使用"><a href="#在TeacherWindow-vue组件中使用" class="headerlink" title="在TeacherWindow.vue组件中使用"></a>在<code>TeacherWindow.vue</code>组件中使用</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;WriteUtilsVideoPlayer src&#x3D;&quot;xxx&quot; :fitMode&#x3D;&quot;&#39;W&#39;&quot; ref&#x3D;&quot;videoTeacherEnterRef&quot; &#x2F;&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import &#123; ref, onMounted &#125; from &quot;vue&quot;
+
+import &#123; useWriteStore &#125; from &quot;@&#x2F;store&quot;
+const writeStore &#x3D; useWriteStore()
+const &#123; videoTeacherProxy &#125; &#x3D; writeStore
+
+import WriteUtilsVideoPlayer from &quot;@&#x2F;components&#x2F;write&#x2F;Utils&#x2F;VideoPlayer.vue&quot;
+
+const videoTeacherEnterRef &#x3D; ref&lt;InstanceType&lt;
+  typeof WriteUtilsVideoPlayer
+&gt; | null&gt;(null)
+
+onMounted(() &#x3D;&gt; &#123;
+  if (videoTeacherEnterRef.value) &#123;
+    videoTeacherProxy.takeOver(videoTeacherEnterRef.value)
+  &#125;
+&#125;)
+&lt;&#x2F;script&gt;
+
+&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="在-write-ts-中的使用"><a href="#在-write-ts-中的使用" class="headerlink" title="在 write.ts 中的使用"></a>在 write.ts 中的使用</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 创建视频代理实例</span>
+<span class="token keyword">const</span> videoTeacherProxy<span class="token operator">:</span> VideoProxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VideoProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 监听播放进度事件</span>
+videoTeacherProxy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">__updateTimelineEmitters</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span> <span class="token comment">// 更新时间轴发射器</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 监听播放结束事件</span>
+videoTeacherProxy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">__handleCleanForVideo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 清理视频相关状态</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>-</p>
+<h2 id="技术亮点"><a href="#技术亮点" class="headerlink" title="技术亮点"></a>技术亮点</h2><h3 id="1-跨平台兼容性"><a href="#1-跨平台兼容性" class="headerlink" title="1. 跨平台兼容性"></a>1. 跨平台兼容性</h3><ul>
+<li>统一接口设计，支持 App 和 Web 环境</li>
+<li>自动环境检测，选择合适的播放方式</li>
+<li>事件机制统一，屏蔽平台差异</li>
+</ul>
+<h3 id="2-事件驱动架构"><a href="#2-事件驱动架构" class="headerlink" title="2. 事件驱动架构"></a>2. 事件驱动架构</h3><ul>
+<li>松耦合设计，组件间通过事件通信</li>
+<li>支持多种事件类型，易于扩展</li>
+<li>时间轴事件系统，精确控制播放进度</li>
+</ul>
+<h3 id="3-状态管理"><a href="#3-状态管理" class="headerlink" title="3. 状态管理"></a>3. 状态管理</h3><ul>
+<li>清晰的状态定义和管理</li>
+<li>状态变化自动触发相应行为</li>
+<li>防止状态不一致问题</li>
+</ul>
+<h3 id="4-代理模式应用"><a href="#4-代理模式应用" class="headerlink" title="4. 代理模式应用"></a>4. 代理模式应用</h3><ul>
+<li>封装复杂播放逻辑</li>
+<li>提供统一控制接口</li>
+<li>支持状态检查和事件管理</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-写作教学"><a href="#1-写作教学" class="headerlink" title="1. 写作教学"></a>1. 写作教学</h3><ul>
+<li>教师讲解视频播放</li>
+<li>进度同步和时间轴事件</li>
+<li>焦点和气泡显示</li>
+</ul>
+<h3 id="2-交互式教学"><a href="#2-交互式教学" class="headerlink" title="2. 交互式教学"></a>2. 交互式教学</h3><ul>
+<li>视频播放与用户交互结合</li>
+<li>实时状态反馈</li>
+<li>多组件协调工作</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个视频播放系统通过代理模式、事件驱动架构和状态管理，实现了一个功能完整、扩展性强的跨平台视频播放解决方案。系统设计清晰，代码结构良好，为写作教学等场景提供了可靠的视频播放支持。</p>
+<p><strong>核心优势</strong>:</p>
+<ul>
+<li>✅ 跨平台兼容性好</li>
+<li>✅ 事件驱动，易于扩展</li>
+<li>✅ 状态管理清晰</li>
+<li>✅ 接口统一，使用简单</li>
+<li>✅ 支持复杂的时间轴事件</li>
+</ul>
+<p>这个系统是一个很好的视频播放解决方案，值得在其他项目中参考和应用。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">高红翔</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/">https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">高红翔</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="时间轴事件管理器">
+                        
+                        <span class="card-title">时间轴事件管理器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-07-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
+                                    架构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/07/25/git-pei-zhi-ge-ren-xin-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="git配置个人信息">
+                        
+                        <span class="card-title">git配置个人信息</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 闪烁之狐<br />'
+            + '文章作者: 高红翔<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2025</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">高红翔</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">122.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2022";
+                    var startMonth = "6";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ghx9908" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2460013249@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2460013249" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2460013249" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var searchFunc = function (path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function (xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function () {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function () {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function (data) {
+                            var isMatch = true;
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title !== '' && data_content !== '') {
+                                keywords.forEach(function (keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i === 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start === 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substr(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function (keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                    });
+
+                                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        };
+
+        searchFunc('/search.xml', 'searchInput', 'searchResult');
+    });
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
