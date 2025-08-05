@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2025-07-29T02:30:41.295Z</updated>
+  <updated>2025-08-05T09:05:08.333Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git私钥配置完整指南</title>
+    <link href="https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/"/>
+    <id>https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/</id>
+    <published>2025-08-04T15:20:33.000Z</published>
+    <updated>2025-08-05T09:05:08.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-检查现有-SSH-密钥&quot;&gt;&lt;a href=&quot;#1-检查现有-SSH-密钥&quot; class=&quot;headerlink&quot; title=&quot;1. 检查现有 SSH 密钥&quot;&gt;&lt;/a&gt;1. 检查现有 SSH 密钥&lt;/h3&gt;&lt;p&gt;首先检查是否已经有 SSH</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://ghx9908.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://ghx9908.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electron原生菜单完整指南</title>
+    <link href="https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/"/>
+    <id>https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/</id>
+    <published>2025-07-31T19:23:04.000Z</published>
+    <updated>2025-08-05T09:05:08.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Electron 桌面应用提供了四类原生菜单，每种菜单都有其特定的用途和实现方式。本文档将详细介绍这四类菜单的实现方法、最佳实践和常见问题解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="electron" scheme="https://ghx9908.github.io/tags/electron/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electron进程间通信最佳实践指南</title>
+    <link href="https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/"/>
+    <id>https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/</id>
+    <published>2025-07-29T17:59:37.000Z</published>
+    <updated>2025-08-05T09:05:08.333Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;Electron 应用由主进程和渲染进程组成，它们运行在不同的进程中，需要通过 IPC (Inter-Process</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="electron" scheme="https://ghx9908.github.io/tags/electron/"/>
+    
+  </entry>
+  
+  <entry>
     <title>时间轴事件管理器</title>
     <link href="https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/</id>
     <published>2025-07-29T10:27:15.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -49,7 +127,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/</id>
     <published>2025-07-29T10:25:59.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -75,7 +153,7 @@
     <link href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/"/>
     <id>https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</id>
     <published>2025-07-25T10:58:17.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -100,7 +178,7 @@
     <link href="https://ghx9908.github.io/2025/07/23/mac-pei-zhi/"/>
     <id>https://ghx9908.github.io/2025/07/23/mac-pei-zhi/</id>
     <published>2025-07-23T13:53:06.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -125,7 +203,7 @@
     <link href="https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/"/>
     <id>https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/</id>
     <published>2025-06-24T12:29:19.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -150,7 +228,7 @@
     <link href="https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/"/>
     <id>https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/</id>
     <published>2024-10-18T15:57:22.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -175,7 +253,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/"/>
     <id>https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/</id>
     <published>2024-10-17T17:51:54.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -200,7 +278,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/posscss/"/>
     <id>https://ghx9908.github.io/2024/10/17/posscss/</id>
     <published>2024-10-17T17:30:11.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -225,7 +303,7 @@
     <link href="https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/"/>
     <id>https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/</id>
     <published>2024-10-09T16:14:56.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -248,7 +326,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/express/"/>
     <id>https://ghx9908.github.io/2024/10/08/express/</id>
     <published>2024-10-08T14:48:34.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -271,7 +349,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/jwt/"/>
     <id>https://ghx9908.github.io/2024/10/08/jwt/</id>
     <published>2024-10-08T11:27:55.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.333Z</updated>
     
     
       
@@ -295,7 +373,7 @@
     <link href="https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/</id>
     <published>2024-09-27T18:28:27.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -318,7 +396,7 @@
     <link href="https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/"/>
     <id>https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/</id>
     <published>2024-09-26T15:25:43.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -342,7 +420,7 @@
     <link href="https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/"/>
     <id>https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/</id>
     <published>2024-07-15T17:26:30.000Z</published>
-    <updated>2025-07-29T02:30:41.295Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -368,7 +446,7 @@
     <link href="https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/"/>
     <id>https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/</id>
     <published>2024-06-27T15:33:25.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -394,7 +472,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/"/>
     <id>https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -423,7 +501,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/"/>
     <id>https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
+    <updated>2025-08-05T09:05:08.332Z</updated>
     
     
       
@@ -441,86 +519,6 @@
     
     
     <category term="React" scheme="https://ghx9908.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue中的性能优化有哪些</title>
-    <link href="https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/"/>
-    <id>https://ghx9908.github.io/2024/05/11/vue-zhong-de-xing-neng-you-hua-you-na-xie/</id>
-    <published>2024-05-11T16:51:14.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;Vue2 中数据层级不易过深，（会数据劫持每一层都增加getter和setter）.合理设置响应式数据；&lt;/li&gt;
-&lt;li&gt;Vue2 非响应式数据可以通过 Object.freeze()方法冻结属性；&lt;/li&gt;
-&lt;li&gt;Vue2 中采用函数式组件 -&amp;gt;</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数组件的优势</title>
-    <link href="https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/"/>
-    <id>https://ghx9908.github.io/2024/05/11/han-shu-zu-jian-de-you-shi/</id>
-    <published>2024-05-11T16:43:46.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;函数式组件是一种定义&lt;strong&gt;自身没有任何状态的组件的方式。它们很像纯函数：接收 props，返回 vnodes&lt;/strong&gt;。函数式组件在渲染过程中不会创建组件实例 (也就是说，没有</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.set方法是如何实现的</title>
-    <link href="https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/"/>
-    <id>https://ghx9908.github.io/2024/03/28/vue-set-fang-fa-shi-ru-he-shi-xian-de/</id>
-    <published>2024-03-28T17:32:45.000Z</published>
-    <updated>2025-07-29T02:30:41.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;code&gt;Vue2&lt;/code&gt; 不允许在已经创建的实例上动态添加新的响应式属性。所以采用 set API 来进行实现。&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-typescript&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
     
   </entry>
   
