@@ -491,14 +491,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    617
+                    720
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -570,14 +570,26 @@ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzs
 </ul>
 </li>
 <li><p>使用 Starship 美化终端提示符（<code>.zshrc</code> 添加）</p>
+</li>
+</ul>
+<p>主题使用<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7293342627814244367?searchId=20250818202221EB3DC46982643A3386E9">https://juejin.cn/post/7293342627814244367?searchId=20250818202221EB3DC46982643A3386E9</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7293342627814244367?searchId=20250826140803C7B559BEC4FC8596A209">https://juejin.cn/post/7293342627814244367?searchId=20250826140803C7B559BEC4FC8596A209</a></p>
 <pre class="line-numbers language-none"><code class="language-none">bash
 
 
 复制编辑
 eval &quot;$(starship init zsh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-</li>
-</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-autosuggestions
+
+<span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-syntax-highlighting
+
+<span class="token function">nano</span> ~/.zshrc
+
+<span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>git zsh-autosuggestions zsh-syntax-highlighting<span class="token punctuation">)</span>
+
+<span class="token builtin class-name">source</span> ~/.zshrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <h2 id="✅-三、开发通用工具安装"><a href="#✅-三、开发通用工具安装" class="headerlink" title="✅ 三、开发通用工具安装"></a>✅ 三、开发通用工具安装</h2><h3 id="1-Git-与-SSH-配置"><a href="#1-Git-与-SSH-配置" class="headerlink" title="1. Git 与 SSH 配置"></a>1. Git 与 SSH 配置</h3><pre class="line-numbers language-none"><code class="language-none">bash
 
@@ -609,7 +621,9 @@ pbcopy &lt; ~&#x2F;.ssh&#x2F;id_ed25519.pub<span aria-hidden="true" class="line-
 
 复制编辑
 brew install nvm
-mkdir ~&#x2F;.nvm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.39.7&#x2F;install.sh | bash
+source ~&#x2F;.zshrc  # 或 ~&#x2F;.bash_profile，取决于你用的 shell
+mkdir ~&#x2F;.nvm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在 <code>~/.zshrc</code> 添加：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvm"</span>
@@ -1140,7 +1154,7 @@ brew <span class="token function">install</span> <span class="token parameter va
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">126.7k</span>&nbsp;字
+                class="white-color">130.5k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2025-08-05T09:05:08.333Z</updated>
+  <updated>2025-09-10T07:23:12.546Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Electron自定义协议完全指南</title>
+    <link href="https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/"/>
+    <id>https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/</id>
+    <published>2025-08-25T19:30:55.000Z</published>
+    <updated>2025-09-10T07:23:12.546Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;想象一下，用户在网页上点击一个链接，就能直接唤起你的 Electron 应用并跳转到指定页面，或者在 OAuth</summary>
+        
+      
+    
+    
+    
+    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="electron" scheme="https://ghx9908.github.io/tags/electron/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git私钥配置完整指南</title>
     <link href="https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/</id>
     <published>2025-08-04T15:20:33.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.546Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/</id>
     <published>2025-07-31T19:23:04.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.546Z</updated>
     
     
       
@@ -74,7 +99,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/</id>
     <published>2025-07-29T17:59:37.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -99,7 +124,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/</id>
     <published>2025-07-29T10:27:15.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -127,7 +152,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/</id>
     <published>2025-07-29T10:25:59.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.546Z</updated>
     
     
       
@@ -153,7 +178,7 @@
     <link href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/"/>
     <id>https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</id>
     <published>2025-07-25T10:58:17.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -178,7 +203,7 @@
     <link href="https://ghx9908.github.io/2025/07/23/mac-pei-zhi/"/>
     <id>https://ghx9908.github.io/2025/07/23/mac-pei-zhi/</id>
     <published>2025-07-23T13:53:06.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -203,7 +228,7 @@
     <link href="https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/"/>
     <id>https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/</id>
     <published>2025-06-24T12:29:19.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -228,7 +253,7 @@
     <link href="https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/"/>
     <id>https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/</id>
     <published>2024-10-18T15:57:22.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -253,7 +278,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/"/>
     <id>https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/</id>
     <published>2024-10-17T17:51:54.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -278,7 +303,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/posscss/"/>
     <id>https://ghx9908.github.io/2024/10/17/posscss/</id>
     <published>2024-10-17T17:30:11.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -303,7 +328,7 @@
     <link href="https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/"/>
     <id>https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/</id>
     <published>2024-10-09T16:14:56.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -326,7 +351,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/express/"/>
     <id>https://ghx9908.github.io/2024/10/08/express/</id>
     <published>2024-10-08T14:48:34.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -349,7 +374,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/jwt/"/>
     <id>https://ghx9908.github.io/2024/10/08/jwt/</id>
     <published>2024-10-08T11:27:55.000Z</published>
-    <updated>2025-08-05T09:05:08.333Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -373,7 +398,7 @@
     <link href="https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/</id>
     <published>2024-09-27T18:28:27.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -396,7 +421,7 @@
     <link href="https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/"/>
     <id>https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/</id>
     <published>2024-09-26T15:25:43.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -420,7 +445,7 @@
     <link href="https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/"/>
     <id>https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/</id>
     <published>2024-07-15T17:26:30.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
+    <updated>2025-09-10T07:23:12.545Z</updated>
     
     
       
@@ -446,7 +471,7 @@
     <link href="https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/"/>
     <id>https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/</id>
     <published>2024-06-27T15:33:25.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
+    <updated>2025-09-10T07:23:12.544Z</updated>
     
     
       
@@ -472,7 +497,7 @@
     <link href="https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/"/>
     <id>https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/</id>
     <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
+    <updated>2025-09-10T07:23:12.544Z</updated>
     
     
       
@@ -493,32 +518,6 @@
     
     
     <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React中的diff算法？</title>
-    <link href="https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/"/>
-    <id>https://ghx9908.github.io/2024/05/11/react-zhong-de-diff-suan-fa/</id>
-    <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-08-05T09:05:08.332Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;React 的 diff 算法是 React 在更新 DOM 时使用的算法。它的目的是最小化页面的重新渲染，以便提高性能。&lt;/p&gt;
-&lt;p&gt;当 React 渲染组件时，它会在内存中生成虚拟 DOM 树。然后，它会对比新的虚拟 DOM</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="React" scheme="https://ghx9908.github.io/tags/React/"/>
     
   </entry>
   

@@ -638,20 +638,22 @@ key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/">
+                        <a href="/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 中如何检测数组变化?">
+                                <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 中如何进行依赖收集">
                                 
-                                <span class="card-title">Vue 中如何检测数组变化?</span>
+                                <span class="card-title">Vue 中如何进行依赖收集</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1.1 Vue2 中采用重写数组方法的方式
-数组考虑性能原因没有用defineProperty对数组的每一项进行拦截，而是选择重写数组（push,shift,pop,splice,unshift,sort,reverse）方法。数组中如果是
+                                    1.1 依赖收集的流程
+每个属性都拥有自己的dep属性，存放他所依赖的 watcher，当属性变化后会通知自己对应的 watcher 去更新
+默认在初始化时会调用 render 函数，此时会触发属性依赖收集 dep.depend
+当属性发生
                                 
                             </div>
                             <div class="publish-info">
@@ -698,22 +700,20 @@ key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/">
+                        <a href="/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 中如何进行依赖收集">
+                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 中如何检测数组变化?">
                                 
-                                <span class="card-title">Vue 中如何进行依赖收集</span>
+                                <span class="card-title">Vue 中如何检测数组变化?</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1.1 依赖收集的流程
-每个属性都拥有自己的dep属性，存放他所依赖的 watcher，当属性变化后会通知自己对应的 watcher 去更新
-默认在初始化时会调用 render 函数，此时会触发属性依赖收集 dep.depend
-当属性发生
+                                    1.1 Vue2 中采用重写数组方法的方式
+数组考虑性能原因没有用defineProperty对数组的每一项进行拦截，而是选择重写数组（push,shift,pop,splice,unshift,sort,reverse）方法。数组中如果是
                                 
                             </div>
                             <div class="publish-info">
@@ -1166,7 +1166,7 @@ Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">126.7k</span>&nbsp;字
+                class="white-color">130.5k</span>&nbsp;字
             
             
             

@@ -1,0 +1,1594 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Electron自定义协议完全指南, 闪烁之狐 高红翔">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Electron自定义协议完全指南 | 闪烁之狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="闪烁之狐" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">闪烁之狐</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="https://ghx9908.github.io/website/">
+          
+          <span>My Site</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">闪烁之狐</div>
+        <div class="logo-desc">
+            
+            从来没有真正的绝境，只有心灵的迷途
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="https://ghx9908.github.io/website/ " style="margin-left:75px">
+				  
+		          <span>My Site</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ghx9908/ghx9908.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ghx9908/ghx9908.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Electron自定义协议完全指南</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/electron/">
+                                <span class="chip bg-color">electron</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                前端框架
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-25
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        <!-- 代码块折行 -->
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>想象一下，用户在网页上点击一个链接，就能直接唤起你的 Electron 应用并跳转到指定页面，或者在 OAuth 登录流程中，无缝地从浏览器跳转回应用并安全地传递 Token。这就是自定义协议（Custom Protocol）的魅力。</p>
+<p>自定义协议，也称为深度链接（Deep Linking），允许我们为应用注册一个独一无二的 URL 方案（如 <code>myapp://</code>）。它就像是为你的桌面应用开启了一扇能与外部世界直接对话的“任意门”，是提升应用集成度和用户体验的关键技术。</p>
+<p>本文将带你从零开始，一步步构建一个强大、安全且易于维护的自定义协议系统。你将学到：</p>
+<ul>
+<li><strong>5 分钟快速上手</strong>：用最少的代码实现核心的应用唤起功能。</li>
+<li><strong>生产级处理器</strong>：设计并实现一个健壮的 <code>ProtocolManager</code>，优雅地处理各种协议请求。</li>
+<li><strong>实战核心功能</strong>：实现页面导航、动态开窗等真实世界的应用场景。</li>
+<li><strong>安全防御</strong>：学习如何识别并防御来自协议链接的潜在安全威胁。</li>
+</ul>
+<p>无论你是初学者还是经验丰富的开发者，都能通过本文，完全掌握 Electron 自定义协议的精髓。</p>
+<hr>
+<h2 id="第一部分：快速上手-——-你的第一个自定义协议"><a href="#第一部分：快速上手-——-你的第一个自定义协议" class="headerlink" title="第一部分：快速上手 —— 你的第一个自定义协议"></a>第一部分：快速上手 —— 你的第一个自定义协议</h2><p>在深入理论之前，我们先来一次“闪电战”。目标：用最精简的代码，实现通过链接 <code>electron-demo://hello</code> 唤起应用，并弹出一个对话框显示 “Hello from Protocol!”。</p>
+<h3 id="步骤-1：注册协议"><a href="#步骤-1：注册协议" class="headerlink" title="步骤 1：注册协议"></a>步骤 1：注册协议</h3><p>在你的主进程文件（通常是 <code>main.js</code> 或 <code>index.js</code>）的 <code>app.whenReady()</code> 回调中，添加以下代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> app<span class="token punctuation">,</span> dialog <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>defaultApp<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">.</span>length <span class="token operator">>=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    app<span class="token punctuation">.</span><span class="token function">setAsDefaultProtocolClient</span><span class="token punctuation">(</span><span class="token string">"electron-demo"</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>execPath<span class="token punctuation">,</span> <span class="token punctuation">[</span>
+      process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  app<span class="token punctuation">.</span><span class="token function">setAsDefaultProtocolClient</span><span class="token punctuation">(</span><span class="token string">"electron-demo"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>app.setAsDefaultProtocolClient(&#39;electron-demo&#39;)</code> 就是核心，它会在操作系统中注册 <code>electron-demo://</code> 这个协议，并将其与你的应用关联起来。</p>
+<ul>
+<li><strong>注意</strong>：在开发环境中（当 <code>process.defaultApp</code> 为 <code>true</code> 时），需要额外传递 <code>process.execPath</code> 和参数，以确保协议能正确唤起打包前的应用。</li>
+</ul>
+<h3 id="步骤-2：确保应用单例"><a href="#步骤-2：确保应用单例" class="headerlink" title="步骤 2：确保应用单例"></a>步骤 2：确保应用单例</h3><p>我们不希望每次点击协议链接都打开一个新应用实例。因此，需要确保应用是“单例”的。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> gotTheLock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">requestSingleInstanceLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>gotTheLock<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  app<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"second-instance"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> commandLine<span class="token punctuation">,</span> workingDirectory</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 当第二个实例被启动时，会在这里触发</span>
+    <span class="token comment">// commandLine 是一个包含了启动参数的数组，协议 URL 就在其中</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这段代码保证了只有一个应用实例在运行。当用户再次通过协议链接唤起应用时，新的实例会立刻退出，并将启动参数传递给已存在的主实例，触发 <code>second-instance</code> 事件。</p>
+<h3 id="步骤-3：接收并处理-URL"><a href="#步骤-3：接收并处理-URL" class="headerlink" title="步骤 3：接收并处理 URL"></a>步骤 3：接收并处理 URL</h3><p>现在，我们在 <code>second-instance</code> 事件中捕获并处理这个 URL。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"second-instance"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> commandLine<span class="token punctuation">,</span> workingDirectory</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> commandLine<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 通常 URL 是最后一个参数</span>
+
+  dialog<span class="token punctuation">.</span><span class="token function">showMessageBox</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"info"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"协议唤起"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">接收到的 URL: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>url<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于 macOS，还需要处理 <code>open-url</code> 事件，它在应用首次被协议链接启动时触发。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"open-url"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> url</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  dialog<span class="token punctuation">.</span><span class="token function">showMessageBox</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"info"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"协议唤起 (macOS)"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">接收到的 URL: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>url<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="步骤-4：测试"><a href="#步骤-4：测试" class="headerlink" title="步骤 4：测试"></a>步骤 4：测试</h3><p>启动你的 Electron 应用。然后，打开你的浏览器，在地址栏输入 <code>electron-demo://hello</code> 并回车。或者在终端中执行：</p>
+<ul>
+<li><strong>macOS</strong>: <code>open &quot;electron-demo://hello&quot;</code></li>
+<li><strong>Windows</strong>: <code>start electron-demo://hello</code></li>
+</ul>
+<p>如果一切顺利，你的应用窗口应该会弹出，并显示一个包含 URL 的对话框。恭喜，你已经迈出了第一步！</p>
+<hr>
+<h2 id="第二部分：构建健壮的协议处理器-ProtocolManager"><a href="#第二部分：构建健壮的协议处理器-ProtocolManager" class="headerlink" title="第二部分：构建健壮的协议处理器 ProtocolManager"></a>第二部分：构建健壮的协议处理器 <code>ProtocolManager</code></h2><p>“快速上手”的示例虽然能工作，但将所有逻辑都堆在主进程文件中，很快就会变得难以维护。一个更优雅的方案是创建一个专门的 <code>ProtocolManager</code> 类，来封装所有与协议相关的逻辑。</p>
+<h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><p><code>ProtocolManager</code> 的核心职责是：</p>
+<ol>
+<li> <strong>封装</strong>：将协议注册、事件监听、URL 解析等底层细节封装起来。</li>
+<li> <strong>解耦</strong>：让主进程文件只负责在合适的时机（如 <code>app.whenReady</code>）初始化管理器，而无需关心具体实现。</li>
+<li> <strong>可扩展</strong>：通过清晰的结构，轻松地添加新的协议动作（Actions），而不会让代码变得混乱。</li>
+</ol>
+<h3 id="URL-结构深度解析"><a href="#URL-结构深度解析" class="headerlink" title="URL 结构深度解析"></a>URL 结构深度解析</h3><p>一个设计良好的协议 URL 应该像一个微型的 API 调用。我们约定使用以下结构：</p>
+<p><code>scheme://action?param1=value1&amp;param2=value2</code></p>
+<p>例如：<code>electron-demo://open-window?type=settings&amp;title=设置</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">URL 部分</th>
+<th align="left">示例值</th>
+<th align="left"><code>URL</code> 对象属性</th>
+<th align="left">在 <code>ProtocolManager</code> 中的映射</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">协议 (Scheme)</td>
+<td align="left"><code>electron-demo:</code></td>
+<td align="left"><code>protocol</code></td>
+<td align="left"><code>protocolName</code> 属性</td>
+<td align="left">识别应用</td>
+</tr>
+<tr>
+<td align="left"><strong>动作 (Host)</strong></td>
+<td align="left"><code>open-window</code></td>
+<td align="left"><code>hostname</code> / <code>host</code></td>
+<td align="left"><strong><code>action</code></strong> 变量 (核心)</td>
+<td align="left"><strong>决定执行什么操作</strong></td>
+</tr>
+<tr>
+<td align="left">参数 (Query)</td>
+<td align="left"><code>?type=settings...</code></td>
+<td align="left"><code>searchParams</code></td>
+<td align="left"><code>params</code> 变量 (URLSearchParams)</td>
+<td align="left">为操作提供具体数据</td>
+</tr>
+</tbody></table>
+<p>通过这种方式，<code>hostname</code> 成为了我们路由不同功能的关键，而 <code>searchParams</code> 则为这些功能提供了灵活的参数。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>以下是 <code>ProtocolManager</code> 的核心骨架，它提炼自 <code>src/main/protocol-manager.js</code>。</p>
+<h4 id="1-注册与监听"><a href="#1-注册与监听" class="headerlink" title="1. 注册与监听"></a>1. 注册与监听</h4><p><code>registerProtocol</code> 方法负责在操作系统中注册协议，并处理了 Windows 和 macOS/Linux 的平台差异。注册成功后，立即调用 <code>setupProtocolHandlers</code> 来设置事件监听。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js (简化版)</span>
+<span class="token keyword">class</span> <span class="token class-name">ProtocolManager</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">windowManager</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>protocolName <span class="token operator">=</span> <span class="token string">'electron-demo'</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token function">registerProtocol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">isDefaultProtocolClient</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>protocolName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        app<span class="token punctuation">.</span><span class="token function">setAsDefaultProtocolClient</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>protocolName<span class="token punctuation">,</span> process<span class="token punctuation">.</span>execPath<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token function">setupProtocolHandlers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'second-instance'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> commandLine</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> url <span class="token operator">=</span> commandLine<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">arg</span> <span class="token operator">=></span> arg<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>protocolName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">://</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleProtocolUrl</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'open-url'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> url</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleProtocolUrl</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-解析与路由"><a href="#2-解析与路由" class="headerlink" title="2. 解析与路由"></a>2. 解析与路由</h4><p><code>handleProtocolUrl</code> 是协议处理的枢纽。它接收原始 URL，使用标准的 <code>URL</code> 对象进行解析，并从中提取出 <code>action</code> 和 <code>params</code>。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js (简化版)</span>
+<span class="token function">handleProtocolUrl</span><span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> urlObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> action <span class="token operator">=</span> urlObj<span class="token punctuation">.</span>hostname<span class="token punctuation">;</span> <span class="token comment">// 核心：action 来自 hostname</span>
+    <span class="token keyword">const</span> params <span class="token operator">=</span> urlObj<span class="token punctuation">.</span>searchParams<span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">executeProtocolAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'协议 URL 解析失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>executeProtocolAction</code> 则像一个交通警察，根据 <code>action</code> 的值，将请求分发到不同的处理函数。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js (简化版)</span>
+<span class="token function">executeProtocolAction</span><span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">case</span> <span class="token string">'open-window'</span><span class="token operator">:</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleOpenWindow</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'navigate'</span><span class="token operator">:</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleNavigate</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">未知的协议操作: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>action<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通过这种方式，我们构建了一个清晰、健壮且易于扩展的协议处理系统。在下一部分，我们将深入探讨如何实现这些具体的 <code>handle*</code> 方法。</p>
+<hr>
+<h2 id="第三部分：实战演练-——-实现强大的协议动作-Actions"><a href="#第三部分：实战演练-——-实现强大的协议动作-Actions" class="headerlink" title="第三部分：实战演练 —— 实现强大的协议动作 (Actions)"></a>第三部分：实战演练 —— 实现强大的协议动作 (Actions)</h2><p>一个协议处理器只有在能执行有意义的操作时才算完整。我们将每一个通过协议暴露的功能（如导航、弹窗）都看作一个独立的 <code>Action</code>。下面，我们来实现几个核心的 <code>Action</code>。</p>
+<h3 id="实战-1：页面导航-navigate"><a href="#实战-1：页面导航-navigate" class="headerlink" title="实战 1：页面导航 (navigate)"></a>实战 1：页面导航 (<code>navigate</code>)</h3><p>这是最常见的需求：从外部链接直接跳转到应用的特定页面。</p>
+<ul>
+<li><strong>目标 URL</strong>: <code>electron-demo://navigate?route=/settings</code></li>
+<li><strong>核心逻辑</strong>: 主进程接收到指令后，需要通知渲染进程（前端页面）执行路由跳转。</li>
+</ul>
+<p><strong>主进程实现 (<code>ProtocolManager</code>)</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js</span>
+<span class="token function">handleNavigate</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> route <span class="token operator">=</span> params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'route'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'/'</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> mainWindow <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windowManager<span class="token punctuation">.</span><span class="token function">getMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">🧭 通过协议导航到: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>route<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>mainWindow<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 通过 IPC 通道将导航指令发送给渲染进程</span>
+    mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'protocol-navigate'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> route <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>渲染进程实现 (例如 <code>App.vue</code> 或 <code>renderer.js</code>)</strong></p>
+<p>在渲染进程中，我们需要监听 <code>protocol-navigate</code> 事件，并调用前端路由库（如 Vue Router, React Router）执行跳转。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 某个前端组件中</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> ipcRenderer <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span>
+
+ipcRenderer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"protocol-navigate"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> route <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">收到导航指令，跳转到: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>route<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// 假设你正在使用 Vue Router</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实战-2：动态创建窗口-open-window"><a href="#实战-2：动态创建窗口-open-window" class="headerlink" title="实战 2：动态创建窗口 (open-window)"></a>实战 2：动态创建窗口 (<code>open-window</code>)</h3><p>让协议能够根据参数打开不同类型的窗口，极大地增强了应用的灵活性。</p>
+<ul>
+<li><strong>目标 URL</strong>: <code>electron-demo://open-window?type=settings&amp;title=设置窗口</code></li>
+<li><strong>核心逻辑</strong>: 主进程解析出窗口类型 <code>type</code> 和标题 <code>title</code>，然后调用一个窗口管理器（<code>WindowManager</code>）来创建和管理新窗口。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js</span>
+<span class="token function">handleOpenWindow</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> windowType <span class="token operator">=</span> params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'type'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'default'</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> title <span class="token operator">=</span> params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'新窗口'</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">🪟 通过协议打开窗口: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>windowType<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 假设 this.windowManager 有一个 createChildWindow 方法</span>
+  <span class="token keyword">const</span> childWindow <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windowManager<span class="token punctuation">.</span><span class="token function">createChildWindow</span><span class="token punctuation">(</span>windowType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>childWindow<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    childWindow<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实战-3：执行系统操作-system-action"><a href="#实战-3：执行系统操作-system-action" class="headerlink" title="实战 3：执行系统操作 (system-action)"></a>实战 3：执行系统操作 (<code>system-action</code>)</h3><p>我们还可以通过协议来触发一些应用级别的系统操作，例如打开开发者工具、最小化/最大化窗口等。</p>
+<ul>
+<li><strong>目标 URL</strong>: <code>electron-demo://system-action?action=devtools</code></li>
+<li><strong>核心逻辑</strong>: 主进程解析出具体的系统操作 <code>action</code>，然后直接调用相关的 Electron API。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/main/protocol-manager.js</span>
+<span class="token function">handleSystemAction</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> action <span class="token operator">=</span> params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'action'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">⚙️ 通过协议执行系统操作: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>action<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> mainWindow <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windowManager<span class="token punctuation">.</span><span class="token function">getMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mainWindow<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">case</span> <span class="token string">'minimize'</span><span class="token operator">:</span>
+      mainWindow<span class="token punctuation">.</span><span class="token function">minimize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'maximize'</span><span class="token operator">:</span>
+      mainWindow<span class="token punctuation">.</span><span class="token function">maximize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'devtools'</span><span class="token operator">:</span>
+      mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">toggleDevTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">❓ 未知的系统操作: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>action<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通过这三个实战案例，你可以看到 <code>ProtocolManager</code> 的强大之处：每增加一个新功能，我们只需在 <code>executeProtocolAction</code> 的 <code>switch</code> 中增加一个 <code>case</code>，并实现一个新的 <code>handle*</code> 方法即可，代码结构依然保持清晰。</p>
+<hr>
+<h2 id="第四部分：安全生命线-——-防御潜在的攻击"><a href="#第四部分：安全生命线-——-防御潜在的攻击" class="headerlink" title="第四部分：安全生命线 —— 防御潜在的攻击"></a>第四部分：安全生命线 —— 防御潜在的攻击</h2><p><strong>自定义协议是应用的一个潜在攻击面，必须严肃对待。</strong> 任何来自外部的输入都是不可信的，协议 URL 也不例外。</p>
+<h3 id="核心原则：永不信任输入"><a href="#核心原则：永不信任输入" class="headerlink" title="核心原则：永不信任输入"></a>核心原则：永不信任输入</h3><p>所有从 <code>params</code> 中获取的值，都必须经过严格的验证和清理（Sanitization），才能在你的应用中使用。</p>
+<h4 id="风险-1：路径遍历与文件系统访问"><a href="#风险-1：路径遍历与文件系统访问" class="headerlink" title="风险 1：路径遍历与文件系统访问"></a>风险 1：路径遍历与文件系统访问</h4><ul>
+<li><strong>恶意链接</strong>: <code>electron-demo://open-file?path=../../../../etc/passwd</code></li>
+<li><strong>风险</strong>: 如果你的应用有一个 <code>open-file</code> 动作，并且天真地直接使用 <code>path</code> 参数去读取文件，攻击者就可能读取到你系统上的任意敏感文件。</li>
+<li><strong>对策</strong>:<ol>
+<li> <strong>白名单验证</strong>：只允许访问预设的安全目录下的文件。</li>
+<li> <strong>路径净化</strong>：使用 <code>path.normalize()</code> 和 <code>path.basename()</code> 来处理路径，移除 <code>../</code> 等不安全字符。</li>
+<li> <strong>最小权限</strong>：从根本上避免暴露直接操作文件系统的 <code>Action</code>，除非这是应用的核心功能。</li>
+</ol>
+</li>
+</ul>
+<h4 id="风险-2：权限过大的危险操作"><a href="#风险-2：权限过大的危险操作" class="headerlink" title="风险 2：权限过大的危险操作"></a>风险 2：权限过大的危险操作</h4><ul>
+<li><strong>恶意链接</strong>: <code>electron-demo://execute-command?cmd=rm -rf /</code></li>
+<li><strong>风险</strong>: 暴露一个能执行任意系统命令的 <code>Action</code> 是极其危险的，这无异于向全世界开放了你电脑的后门。</li>
+<li><strong>对策</strong>:<ol>
+<li> <strong>最小化 <code>Action</code> 集合</strong>：只暴露绝对必要的、影响范围可控的 <code>Action</code>。</li>
+<li> <strong>避免直接执行</strong>：绝对不要将 URL 参数直接拼接成系统命令或代码片段来执行。</li>
+</ol>
+</li>
+</ul>
+<h4 id="风险-3：缺少用户确认的破坏性操作"><a href="#风险-3：缺少用户确认的破坏性操作" class="headerlink" title="风险 3：缺少用户确认的破坏性操作"></a>风险 3：缺少用户确认的破坏性操作</h4><ul>
+<li><strong>恶意链接</strong>: <code>electron-demo://delete-user-data?confirm=true</code></li>
+<li><strong>风险</strong>: 攻击者可能诱导用户点击一个链接，在用户不知情的情况下执行删除数据、修改设置等不可逆操作。</li>
+<li><strong>对策</strong>: 对于任何敏感或破坏性的操作，<strong>必须</strong>通过 Electron 的 <code>dialog.showMessageBox</code> 弹出一个原生对话框，向用户清晰地解释即将发生什么，并请求其明确授权。<strong>永远不要</strong>依赖 URL 中的参数（如 <code>confirm=true</code>）来跳过用户确认环节。</li>
+</ul>
+<h4 id="风险-4：畸形-URL-导致应用崩溃"><a href="#风险-4：畸形-URL-导致应用崩溃" class="headerlink" title="风险 4：畸形 URL 导致应用崩溃"></a>风险 4：畸形 URL 导致应用崩溃</h4><ul>
+<li><strong>恶意链接</strong>: <code>electron-demo:?#malformed-url</code></li>
+<li><strong>风险</strong>: 格式错误的 URL 可能会导致 <code>new URL(url)</code> 构造函数抛出异常。如果没有被捕获，这个未处理的异常将导致你的主进程崩溃。</li>
+<li><strong>对策</strong>: 务必将 URL 解析和处理的所有逻辑都包裹在 <code>try...catch</code> 块中。这可以捕获解析错误，防止应用崩溃，并通过 <code>dialog.showErrorBox</code> 或日志进行优雅地报告。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// handleProtocolUrl 方法必须有 try...catch</span>
+<span class="token function">handleProtocolUrl</span><span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// ... 解析和执行</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'协议 URL 处理失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dialog<span class="token punctuation">.</span><span class="token function">showErrorBox</span><span class="token punctuation">(</span><span class="token string">'处理失败'</span><span class="token punctuation">,</span> <span class="token string">'无效的协议链接'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>安全不是一次性的任务，而是一种持续的实践。在设计每一个新的 <code>Action</code> 时，都应首先进行安全评估。</p>
+<hr>
+<h2 id="第五部分：调试与测试"><a href="#第五部分：调试与测试" class="headerlink" title="第五部分：调试与测试"></a>第五部分：调试与测试</h2><p>当协议行为不符合预期时，高效的调试技巧至关重要。</p>
+<h3 id="1-关注主进程日志"><a href="#1-关注主进程日志" class="headerlink" title="1. 关注主进程日志"></a>1. 关注主进程日志</h3><p>协议相关的所有核心逻辑都发生在主进程。因此，<strong>从启动应用的终端（而不是渲染进程的开发者工具）查看 <code>console.log</code> 输出</strong>，是跟踪协议流程最直接、最有效的方法。<code>ProtocolManager</code> 中的关键日志能告诉你：</p>
+<ul>
+<li>是否成功收到了 URL？</li>
+<li>URL 是否被正确解析成了 <code>action</code> 和 <code>params</code>？</li>
+<li><code>action</code> 是否匹配到了正确的处理函数？</li>
+</ul>
+<h3 id="2-验证协议注册"><a href="#2-验证协议注册" class="headerlink" title="2. 验证协议注册"></a>2. 验证协议注册</h3><ul>
+<li><strong>Windows</strong>: 打开注册表编辑器 (<code>regedit</code>)，导航到 <code>HKEY_CLASSES_ROOT</code>，然后搜索你的协议名（如 <code>electron-demo</code>）。你应该能看到它指向了你的应用程序。</li>
+<li><strong>macOS</strong>: 协议注册信息较为分散。一个简单的验证方法是，如果你的应用<strong>没有在运行</strong>，在终端执行 <code>open your-protocol://test</code>，看应用是否能被成功启动。</li>
+</ul>
+<h3 id="3-使用终端命令测试"><a href="#3-使用终端命令测试" class="headerlink" title="3. 使用终端命令测试"></a>3. 使用终端命令测试</h3><p>在开发过程中，反复打开浏览器输入 URL 很繁琐。使用终端命令可以快速触发协议：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># macOS</span>
+<span class="token function">open</span> <span class="token string">"electron-demo://system-action?action=devtools"</span>
+
+<span class="token comment"># Windows (cmd.exe)</span>
+start electron-demo://system-action?action<span class="token operator">=</span>devtools<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-创建一个-test-html"><a href="#4-创建一个-test-html" class="headerlink" title="4. 创建一个 test.html"></a>4. 创建一个 <code>test.html</code></h3><p>为了模拟真实的用户点击场景，可以在项目根目录创建一个简单的 <code>test.html</code> 文件：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>协议测试页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Electron 自定义协议测试<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>electron-demo://navigate?route=/window-management<span class="token punctuation">"</span></span>
+        <span class="token punctuation">></span></span>导航到窗口管理页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span>
+      <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>electron-demo://open-window?type=settings&amp;title=设置<span class="token punctuation">"</span></span>
+        <span class="token punctuation">></span></span>打开设置窗口<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span>
+      <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>直接用浏览器打开这个文件，点击链接，就能方便地测试各种协议 <code>Action</code>。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们从一个最简单的协议唤起示例出发，逐步构建了一个健壮、可扩展且安全的 <code>ProtocolManager</code>。通过这篇文章，我们不仅掌握了 <code>app.setAsDefaultProtocolClient</code> 的用法，更重要的是，建立了一套围绕“Action”和“安全第一”的设计思想。</p>
+<p>自定义协议是连接你的 Electron 应用与广阔外部世界的强大桥梁。善用它，能为你的用户带来如原生应用般丝滑、便捷的深度链接体验。希望这篇指南能为你开启这扇大门，并在保障安全的前提下，创造出更多富有想象力的应用交互。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">高红翔</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/">https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">高红翔</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/electron/">
+                                    <span class="chip bg-color">electron</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Electron自定义协议完全指南">
+                        
+                        <span class="card-title">Electron自定义协议完全指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-08-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    前端框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/electron/">
+                        <span class="chip bg-color">electron</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Git私钥配置完整指南">
+                        
+                        <span class="card-title">Git私钥配置完整指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-08-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 闪烁之狐<br />'
+            + '文章作者: 高红翔<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2025</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">高红翔</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">130.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2022";
+                    var startMonth = "6";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ghx9908" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2460013249@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2460013249" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2460013249" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var searchFunc = function (path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function (xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function () {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function () {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function (data) {
+                            var isMatch = true;
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title !== '' && data_content !== '') {
+                                keywords.forEach(function (keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i === 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start === 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substr(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function (keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                    });
+
+                                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        };
+
+        searchFunc('/search.xml', 'searchInput', 'searchResult');
+    });
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

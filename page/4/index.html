@@ -375,6 +375,55 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2024/03/25/tan-tan-vue3-zhong-mo-ban-bian-yi-zuo-liao-na-xie-you-hua/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="谈谈Vue3中模板编译做了哪些优化">
+                            
+                            <span class="card-title">谈谈Vue3中模板编译做了哪些优化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1.1 PatchFlags 优化Diff 算法无法避免新旧虚拟 DOM 中无用的比较操作，通过 patchFlags 来标记动态内容，可以实现快速 diff 算法
+&lt;div&gt;
+  &lt;h1 a&#x3D;&#39;a&#3
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="post-category">
+                                    面试宝典
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Vue-js/">
+                            <span class="chip bg-color">Vue.js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2024/03/22/key-de-zuo-yong-he-yuan-li/">
                         <div class="card-image">
                             
@@ -471,21 +520,23 @@ key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/">
+                    <a href="/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 中如何检测数组变化?">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 中如何进行依赖收集">
                             
-                            <span class="card-title">Vue 中如何检测数组变化?</span>
+                            <span class="card-title">Vue 中如何进行依赖收集</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.1 Vue2 中采用重写数组方法的方式
-数组考虑性能原因没有用defineProperty对数组的每一项进行拦截，而是选择重写数组（push,shift,pop,splice,unshift,sort,reverse）方法。数组中如果是
+                                1.1 依赖收集的流程
+每个属性都拥有自己的dep属性，存放他所依赖的 watcher，当属性变化后会通知自己对应的 watcher 去更新
+默认在初始化时会调用 render 函数，此时会触发属性依赖收集 dep.depend
+当属性发生
                             
                         </div>
                         <div class="publish-info">
@@ -519,23 +570,21 @@ key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/03/22/zhong-ru-he-jin-xing-yi-lai-shou-ji/">
+                    <a href="/2024/03/22/zhong-ru-he-jian-ce-shu-zu-bian-hua/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 中如何进行依赖收集">
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 中如何检测数组变化?">
                             
-                            <span class="card-title">Vue 中如何进行依赖收集</span>
+                            <span class="card-title">Vue 中如何检测数组变化?</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.1 依赖收集的流程
-每个属性都拥有自己的dep属性，存放他所依赖的 watcher，当属性变化后会通知自己对应的 watcher 去更新
-默认在初始化时会调用 render 函数，此时会触发属性依赖收集 dep.depend
-当属性发生
+                                1.1 Vue2 中采用重写数组方法的方式
+数组考虑性能原因没有用defineProperty对数组的每一项进行拦截，而是选择重写数组（push,shift,pop,splice,unshift,sort,reverse）方法。数组中如果是
                             
                         </div>
                         <div class="publish-info">
@@ -917,54 +966,6 @@ Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象�
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/01/26/yi-dong-she-bei-shang-de-an-quan-qu-yu-gua-pei/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="移动设备上的安全区域适配">
-                            
-                            <span class="card-title">移动设备上的安全区域适配</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                CSS 代码解析问题描述当我们写个功能，容器的高度需要设置为 100vh，发现在 ios(safari)浏览器显示的时候，浏览器的底部工具栏总是会挡住底下的一部分，只有工具栏隐藏或者向上滚动的时候才能看到。
-问题原因没找到相关官方的问题，从
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-category">
-                                    解决方法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                            <span class="chip bg-color">移动端</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1014,7 +1015,7 @@ Virtual DOM 就是用 js 对象来描述真实 DOM，是对真实 DOM 的抽象�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">126.7k</span>&nbsp;字
+                class="white-color">130.5k</span>&nbsp;字
             
             
             
