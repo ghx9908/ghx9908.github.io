@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2025-09-10T07:23:12.546Z</updated>
+  <updated>2025-11-05T03:12:22.083Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于腾讯云IM实现家长端小程序与教师端PC端双向聊天功能</title>
+    <link href="https://ghx9908.github.io/2025/11/05/ji-yu-teng-xun-yun-im-shi-xian-jia-chang-duan-xiao-cheng-xu-yu-jiao-shi-duan-pc-duan-shuang-xiang-liao-tian-gong-neng/"/>
+    <id>https://ghx9908.github.io/2025/11/05/ji-yu-teng-xun-yun-im-shi-xian-jia-chang-duan-xiao-cheng-xu-yu-jiao-shi-duan-pc-duan-shuang-xiang-liao-tian-gong-neng/</id>
+    <published>2025-11-05T11:03:52.000Z</published>
+    <updated>2025-11-05T03:12:22.083Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;太好了 👍&lt;br&gt;下面给你的是一篇完整的、成体系的技术文档，内容融合了前面所有讲解：包括&lt;strong&gt;整体架构、家长端与教师端 IM</summary>
+        
+      
+    
+    
+    
+    <category term="前端架构" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="SDK" scheme="https://ghx9908.github.io/tags/SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>useIMManager</title>
+    <link href="https://ghx9908.github.io/2025/11/05/useimmanager/"/>
+    <id>https://ghx9908.github.io/2025/11/05/useimmanager/</id>
+    <published>2025-11-05T11:02:03.000Z</published>
+    <updated>2025-11-05T03:12:22.083Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-javascript&quot; data-language=&quot;javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;//</summary>
+        
+      
+    
+    
+    
+    <category term="前端架构" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="SDK" scheme="https://ghx9908.github.io/tags/SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>腾讯云IMSDK的封装</title>
+    <link href="https://ghx9908.github.io/2025/10/21/teng-xun-yun-imsdk-de-feng-zhuang/"/>
+    <id>https://ghx9908.github.io/2025/10/21/teng-xun-yun-imsdk-de-feng-zhuang/</id>
+    <published>2025-10-21T10:16:08.000Z</published>
+    <updated>2025-11-05T03:12:22.083Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[MODE: RESEARCH]&lt;/p&gt;
+&lt;p&gt;快乐程序员，我来详细讲解 &lt;code&gt;useIMManager.ts&lt;/code&gt; 中的核心方法！这个文件是腾讯云IM SDK的封装，提供了完整的即时通讯功能。&lt;/p&gt;
+&lt;h2 id=&quot;🏗️-整体架构设计&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端架构" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="SDK" scheme="https://ghx9908.github.io/tags/SDK/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Electron自定义协议完全指南</title>
     <link href="https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/</id>
     <published>2025-08-25T19:30:55.000Z</published>
-    <updated>2025-09-10T07:23:12.546Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -46,7 +124,7 @@
     <link href="https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/</id>
     <published>2025-08-04T15:20:33.000Z</published>
-    <updated>2025-09-10T07:23:12.546Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -71,7 +149,7 @@
     <link href="https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/</id>
     <published>2025-07-31T19:23:04.000Z</published>
-    <updated>2025-09-10T07:23:12.546Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -99,7 +177,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/</id>
     <published>2025-07-29T17:59:37.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -124,7 +202,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/</id>
     <published>2025-07-29T10:27:15.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -152,7 +230,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/</id>
     <published>2025-07-29T10:25:59.000Z</published>
-    <updated>2025-09-10T07:23:12.546Z</updated>
+    <updated>2025-11-05T03:12:22.083Z</updated>
     
     
       
@@ -178,7 +256,7 @@
     <link href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/"/>
     <id>https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</id>
     <published>2025-07-25T10:58:17.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -203,7 +281,7 @@
     <link href="https://ghx9908.github.io/2025/07/23/mac-pei-zhi/"/>
     <id>https://ghx9908.github.io/2025/07/23/mac-pei-zhi/</id>
     <published>2025-07-23T13:53:06.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -228,7 +306,7 @@
     <link href="https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/"/>
     <id>https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/</id>
     <published>2025-06-24T12:29:19.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -253,7 +331,7 @@
     <link href="https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/"/>
     <id>https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/</id>
     <published>2024-10-18T15:57:22.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -278,7 +356,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/"/>
     <id>https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/</id>
     <published>2024-10-17T17:51:54.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -303,7 +381,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/posscss/"/>
     <id>https://ghx9908.github.io/2024/10/17/posscss/</id>
     <published>2024-10-17T17:30:11.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -328,7 +406,7 @@
     <link href="https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/"/>
     <id>https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/</id>
     <published>2024-10-09T16:14:56.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -351,7 +429,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/express/"/>
     <id>https://ghx9908.github.io/2024/10/08/express/</id>
     <published>2024-10-08T14:48:34.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -374,7 +452,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/jwt/"/>
     <id>https://ghx9908.github.io/2024/10/08/jwt/</id>
     <published>2024-10-08T11:27:55.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -398,7 +476,7 @@
     <link href="https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/</id>
     <published>2024-09-27T18:28:27.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -421,7 +499,7 @@
     <link href="https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/"/>
     <id>https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/</id>
     <published>2024-09-26T15:25:43.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
+    <updated>2025-11-05T03:12:22.082Z</updated>
     
     
       
@@ -437,87 +515,6 @@
     
     
     <category term="node" scheme="https://ghx9908.github.io/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 中的diff算法？</title>
-    <link href="https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/"/>
-    <id>https://ghx9908.github.io/2024/07/15/vue-zhong-de-diff-suan-fa/</id>
-    <published>2024-07-15T17:26:30.000Z</published>
-    <updated>2025-09-10T07:23:12.545Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前后元素不一致&quot;&gt;&lt;a href=&quot;#前后元素不一致&quot; class=&quot;headerlink&quot; title=&quot;前后元素不一致&quot;&gt;&lt;/a&gt;前后元素不一致&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;两个不同虚拟节点不需要进行比较，直接移除老节点，将新的虚拟节点渲染成真实</summary>
-        
-      
-    
-    
-    
-    <category term="前端框架" scheme="https://ghx9908.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="Vue" scheme="https://ghx9908.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>V8内存管理</title>
-    <link href="https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/"/>
-    <id>https://ghx9908.github.io/2024/06/27/v8-nei-cun-guan-li/</id>
-    <published>2024-06-27T15:33:25.000Z</published>
-    <updated>2025-09-10T07:23:12.544Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;V8 也会申请内存，申请的内存又会分为&lt;strong&gt;堆内存和栈内存&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;一、栈&quot;&gt;&lt;a href=&quot;#一、栈&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="网络" scheme="https://ghx9908.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>单页应用首屏加载速度慢的怎么解决？</title>
-    <link href="https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/"/>
-    <id>https://ghx9908.github.io/2024/05/11/dan-ye-ying-yong-shou-ping-jia-zai-su-du-man-de-zen-me-jie-jue/</id>
-    <published>2024-05-11T17:26:30.000Z</published>
-    <updated>2025-09-10T07:23:12.544Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;使用路由懒加载、异步组件，实现组件拆分，减少入口文件体积大小,优化体验骨架屏&lt;/li&gt;
-&lt;li&gt;抽离公共代码，采用 splitChunks 进行代码分割。&lt;/li&gt;
-&lt;li&gt;组件加载采用按需加载的方式。&lt;/li&gt;
-&lt;li&gt;静态资源缓存，采用 HTTP 缓存</summary>
-        
-      
-    
-    
-    
-    <category term="面试宝典" scheme="https://ghx9908.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
-    
-    
-    <category term="Vue.js" scheme="https://ghx9908.github.io/tags/Vue-js/"/>
     
   </entry>
   
