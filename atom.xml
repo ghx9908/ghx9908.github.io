@@ -6,7 +6,7 @@
   <link href="https://ghx9908.github.io/atom.xml" rel="self"/>
   
   <link href="https://ghx9908.github.io/"/>
-  <updated>2025-11-05T03:12:22.083Z</updated>
+  <updated>2025-12-01T02:59:33.800Z</updated>
   <id>https://ghx9908.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>代理节点转化sub_to_yaml</title>
+    <link href="https://ghx9908.github.io/2025/12/01/dai-li-jie-dian-zhuan-hua-sub-to-yaml/"/>
+    <id>https://ghx9908.github.io/2025/12/01/dai-li-jie-dian-zhuan-hua-sub-to-yaml/</id>
+    <published>2025-12-01T10:56:11.000Z</published>
+    <updated>2025-12-01T02:59:33.800Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/usr/bin/env</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>基于腾讯云IM实现家长端小程序与教师端PC端双向聊天功能</title>
     <link href="https://ghx9908.github.io/2025/11/05/ji-yu-teng-xun-yun-im-shi-xian-jia-chang-duan-xiao-cheng-xu-yu-jiao-shi-duan-pc-duan-shuang-xiang-liao-tian-gong-neng/"/>
     <id>https://ghx9908.github.io/2025/11/05/ji-yu-teng-xun-yun-im-shi-xian-jia-chang-duan-xiao-cheng-xu-yu-jiao-shi-duan-pc-duan-shuang-xiang-liao-tian-gong-neng/</id>
     <published>2025-11-05T11:03:52.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.800Z</updated>
     
     
       
@@ -46,7 +67,7 @@
     <link href="https://ghx9908.github.io/2025/11/05/useimmanager/"/>
     <id>https://ghx9908.github.io/2025/11/05/useimmanager/</id>
     <published>2025-11-05T11:02:03.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.800Z</updated>
     
     
       
@@ -72,7 +93,7 @@
     <link href="https://ghx9908.github.io/2025/10/21/teng-xun-yun-imsdk-de-feng-zhuang/"/>
     <id>https://ghx9908.github.io/2025/10/21/teng-xun-yun-imsdk-de-feng-zhuang/</id>
     <published>2025-10-21T10:16:08.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.800Z</updated>
     
     
       
@@ -99,7 +120,7 @@
     <link href="https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/08/25/electron-zi-ding-yi-xie-yi-wan-quan-zhi-nan/</id>
     <published>2025-08-25T19:30:55.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -124,7 +145,7 @@
     <link href="https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/08/04/git-si-yao-pei-zhi-wan-zheng-zhi-nan/</id>
     <published>2025-08-04T15:20:33.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -149,7 +170,7 @@
     <link href="https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/31/electron-yuan-sheng-cai-dan-wan-zheng-zhi-nan/</id>
     <published>2025-07-31T19:23:04.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -177,7 +198,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/"/>
     <id>https://ghx9908.github.io/2025/07/29/electron-jin-cheng-jian-tong-xin-zui-jia-shi-jian-zhi-nan/</id>
     <published>2025-07-29T17:59:37.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -202,7 +223,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-jian-zhou-shi-jian-guan-li-qi/</id>
     <published>2025-07-29T10:27:15.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -230,7 +251,7 @@
     <link href="https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/"/>
     <id>https://ghx9908.github.io/2025/07/29/shi-pin-bo-fang-xi-tong-jia-gou-she-ji-yu-shi-xian/</id>
     <published>2025-07-29T10:25:59.000Z</published>
-    <updated>2025-11-05T03:12:22.083Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -256,7 +277,7 @@
     <link href="https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/"/>
     <id>https://ghx9908.github.io/2025/07/25/git-pei-zhi-ge-ren-xin-xi/</id>
     <published>2025-07-25T10:58:17.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -281,7 +302,7 @@
     <link href="https://ghx9908.github.io/2025/07/23/mac-pei-zhi/"/>
     <id>https://ghx9908.github.io/2025/07/23/mac-pei-zhi/</id>
     <published>2025-07-23T13:53:06.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -306,7 +327,7 @@
     <link href="https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/"/>
     <id>https://ghx9908.github.io/2025/06/24/vue3-zhong-shi-xian-ke-chong-zhi-de-zhuang-tai-guan-li-userestableref-yu-userestableactive/</id>
     <published>2025-06-24T12:29:19.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -331,7 +352,7 @@
     <link href="https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/"/>
     <id>https://ghx9908.github.io/2024/10/18/eslint-pei-zhi-an-li/</id>
     <published>2024-10-18T15:57:22.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -356,7 +377,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/"/>
     <id>https://ghx9908.github.io/2024/10/17/npm-bao-xiang-jie/</id>
     <published>2024-10-17T17:51:54.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -381,7 +402,7 @@
     <link href="https://ghx9908.github.io/2024/10/17/posscss/"/>
     <id>https://ghx9908.github.io/2024/10/17/posscss/</id>
     <published>2024-10-17T17:30:11.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -406,7 +427,7 @@
     <link href="https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/"/>
     <id>https://ghx9908.github.io/2024/10/09/dan-dian-deng-lu/</id>
     <published>2024-10-09T16:14:56.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -429,7 +450,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/express/"/>
     <id>https://ghx9908.github.io/2024/10/08/express/</id>
     <published>2024-10-08T14:48:34.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -452,7 +473,7 @@
     <link href="https://ghx9908.github.io/2024/10/08/jwt/"/>
     <id>https://ghx9908.github.io/2024/10/08/jwt/</id>
     <published>2024-10-08T11:27:55.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.799Z</updated>
     
     
       
@@ -476,7 +497,7 @@
     <link href="https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/"/>
     <id>https://ghx9908.github.io/2024/09/27/cookie-he-session-yuan-li/</id>
     <published>2024-09-27T18:28:27.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
+    <updated>2025-12-01T02:59:33.798Z</updated>
     
     
       
@@ -484,30 +505,6 @@
         
         
     <summary type="html">&lt;h3 id=&quot;Cookie-与-Session-的区别与理解&quot;&gt;&lt;a href=&quot;#Cookie-与-Session-的区别与理解&quot; class=&quot;headerlink&quot; title=&quot;Cookie 与 Session 的区别与理解&quot;&gt;&lt;/a&gt;&lt;strong&gt;Cookie 与</summary>
-        
-      
-    
-    
-    
-    
-    <category term="node" scheme="https://ghx9908.github.io/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>koa底层实现</title>
-    <link href="https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/"/>
-    <id>https://ghx9908.github.io/2024/09/26/koa-di-ceng-shi-xian/</id>
-    <published>2024-09-26T15:25:43.000Z</published>
-    <updated>2025-11-05T03:12:22.082Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-Koa&quot;&gt;&lt;a href=&quot;#1-Koa&quot; class=&quot;headerlink&quot; title=&quot;1.Koa&quot;&gt;&lt;/a&gt;1.Koa&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://koajs.com/&quot;&gt;Koa&lt;/a&gt;是一个由 Express</summary>
         
       
     
